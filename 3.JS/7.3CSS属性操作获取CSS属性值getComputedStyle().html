@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		(智能读不能写)
+		CSS属性操作，指的是使用JavaScript来操作一个元素的CSS样式。
+		在JavaScript中，CSS属性操作同样有2种：
+		
+		获取CSS属性值
+  		设置CSS属性值 
+		
+		获取CSS属性值
+		
+		在JavaScript中，我们可以使用getComputedStyle()方法来获取一个CSS属性的取值。
+		
+		语法：
+		doucument.getComputedStyle(obj).attr
+		
+		doucument.getComputedStyle()方法其实有2种写法，以下2种是等价的：
+		doucument.getComputedStyle(obj).attr
+		doucument.getComputedStyle(obj)["attr"]
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				border: 10px #ADFF2F solid;
+				height: 100px;
+				width: 100px;
+				background-color: #00BFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<p id="p1"></p>
+		<div id="div1">
+		</div>
+		<script type="text/javascript">
+			p1.innerHTML=window.getComputedStyle(div1,null).backgroundColor;	
+		</script>
+	</body>
+</html>

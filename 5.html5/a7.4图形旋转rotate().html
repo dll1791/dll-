@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在Canvas中，我们可以使用rotate()方法来旋转图形。
+		语法：
+		cxt.rotate(angle);
+		
+		参数			描述
+		angle		旋转角度，以弧度计。
+		
+		如需将角度转换为弧度，请使用 degrees*Math.PI/180 公式进行计算。
+		实例：如需旋转 5 度，可规定下面的公式：5*Math.PI/180。
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300" style="border: 2px aquamarine solid;"></canvas>
+		<script type="text/javascript">
+			var ctx=c.getContext("2d");
+			ctx.rotate(20*Math.PI/180);
+			ctx.fillRect(100,100,40,20);
+		</script>
+	</body>
+</html>

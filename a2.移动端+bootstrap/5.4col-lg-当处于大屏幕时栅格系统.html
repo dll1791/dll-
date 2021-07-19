@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- 
+	bootstrap:统一把 container屏幕内容划分成了12列,然后根据页面宽度对列进行缩减
+	达到响应式布局的目的
+	
+	如果孩子的分数等于12就能占满整个页面
+	col-lg-3//每个盒子占三份总共12份 大于12则另一起行  小于12则占不满
+	
+	
+	行( row )必须放到container布局容器里面(行的作用在于消除padding让父元素的高度与子元素相同)
+	我们实现列的平均划分需要给列添加	类前缀
+	xs-extra small超小; sm-small : 小; md-medium :中等;lg-large :大;
+	列( column )大于12，多余的“列( column )”所在的元素将被作为一个整体另起一行排列每一列默认有左右15像素的padding
+	可以同时为一列指定多个设备的类名，以便划分不同份数例如class="col-md-4 col-sm-6"
+ -->
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../bootstrap-3.4.1-dist/css/bootstrap.min.css"/>
+		<style type="text/css">
+			[class^='col']{
+				border: 1px solid bisque;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<!-- 	col-lg-3//每个盒子占三份总共12份 -->
+				<div class='col-lg-3'>1</div>
+				<div class='col-lg-3'>2</div>
+				<div class='col-lg-3'>3</div>
+				<div class='col-lg-3'>4</div>
+			</div>
+		</div>
+	</body>
+</html>

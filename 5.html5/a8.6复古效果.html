@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+	复古效果（sepia），是指使得图片有一种古旧效果。实现算法是：
+	分别取红、绿、蓝这3个通道值的某种加权平均值。
+	语法：
+	for (var i = 0; i < data.length; i += 4) {
+	    var r = data[i + 0];
+	    var g = data[i + 1];
+	    var b = data[i + 2];
+	    data[i + 0] = r * 0.39 + g * 0.76 + b * 0.18;
+	    data[i + 1] = r * 0.35 + g * 0.68 + b * 0.16;
+	    data[i + 2] = r * 0.27 + g * 0.53 + b * 0.13;
+	}
+
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300" style="border: 2px aquamarine solid;"></canvas>
+		<script type="text/javascript">
+			var a=c.getContext("2d");
+			a.fillStyle="#66FF2F"
+			a.fillRect(10,10,20,20);
+			a.fillStyle="#8A2BE2";
+			a.fillRect(10,30,20,20);
+			a.fillStyle="#FF0000";
+			a.fillRect(30,30,20,20);
+			a.fillStyle="#FFFF00";
+			a.fillRect(30,10,20,20);
+			
+			var img=a.getImageData(10,10,40,40);
+			for (var i = 0; i < img.data.length; i += 4) {
+			    var r = img.data[i + 0];
+			    var g = img.data[i + 1];
+			    var b = img.data[i + 2];
+			    img.data[i + 0] = r * 0.39 + g * 0.76 + b * 0.18;
+			    img.data[i + 1] = r * 0.35 + g * 0.68 + b * 0.16;
+			    img.data[i + 2] = r * 0.27 + g * 0.53 + b * 0.13;
+			}
+			a.putImageData(img,50,50);
+		</script>
+	</body>
+</html>

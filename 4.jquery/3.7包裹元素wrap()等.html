@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在jQuery中，如果想要将某个元素用其他元素包裹起来，我们有以下3种方法。
+		打包的元素.wrap("<div></div>")	//wrap() 方法把每个被选元素放置在指定的 HTML 内容或元素中。
+		wrapAll()	//把打包的元素里的所有元素一起放在指定的类容里（保留打包元素本身的层次）
+		wrapInner()//把类容一起打包
+		
+		把某个类型的东西打包到一个元素里面打包的元素会自动添加到文档的最后
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			div{
+				background-color:azure;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d">132</div>
+		<button class="b1">wrap</button>
+		<button class="b2">wrapAll</button>
+		<button class="b3">wrapInner</button>
+		<button class="b4"><a href="">重置</a></button>
+		<p>被打包元素1</p>
+		<p>被打包元素2</p>
+		<script type="text/javascript">
+			$(".b1").click(function(){
+				$("p").wrap("#d");
+			})
+			$(".b2").click(function(){
+				$("p").wrapAll("#d");
+			})
+			$(".b3").click(function(){
+				$("p").wrapInner("#d");
+			})
+		</script>
+	</body>
+</html>

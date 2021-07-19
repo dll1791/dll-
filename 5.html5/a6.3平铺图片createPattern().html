@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+	在Canvas中，我们可以使用createPattern()方法来定义图片的平铺方式。
+	语法：
+	var pattern = cxt.createPattern(image , type);
+	cxt.fillStyle = pattern;
+	cxt.fillRect();
+	
+	type的参数
+	参数			描述
+	image		规定要使用的模式的图片、画布或视频元素。	 
+	repeat		默认。该模式在水平和垂直方向重复。
+	repeat-x	该模式只在水平方向重复。
+	repeat-y	该模式只在垂直方向重复。
+	no-repeat	该模式只显示一次（不重复）。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300"style="border: 2px solid goldenrod;"></canvas>
+		<p>要使用的图片：</p>
+		<img id="i" src="../../图片与文件/小相机.png"  />
+		<script type="text/javascript">
+			var a=c.getContext("2d");
+			a.clearRect(0,0,300,300);
+			var p=a.createPattern(i,"repeat");
+			
+			a.rect(0,0,200,200);//设置平铺的位置长宽等
+			a.fillStyle=p;
+			a.clearRect(0,0,200,200);
+			a.fill();
+			
+		</script>
+	</body>
+</html>

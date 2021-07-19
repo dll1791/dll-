@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在jQuery中，想要删除元素，我们有以下3种方法。
+			remove()
+			detach()
+			empty()
+		
+		remove() 方法移除被选元素，包括所有的文本和子节点。
+		该方法也会移除被选元素的数据和事件。
+		提示：如需移除元素，但保留数据和事件，请使用 detach() 方法代替。
+		提示：如只需从被选元素移除内容，请使用 empty() 方法。
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<button class="bt1">remove</button>
+		<button class="bt2">datach</button>
+		<button class="bt3">empty</button>
+		<ul>
+			<li>小城里</li>
+			<li>岁月流过去</li>
+			<li>清澈的勇气</li>
+			<li>洗涤过的回忆</li>
+			<li>我记得你</li>
+			<li>骄傲的活下去</li>
+		</ul>
+		<script type="text/javascript">
+			$(".bt1").click(function(){
+				$("li:eq(0)").remove();
+			})
+			$(".bt2").click(function(){
+				$("li:eq(0)").detach();
+			})
+			$(".bt3").click(function(){
+				$("li:eq(0)").empty();
+			})
+			
+			
+		</script>
+	</body>
+</html>

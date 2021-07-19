@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- 
+	1.字符串类型:(和之前一样)
+	<menu-item :pstr='str'></menu-item>
+	Vue.component('menu-item',{
+		props:['pstr'],
+		data:function(){
+			return{
+			}
+		},
+		template:`<div>{{pstr}}</div>`
+	});
+	2.数字类型：(:pnum加了“：”12才会变成数字类型否则就是字符串类型)
+	<menu-item :pnum='12'></menu-item>
+	3.布尔类型 和数字类型一样需要加上“：”才能变成布尔类型否则就是字符串类型
+	<menu-item :pboo=true></menu-item>
+	4.数组类型 (需要用到for来遍历)
+	<menu-item :parr='arr'></menu-item>
+	<li key='index' v-for='(item,index) in parr'>{{item}}</li>
+	5.对象类型
+	<menu-item :pobj='obj'></menu-item>
+	<span>{{pobj.name}}</span>
+	<span>{{pobj.age}}</span>
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id='vue1'>
+			<!-- (:pnum加了“：”12才会变成数字类型) -->
+			<menu-item :pstr='str' :pnum='12' :pboo=true :parr='arr' :pobj='obj'></menu-item>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		Vue.component('menu-item',{
+			props:['pstr','pnum','pboo','parr','pobj'],
+			data:function(){
+				return{
+				}
+			},
+			template:`<div> 
+							<div>{{pstr}}</div>//这里是字符串类型
+							<div>{{pnum+2}}</div>//这里是数字类型
+							<div>{{typeof pboo}}</div>//这里是布尔类型
+							<ul>
+								<li key='index' v-for='(item,index) in parr'>{{item}}</li>
+							</ul>
+							<div>
+								<span>{{pobj.name}}</span>
+								<span>{{pobj.age}}</span>
+							</div>
+							</div>`
+		});
+		let vue=new Vue({
+			el:'#vue1',
+			data:{
+				str:'hello',
+				arr:['apple','orange'],
+				obj:{
+					name:'dll',
+					age:'22'
+				}
+			}
+			})
+	</script>
+</html>
+
+

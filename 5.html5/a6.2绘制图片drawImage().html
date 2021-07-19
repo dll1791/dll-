@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+	在Canvas中，我们可以使用drawImage()方法来绘制图片。所谓“绘制图片”，
+	说白了，就是把一张图片在Canvas中显示出来。
+	 drawImage()方法共有3种调用方式。
+	 
+	 例子：
+	 i.onload=function(){
+		a.drawImage(i,400,520,200,150,0,0,300,300);
+	}
+	在画布上定位图像：
+	context.drawImage(img,x,y);
+	在画布上定位图像，并规定图像的宽度和高度：
+	context.drawImage(img,x,y,width,height);
+	剪切图像，并在画布上定位被剪切的部分：
+	context.drawImage(img,sx,sy,swidth,sheight,x,y,width,height);
+	 
+	 	img		规定要使用的图像、画布或视频。	 
+		sx		可选。开始剪切的 x 坐标位置。//原图上开始剪切的位置
+		sy		可选。开始剪切的 y 坐标位置。//原图上开始剪切的位置
+		swidth	可选。被剪切图像的宽度。//原图上剪切的宽度
+		sheight	可选。被剪切图像的高度。//原图上剪切的高度
+		
+		x		在画布上放置图像的 x 坐标位置。//选择在画布上的位置
+		y		在画布上放置图像的 y 坐标位置。
+		width	可选。要使用的图像的宽度（伸展或缩小图像）。//画布上显示的高度和宽度
+		height	可选。要使用的图像的高度（伸展或缩小图像）。
+	      
+	（1）第1种方法仅仅绘制一个图片。
+	（2）第2种方法可以绘制大小不一样的图片（常用于Canvas游戏开发）。
+	（3）第3种方法可以将部分图像复制到画布，类似于CSS Sprite技术，
+	从而使得图片只需要加载一次即可，这样极大地提高了加载速度（常用于Canvas游戏开发）。
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300"style="border: 2px solid goldenrod;"></canvas>
+		<p>要使用的图片：</p>
+		<img id="i" src="../../图片与文件/梦想3.jfif" height="300px" />
+		<script type="text/javascript">
+			var a=c.getContext("2d");
+			
+			i.onload=function(){
+				a.drawImage(i,400,520,200,150,0,0,300,300);
+			}
+		</script>
+	</body>
+</html>

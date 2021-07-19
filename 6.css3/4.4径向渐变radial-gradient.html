@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+	径向渐变，指的是颜色从内到外进行的圆形渐变（从中间往外拉，像圆一样）。
+	径向渐变是圆形渐变或椭圆渐变，颜色不再沿着一条直线渐变，而是从一个起点向所有方向渐变。
+	语法：
+	background:radial-gradient(position, shape size, start-color, stop-color)
+	
+	position	定义渐变的位置 默认是中心
+	shape		 参数定义了形状。它可以是值 circle 或椭圆 ellipse。(默认椭圆)
+	
+	1.颜色节点不均匀分布的径向渐变：
+	#grad {
+	  background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+	}
+	2.一个重复的径向渐变：
+	#grad {
+	  background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+	}
+	
+	最后的话：在真正的开发中，大多数渐变效果都是线性渐变，因此
+	我们只需要重点掌握线性渐变就可以了。
+	
+	
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.d1{
+				height: 100px;
+				width: 100px;
+				background: radial-gradient(circle ,red, yellow,black);
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="d1">我最后的太阳</div>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- 
+	浅拷贝只是拷贝一层，更深层次对象级别的只拷贝地址
+	深拷贝拷贝多层，每一层的数据都会拷贝
+1.浅拷贝 js方法
+	var obj={
+		id: 1,
+		name:"andy",
+		msg: {
+			age:18
+		}
+	};
+	var o={};
+	for(var k in obj){
+		//k是属性名  obj[k]就是属性值
+		o[k]=obj[k];
+		//相当于o.k=obj.k
+	}
+	console.log(o);
+	//浅拷贝只是把msg的地址拷贝给了o,如果修改了msg的数据就会影响O里面的数据
+	
+	2.es6新增方法可以浅拷贝
+	Object.assign(target,...sources)
+	target 是拷贝给的对象   sources是被拷贝的对象
+	例如：
+	Object.assign(o,obj)
+	把obj拷贝给o
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var obj={
+				id: 1,
+				name:"andy",
+				msg: {
+					age:18
+				}
+			};
+			var o={};
+		Object.assign(o,obj);
+		console.log(o);
+		</script>
+	</body>
+</html>

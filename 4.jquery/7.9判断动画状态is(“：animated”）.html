@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<!--
+		在jQuery中，我们可以使用is()方法来判断元素是否正处于动画状态。
+		如果不处于动画状态，则添加新的动画；如果正处于动画状态，则不添加新的动画。
+		语法：
+		
+		if(!$().is(":animated"))
+		{
+		    //如果不处于动画状态，则添加新的动画
+		}
+
+	-->
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="../../jquery-1.12.4.js"></script>
+</head>
+
+<body>
+	<button>action</button><br>
+	<button>判断</button><br>
+	<img src="../../图片与文件/梦想3.jfif" alt="" height="200px">
+	<script>
+		$("button:eq(0)").click(function () {
+			$("img").animate({ height: "+=300px" }, 3000)
+		})
+		$("button:eq(1)").click(function () {
+			if ($("img").is(":animated")) {
+				alert("处于动画状态");
+			}
+			else {
+				alert("不处于动画状态");
+			}
+		})
+	</script>
+</body>
+
+</html>

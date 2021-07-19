@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- 
+	Promis,ES6专用语法用于处理异步编程如ajax setTimeout
+	1.可以解决回调函数内多层嵌套的问题
+	2.简洁的API
+	3.Promis是一个对象,也是一个方法
+	
+	基本语法
+		1.实例化promise对象，构造函数中传递函数用于处理异步任务
+		2.resolve和reject俩个参数用于处理成功和失败俩种情况，通过p.then获取处理结果
+			例：
+			var p=new Promise(function(resolve,reject){
+				//这里用于实现异步任务 resolve,reject是俩个方法名字可以自定义
+				setTimeout(function(){
+					var flag=true;
+					if(flag){
+						//正常情况
+						resolve('hello dll');对的值就通过resolve传过去
+					}
+					else{
+						//异常情况
+						reject('出错了')
+					}
+				},100);
+			})
+			//then可以用于接收前面resolve/reject传过来的值
+			p.then(function(data){
+				//获取正确的处理结果
+				console.log(data)
+			},function(info){
+				//错误的处理结果
+				console.log(info)
+			})
+			
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// console.log(typeof Promise); 
+			// console.dir(Promise);
+			var p=new Promise(function(resolve,reject){
+				//这里用于实现异步任务 resolve,reject是俩个方法
+				setTimeout(function(){
+					var flag=true;
+					if(flag){
+						//正常情况
+						resolve('hello dll');
+					}
+					else{
+						//异常情况
+						reject('出错了')
+					}
+				},100);
+			})
+			p.then(function(data){
+				//获取正确的处理结果
+				console.log(data)
+			},function(info){
+				//错误的处理结果
+				console.log(info)
+			})
+		</script>
+	</body>
+</html>

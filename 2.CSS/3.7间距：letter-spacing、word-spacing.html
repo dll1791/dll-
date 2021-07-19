@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+	在CSS中，我们可以使用letter-spacing属性来两个字之间的距离。
+	语法：
+	letter-spacing: 像素值;
+	
+	letter-spacing，从英文意思上就可以知道这是“字母间距”。注意，每一个中文汉字都被当做一个“字”，而每一个英文字母也当做一个“字”。
+	word-spacing，从英文意思上就可以知道这是“单词间距”。一般来说，word-spacing只针对英文单词而言,其他语种不会变化。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		 	<style type="text/css">
+		        #p1{word-spacing:10px;}
+		        #p2{letter-spacing:10px;}
+		        #p3{letter-spacing:5px;}
+    		</style>
+	</head>
+	<body>
+		<p id="p1">Rome was't built in a day.罗马不是一天建成的。</p><hr/>
+	    <p id="p2">Rome was't built in a day.罗马不是一天建成的。</p><hr/>
+	    <p id="p3">Rome was't built in a day.罗马不是一天建成的。</p>
+	</body>
+</html>

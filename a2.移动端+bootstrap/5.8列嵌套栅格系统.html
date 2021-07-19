@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- 
+	栅格系统在栅格系统里嵌套
+	将栅格系统的子元素作为一个父盒子，在将其划分12份
+	//让盒子中间间隔一段距离，用margin是不行的，因为栅格系统采用
+	百分比布局一旦用了margin整个盒子就会掉下来，
+	但是可以通过在小盒子里面设置小盒子，然后规定padding值让他产生间隙
+ -->
+<html>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../../bootstrap-3.4.1-dist/css/bootstrap.min.css"/>
+		<title></title>
+		<style type="text/css">
+			.row>div{
+				height:50px;
+				background: #00FF00;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+				<div class="row">
+					<div class='col-md-4'>
+						<!-- 列嵌套可以加一个行 可以去掉父元素的padding值且高度固定和父级一样高 -->
+						<div class="row">
+							<div class='col-md-6'>a</div>
+							<div class='col-md-6'>b</div>
+						</div>
+					</div>
+					<div class='col-md-4'>2</div>
+					<div class='col-md-4'>3</div>
+				</div>
+		</div>
+	</body>
+</html>

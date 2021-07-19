@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+	Canvas为我们提供了3种文本操作的方法：strokeText()、fillText()和measureText()。
+	
+	1、strokeText()方法
+	在Canvas中，我们可以使用strokeText()方法来绘制“描边文本”。“描边文本”指的是空心的文本。
+	语法：
+		strokeText(text , x , y , maxWidth)
+		
+		参数			描述
+		text		规定在画布上输出的文本。
+		x			开始绘制文本的 x 坐标位置（相对于画布）。
+		y			开始绘制文本的 y 坐标位置（相对于画布）。
+		maxWidth	可选。允许的最大文本宽度，以像素计。
+					//只有当文本本身的宽度超过最大值，文本才会发生改变
+	
+	2、fillText()方法
+	在Canvas中，我们可以使用fillText()方法来绘制“填充文本”。“填充文本”是实心的文本。
+	语法：
+		fillText(text , x , y , maxWidth)
+	
+	3、measureText()方法
+	在Canvas中，我们使用measureText()方法来返回一个对象，并且可以利用这个对象的width属性来获取某个文本的长度。
+	语法：
+		var length = cxt.measureText(text).width;
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300" style="border: 1px blue solid;"></canvas>
+		<br />文本长度: <span id="p"></span>
+		<script type="text/javascript">
+			var a=c.getContext("2d");
+			a.font="20px 仿宋";
+			a.strokeText("风萧萧兮易水寒" , 20 , 50,500);
+			
+			a.font="20px 仿宋";
+			a.fillText("壮士一起兮不复还",20,100);
+			
+			var len=a.measureText("壮士一起兮不复还").width;
+		</script>
+		
+	</body>
+</html>

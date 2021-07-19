@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- 
+	服务器下一般用绝对路径
+	1.相对路径
+	const fs=require('fs');
+	fs.readFile('./1.1ceshi.js','utf8',(err,doc)=>{
+		console.log('相对路径：');
+		console.log(err);
+		console.log(doc);
+	})//命令行的目录和文件目录一致时用相对目录是没有问题的，
+	不一致时会出错
+	
+	2.绝对路径 用path.join(__dirname, '文件名')来获取绝对路径
+	__driname可以获取当前文件的绝对路径
+	
+	const fs=require('fs');
+	const path=require('path');
+	
+	fs.readFile(path.join(__dirname, '1.1ceshi.js'),'utf8',(err,doc)=>{
+		console.log('绝对路径：');
+		console.log(err);
+		console.log(doc);
+	})
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

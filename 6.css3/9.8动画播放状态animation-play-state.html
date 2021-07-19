@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+	
+	
+	在CSS3中，我们可以使用animation-play-state属性来定义动画的播放状态。
+	语法
+	animation-play-state: paused|running;
+	
+	值	描述	测试
+	paused	暂停动画至动画停止的位置	
+	running	开始运行动画
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				height: 100px;
+				width: 100px;
+				background: #00BFFF;
+				position: relative;
+				animation: dllmove 2s infinite alternate paused;
+			}
+			@keyframes dllmove{
+				from{top:0px}
+				to{top:200px}
+			}
+		</style>
+	</head>
+	<body>
+		<button id="b1">开始</button>
+		<button id="b2">暂停</button>
+		<div id="d1"></div>
+		<script type="text/javascript">
+			b1.onclick=function(){
+				d1.style.animationPlayState="running";
+			}
+			b2.onclick=function(){
+				d1.style.animationPlayState="paused";
+			}
+		</script>
+	</body>
+</html>

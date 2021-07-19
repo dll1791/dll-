@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- 
+	fetch 的post请求方式传递数据 （添加数据）
+	post可以在url中不可以传递参数
+	1.method 改为post
+	2.body 中添加要发送的内容 如果是json的话加上 JSON.stringify
+	3.配置请求头headers 发送特定格式的信息都需要配置请求头
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		// 第一种用法：数据以String类型发送请求（传统表单形式的数据）
+			fetch('http://localhost:3000/books3',{
+				//post请求不需要也不能在url中设置传递参数
+				method:'post',
+				//body中存放待传的参数
+				body:'uname=戴林朗&pwd=123',//这样就可以传递多个参数到后台用&隔开
+				//设置请求头（必须设置）
+				headers:{
+					'Content-Type':'application/x-www-form-urlencoded'//选项配置
+				}
+			}).then(function(data){
+				return data.text();
+			}).then(function(data){
+				console.log(data);
+			})
+		
+		//第二种:数据以json格式发送请求
+		fetch('http://localhost:3000/books4',{
+			method:'post',
+			//JSON格式提交请求 对于后台来说JSON格式和普通格式传递过来的值在获取上没有区别
+			body: JSON.stringify({
+				uname:"dll",
+				pwd:'456'
+			}),
+			headers:{
+				'Content-Type':'application/json'//选项配置，必须配置
+			}
+		}).then(function(data){
+			return data.text();
+		}).then(function(data){
+			console.log(data);
+		})
+		</script>
+	</body>
+</html>

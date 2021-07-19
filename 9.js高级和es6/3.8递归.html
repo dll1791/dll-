@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- 
+	函数内部自己调用自己称为递归
+	var num=1;
+	function fn(){
+		console.log('六句话');
+		if (num==6){
+			return;//递归里必须加return
+		}
+		num++;
+		fn();
+	}
+	fn();
+	递归容易出现死循环，栈溢出的错误，加一个return
+	 加上退出条件避免栈溢出的情况。
+	 
+	1. 可以利用递归求解一些数学题，例如1->n的阶乘
+	 function fn(n){
+	 	if(n==1){
+	 		return 1;
+	 	}
+	 	return n* fn(n-1);
+	 }
+	 console.log(fn(3));
+	 2.用递归求斐波那契数列（兔子序列）
+	 1,1,2,3,5,8,13,21.....前俩向相加正好等于第三项
+	 //输入一个N就可以求出n所对应的斐波那契数列值
+	 
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function fb(n){
+				if(n==1||n==2)
+				return 1;
+				
+				return fb(n-1)+fb(n-2);
+			}
+			console.log(fb(6));
+		</script>
+	</body>
+</html>

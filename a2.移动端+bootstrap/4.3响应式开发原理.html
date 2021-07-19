@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- 
+	响应式需要一个父级元素作为容器，
+	根据容器大小，来配合子级元素实现变化效果
+	通过媒体查询排列
+	
+	响应式布局有四个档位：											常见开发宽度
+	1.超小屏幕，小于768px//iphone6 7 8手机类  	布局容器宽度设为100%
+	2.小屏幕设备 768-992px//平板电脑					布局容器宽度设为750px
+	3.中等屏幕 992-1200px//pc端中的小屏				布局容器宽度设为970px
+	4.大屏 1200px以上//pc端大屏								布局容器宽度设为1170px
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 媒体查询从小到大，大的配置会把小的覆盖掉 */
+			.container{
+				height: 150px;
+				margin: 0 auto;
+			}
+			/* 1.超小屏幕下 小于768px*/
+			@media screen and (max-width:767px) {
+				.container{
+					width:100%;
+					background-color: #0000FF;
+				}
+				
+			}	
+			/* 小屏幕>=768px; */
+			@media screen and (min-width:767px) {
+			.container{
+				width:750px;
+				background-color: #00ffff;
+				}
+			}	
+			/* 中等屏幕992px以下 */
+			@media screen and (min-width:992px) {
+				.container{
+					width:970px;
+					background-color: #ffaaff;
+				}
+				
+			}	
+			/* 大屏幕下 */
+			@media screen and (max-width:1200px) {
+				.container{
+					width:1170px;
+					background-color: #00b600;
+				}
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!-- 布局容器 -->
+		<div class="container"></div>
+	</body>
+</html>

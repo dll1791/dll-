@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用transition-property属性来定义过渡效果操作的是哪一个属性。
+	语法：
+	transition-property: 取值;
+	transition-property: none|all| property;
+	例：transition-property: width;
+	   transition-property: width,height;
+	值			描述
+	none		没有属性会获得过渡效果。
+	all			所有属性都将获得过渡效果。
+	property	定义应用过渡效果的 CSS 属性名称列表，列表以逗号分隔。
+				(例如height,width等)
+				
+	
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				position: relative;
+				top:200px;
+				left: 200px;
+				width: 100px;
+				height: 100px;
+				background: #7CFC00;
+			}
+			div:hover{
+				/*transition:all 1s;/*过渡属性 过渡时间简写*/*/
+				transition-property: all;
+				transition-duration: 1.5s;
+				width:200px;
+				height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		将鼠标放在上面
+		<div id="d1">
+			
+		</div>
+	</body>
+</html>

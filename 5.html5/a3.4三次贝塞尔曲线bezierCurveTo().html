@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在Canvas中，我们可以使用bezierCurveTo()方法来实现三次贝塞尔曲线。
+		语法：
+		cxt.bezierCurveTo(cx1 , cy1 , cx2 , cy2 , x , y);
+
+		三次贝塞尔曲线与二次贝塞尔曲线唯一的区别在于：三次贝塞尔曲线有两个控制点，
+		而二次贝塞尔曲线只有一个控制点。
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300" style="border: 1px blue solid;"></canvas>
+		<img src="../../图片与文件/三次贝塞尔曲线原理图.png"/>
+		<script type="text/javascript">
+			var a=c.getContext("2d");
+			a.moveTo(30,60);
+			a.bezierCurveTo(60,20,120,120,150,60);
+			a.stroke();
+		</script>
+	</body>
+</html>

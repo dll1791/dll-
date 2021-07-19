@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+	曲线图形，一般涉及两种情况：曲线和弧线。
+	曲线与弧线，是两个不同的概念。简单来说，弧线是圆周的一部分，
+	曲线则不一定。弧线上每个点都具有相同的曲率，曲线则不一定。也可以这样说，曲线包含弧线。
+	
+	在Canvas中，我们可以使用arc()方法来画一个圆。
+	
+	例子：ctx.beginPath();
+		ctx.arc(100,75,50,0,2*Math.PI);//起始位置为圆的右顶点 ，xy为圆心位置
+		ctx.stroke();
+		
+	语法：
+	cxt.beginPath();
+	cxt.arc(x,y,半径,开始角度,结束角度, anticlockwise);
+	cxt.closePath();
+	
+	anticlockwise。规定应该逆时针还是顺时针绘图。False = 顺时针，true = 逆时针。默认顺时针
+	
+	1、描边圆
+	在Canvas中，我们可以使用stroke()方法来绘制一个“描边的圆”。
+	语法：
+		//状态描述
+		cxt.beginPath();
+		cxt.arc(x,y,半径,开始角度,结束角度, anticlockwise);
+		cxt.closePath();
+		//描边
+		cxt.strokeStyle = "颜色值";
+		cxt.stroke();
+	
+	2、填充圆
+	在Canvas中，我们可以使用fill()方法来绘制一个“填充的圆”。
+		语法：
+		//状态描述
+		cxt.beginPath();
+		cxt.arc(x,y,半径,开始角度,结束角度, anticlockwise);
+		cxt.closePath();
+		//描边
+		cxt.fillStyle = "颜色值";
+		cxt.fill();
+
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300" style="border: solid 2px aquamarine;"></canvas>
+		<script type="text/javascript">
+			var a=c.getContext("2d");
+			a.arc(150,150,150,0,1.5*Math.PI);
+			a.closePath();
+			a.strokeStyle="chartreuse";
+			a.stroke();
+			
+			a.beginPath();
+			a.arc(150,150,75,0,2*Math.PI);
+			
+			a.fillStyle="red";
+			a.fill();
+		</script>
+	</body>
+</html>

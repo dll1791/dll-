@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- 
+	动态路由匹配：
+	当路由多的时候如果一个个配置路由规则会显得非常麻烦
+	如果配置的路由地址等有相同之处我们可以使用
+	:id来设置一个变量(id是自定义的名字)，让他自己配置路由规则
+	1.	{path:'/user/:uid',component:	User},
+	//设置uid让所有/user/开头的路由都可以匹配User组件
+	2.{{$route.params.uid}}路由组件中获取路由地址携带的uid值
+ -->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<!-- 导入 vue 文件 -->
+		<script src="0.0vue.js"></script>
+		<!-- vue-router 和vue存在依赖关系，所以vue-router要放在vue下面  -->
+		<!-- 1.引入库文件 -->
+		<script src="0.0vue-router.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- 被 vue 实例控制的 div 区域 -->
+		<div id="app">
+				<router-link to='/user/1'>User1</router-link>
+				<router-link to='/user/2'>User2</router-link>
+				<router-link to='/user/3'>User3</router-link>
+				<router-link to='/register'>register</router-link>
+				 <router-view></router-view>
+		</div>
+
+		<script>
+			let User={
+				//2. *************************
+				//{{$route.params.uid}}获取路由地址后面携带的参数
+				template:`<h1>User组件---用户id为：{{$route.params.uid}}</h1>`
+			}
+			let Register={
+				template:`<h1>Register组件</h1>`
+			}
+			const router=new VueRouter({
+				routes:[
+					{path:'/',redirect:'/user/1'},
+//********************1.动态路由匹配*********************
+					{path:'/user/:uid',component:	User},
+					//通过设置:uid(uid的值是自定义的)使得所有以/user/开头的路由都能匹配
+					//路由组件User   
+					//在路由组件内部我们可以通过
+					//{{$route.params.uid}}来匹配路由地址/user/后面所携带的的参数
+					{path:'/register',component: Register}
+				]
+			})
+		
+			const vm = new Vue({
+				el: '#app',
+				data: {
+					
+				},
+				router:router,
+			})
+			
+		</script>
+	</body>
+</html>

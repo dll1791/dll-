@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		1、fadeIn()和fadeOut()
+		在jQuery中，我们可以使用fadeIn()方法来实现元素的淡入效果，
+		可以使用fadeOut()方法来实现元素的淡出效果。一般情况下，
+		fadeIn()和fadeOut()这两个方法都是配合一起使用的。
+		
+		语法：
+		$().fadeIn(speed, fn)
+		$().fadeOut(speed, fn)
+		
+		2、fadeToggle()
+		在jQuery中，我们还可以使用fadeToggle()方法来“切换”元素的显示状态。
+		也就是说，如果元素是显示状态，则会淡出；如果元素是隐藏状态，则会淡入。
+		
+		语法：
+		$().fadeToggle(speed, fn)
+		
+		3、fadeTo()
+		在淡入效果中，透明度（opacity属性）是从0变化到1。在淡出效果中，
+		透明度是从1变化到0的。在jQuery中，如果想要将元素透明度指定到0~1之间的某个值，
+		可以使用fadeTo()方法。
+		语法：
+		$().fadeTo(speed, opacity, fn)
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<button id="b">淡入</button>
+		<button id="b1">淡出</button>
+
+		<img src="../../图片与文件/风景3.png" height="300px"/>
+		
+			<script type="text/javascript">
+			$("#b").click(function(){
+				$("img").fadeIn(2000);
+			})
+			$("#b1").click(function(){
+				$("img").fadeOut(2000);
+				
+			})
+			
+		</script>
+
+	</body>
+</html>

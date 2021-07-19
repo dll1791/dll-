@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		indexOf() 检索字符串（正则表达式）
+		注释：如果要检索的字符串值没有出现，则该方法返回 -1 如果匹配成功返回一个随机正整数
+		
+		在JavaScript中，我们可以使用window对象下的子对象
+		navigator来获取浏览器的类型。
+		语法：
+		window.navigator.userAgent
+		
+		判断浏览器版本：
+		if (window.navigator.userAgent.indexOf("MSIE") != -1) {
+		    alert("这是IE");
+		}else if (window.navigator.userAgent.indexOf("Chrome") != -1) {
+		    alert("这是Chrome");
+		}else if (window.navigator.userAgent.indexOf("Firefox") != -1) {
+		    alert("这是Firefox");
+		}
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a=window.navigator.userAgent.indexOf("Chrome");
+			if (window.navigator.userAgent.indexOf("MSIE") != -1) {
+		    alert("这是IE");
+		}else if (window.navigator.userAgent.indexOf("Chrome") != -1) {
+		    alert("这是Chrome ");
+		}else if (window.navigator.userAgent.indexOf("Firefox") != -1) {
+		    alert("这是Firefox");
+		}
+		</script>
+	</body>
+</html>

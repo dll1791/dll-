@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+	在CSS中，常见清除浮动的方法有3种。
+	 clear:both
+	 overflow:hidden
+	 ::after伪元素
+	 
+	 clear:both清除浮动会增加多余标签，
+	 overflow:hidden清除浮动会使得超出父元素部分隐藏。
+	 使用::after伪元素来清除浮动，则不会有这些缺点。
+	在实际开发中，推荐使用::after伪元素来清除浮动。
+	
+	方法一：添加新的css样式，应用 clear:both;
+	方法二：父级div定义 overflow:auto/hidden/scroll;（主意：是父级div）。
+	方法三：据说最高大上的方法，:after方法。（注意：作用于浮动元素的父亲）。
+	.outer:after { 
+		clear:both;
+		content:'';
+		display:block;
+		width:0;height:0;visibility:hidden; }//
+	
+	 其中clear:both;指清除所有浮动；content:'  '；display:block;
+	  对于FF/Chrome/opera/IE8不能缺少，其中content()取值也可以为空。
+	  visibility:hidden;的作用是允许浏览器渲染它，
+	  但是不显示出来，这样才能实现清除浮动。 
+	  
+	:after 的意思是再.outer内部的最后加入伪元素:after，
+	首先要显示伪元素，所以display:block，
+	然后为伪元素加入空内容，以便伪元素中不会有内容显示在页面中，所以， content:""；
+	其次，为使伪元素不影响页面布局，将伪元素高度设置为0，所以， height:0，
+	最后，要清除浮动，所以，clear:both。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				height: 200px;
+				width: 200px;
+			}
+			
+			p{
+				margin: 5px;
+				height: 80px;
+				width: 80px;
+				border: 2px solid green;
+				float:right;
+			}
+			.clearfix{zoom:1}  
+			.clearfix:after{
+			  content:"";
+			  display:block;
+			  height:0;
+			  clear:both;
+			  visibility:hidden;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="parent clearfix">
+			<p id="clear"></p>
+			<p id="clear"></p>
+			<p id="clear"></p>
+		</div>
+		
+	</body>
+</html>

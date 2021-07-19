@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- 
+	vue原理：vue通过解析语法结构将其变成原生js语法被浏览器所使用
+	1.在要添加内容的标签中添加{{}}
+	2. var vm=new Vue({//2.vue提供的要填充的数据 数据是对象形式
+				el:'#app',//告诉vue数据填充到那个位置 类似于css选择器 也可以是一个dom元素 如document.getelementbyid()
+				data:{//
+					msg:'hello vue',//msg提供数据的名字，hello vue提供的数据
+					dll:'dll taishuaile'
+				}
+			});
+	3.在之前{{dll}}中填入要显示的内容
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<!-- 1.提供填充数据的容器 -->
+		<div id='app'>
+			<!-- 3.通过插值表达式把数据填充到标签 插值支持一些
+			 简单的表达式计算msg是刚才定义的数据名称-->
+			<div>{{msg+(0.5+1.5)}}</div>
+		</div>
+		<script type="text/javascript">
+			// 声明
+			var vm=new Vue({//2.vue提供的要填充的数据 数据是对象形式
+				el:'#app',//告诉vue数据填充到那个位置 类似于css选择器 也可以是一个dom元素 如document.getelementbyid()
+				data:{//
+					msg:'hello vue',//msg提供数据的名字，hello vue提供的数据
+					dll:'dll taishuaile'
+				}
+			});
+		</script>
+	</body>
+</html>

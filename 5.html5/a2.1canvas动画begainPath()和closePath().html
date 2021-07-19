@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+	closePath() 方法创建从当前点到开始点的路径。//当使用beginPath开启一条新的线段时
+		//closePath只作用于自己所处的那一条线段
+	beginPath() 方法开始一条路径，或重置当前的路径。
+		//beginPath() 可以直接开始一条新的路径，包括style 和起始点都要重新定义
+		//stroke()这个属性也要重新使用
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300" style="border: 2px black solid;stroke-"></canvas>
+		<script type="text/javascript">
+			var ctx=c.getContext("2d");
+			ctx.strokeStyle="red";
+			ctx.moveTo(150,0);
+			ctx.lineTo(300,150);
+			ctx.lineTo(200,150);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.strokeStyle="#00BFFF"
+			ctx.moveTo(0,0);
+			ctx.lineTo(300,300);
+			ctx.lineTo(100,150);
+			ctx.lineTo(50,300);
+			ctx.closePath();
+			ctx.stroke();
+		</script>
+	</body>
+</html>

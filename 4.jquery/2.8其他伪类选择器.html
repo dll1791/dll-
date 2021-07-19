@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		
+		选择器			说明
+		:not(selector)	选取除了某个选择器之外的所有元素
+		:animated		选取所有正在执行动画的元素<显示淡入淡出这类的并不属于动画效果>
+		:root			选取页面根元素，即 html元素<整个html>
+		:header			选取h1~h6的标题元素
+		:target			选取锚点元素
+		:lang(language)	选取特定语言的元素
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<style type="text/css">
+			img{
+				display: none;
+			}
+		</style>
+		<img src="../../图片与文件/梦想3.jfif"/>
+		<script type="text/javascript">
+			$("img").show(5000);
+			$(":animated").css("border","5px red soild")
+		</script>
+	</body>
+</html>

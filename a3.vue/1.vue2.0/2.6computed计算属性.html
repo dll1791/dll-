@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- 
+	计算属性：表达式的复杂计算逻辑的可读性较差，
+	把他抽取出来放在专门的位置，使得模板更简洁 如：
+	<div>{{dll.split('').reverse().join('')}}</div>中的dll.split('').reverse().join('')太复杂
+	可读性差
+	
+	用法：
+	在下方声明的vue中添加computed属性
+	computed:{
+		reverseddll:function(){
+			return this.dll.split('').reverse().join('');//这里必须要return一下不然识别不了
+		}
+		<div>{{reversedll}}</div>
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id='vue1'>
+			<div>{{dll}}</div>
+			<!-- 用原生JS实现字符串反转 
+			1.split('')把字符串变成数组
+			2 .reverse()使数组反转
+			3 .join('')把反转的字符串用''拼接到一起形成一个新的字符串
+			-->
+			<div>{{dll.split('').reverse().join('')}}</div>
+			<!-- 用计算指令实现字符串反转 -->
+			<div>{{reversedll}}</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		let vue=new Vue({
+			el:'#vue1',
+			data:{
+				dll:'hello dll'
+			},
+			computed:{
+				reversedll:function(){
+					return this.dll.split('').reverse().join('');
+				}
+			}
+		})
+	</script>
+</html>

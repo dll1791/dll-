@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- 
+	数据响应式：
+	数据的变化导致页面内容变化
+	数据绑定属于数据响应式
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id='d1'>{{dll}}</div>
+		<script type="text/javascript">
+			let vue=new Vue({
+				el:'#d1',
+				data:{
+					dll:'hello dll'
+				}
+			})
+			// 改变dll的值可以改变页面内容 数据响应式
+			vue.dll='123 dll';
+		</script>
+	</body>
+</html>

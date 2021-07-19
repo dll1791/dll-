@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在JavaScript中，常用的表单事件共有3种：
+		  onfocus和onblur
+		  onselect
+		  onchange
+		
+		1、onfocus和onblur
+		onfocus表示获取焦点时触发的事件，而onblur表示失去焦点时触发的事件，两者是相反操作。
+		具有“获取焦点”和“失去焦点”特点的元素只有2种：
+		
+		表单元素（单选框、复选框、单行文本框、多行文本框、下拉列表）
+ 		超链接
+ 		
+ 		focus()是一个方法，仅仅用于让元素获取焦点。而onfocus是一个属性，它是用于事件操作的。
+ 		(焦点就是让鼠标自己选中目的属性 例如文本框中的焦点就是点击文本框后的状态)
+		
+		2.onselect
+		在JavaScript中，当我们选中“单行文本框”或“多行文本框”中的内容时，就会触发onselect事件。
+		select()是一个方法，仅仅用于全选文本。
+		而onselect是一个属性，它是用于事件操作的。
+		select()和onselect的关系，跟focus()和onfocus的关系是相似的。
+		
+		3、onchange
+		在JavaScript中，onchange事件常用于“具有多个选项的表单元素”中：
+		 单选框选择某一项时触发
+		 复选框选择某一项时触发
+		 下拉列表选择某一项时触发
+		选择下拉列表的某一项时，触发的是onchange事件，而不是onselect事件。
+		
+
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title>js中如何获得焦点</title>
+		
+	</head>
+	<body>
+		<input type="text" name="" id="a"  value="1235" selected/>
+		1:<input type="radio" name="a1" id="a1"/>
+		2:<input type="radio" name="a1" id="a2"/>
+		3:<input type="radio" name="a1" id="a3"/>
+		<p id="p"></p>
+			<script type="text/javascript">
+				a.onfocus=function(){
+					a.style.backgroundColor="pink";
+				}
+				a.onblur=function(){
+					a.style.backgroundColor="white";
+				}
+				a.onselect=function(){
+					a.style.backgroundColor="yellow"
+				}
+				a1.onchange=function(){
+					alert("你选择了1");
+				}
+			</script>
+			
+	</body>
+</html>

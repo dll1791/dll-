@@ -1,0 +1,212 @@
+*{
+	font-family: "微软雅黑";
+}
+a{
+	text-decoration: none;
+}
+.daohang{
+	/*上导航栏*/
+	color: #000000;
+	font-size: 13px;
+	margin: 100px 13px 13px 13px;
+}
+#div1{
+	/*head*/
+	position: fixed;
+	top:20px;
+}
+#img{
+	/*百度图标*/
+	position: fixed;
+	left: 650px;
+	top: 85px;
+	height: 90px;
+}
+span{
+	/*设置  和 百度经营性*/
+	font-size: 13px;
+}
+.anniu{
+	/*俩个按钮*/
+	cursor: pointer;
+	background-color: #0000FF;
+	color: white;
+	font-size: 13px;
+	opacity: 0.6;
+	border-radius: 5px;
+	border:0px;
+	outline: none;/*点击后去掉样式*/
+}
+.anniu:hover{
+	/*鼠标经过按钮后*/
+	opacity: 0.7;
+}
+#sit{
+	/*设置*/
+	position: fixed;
+	right: 100px;
+	cursor: pointer;
+}
+
+#anniu1{
+	/*登录*/
+	position: fixed;
+	right: 20px;
+	top: 16px;
+	height: 24px;
+	width: 50px;
+}
+	
+	/*搜索框样式*/
+form{
+	/*设置文本框*/
+	position: fixed;
+	top:190px;
+	left: 450px;
+	border: 2px #C0C0C0 solid;
+	border-radius: 10px;
+	height: 45px;
+	width: 620px;
+	padding: 0px;
+	margin: 0px;
+	border-right: none;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+form #text1{
+	/*文本框*/
+	height: 30px;
+	width: 480px;
+	border: 0;
+	outline: none;/*去掉文本框点击后的边框*/
+	position: relative;
+	left: 10px;
+	top:2px;
+	padding: 0px;
+	margin: 0px;
+}
+#img1{
+	/*设置相机小图片*/
+	position: relative;
+	top:10px;
+	height: 25px;
+	padding: 0px;
+	margin: 0px;
+}
+#img1:hover{
+	cursor: pointer;
+}
+#anniu2{
+	/*设置搜索框中的按钮*/
+	border-radius: 10px;
+	height: 47px;
+	width: 107px;
+	padding: 0px;
+	margin: 0px;
+	font-size: 17px;
+	position: fixed;
+	left: 975px;
+	top:191px;
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+}
+#rebang{
+	position: fixed;
+	top:180px;
+	left: 440px;
+	font-size: 14px;
+}
+/*百度热榜 和 换一换*/
+#div2{
+	position: fixed;
+	top:270px;
+	left: 990px;
+	cursor: pointer;
+}
+#img2{
+	height: 20px;
+	position: relative;
+	top:9px;
+	left: 15px;
+	color: #C0C0C0;
+}
+#huanyihuan{
+	font-size: 14px;
+	position: relative;
+	top:5px;
+	color: #C0C0C0;
+}
+/*热榜6事件*/
+ul{
+	list-style-type: none;
+}
+li{
+	margin: 0px 0px 10px 0px;
+}
+.daohang1,.daohang2{
+	margin: 10px 0px;
+	font-size: 14px;
+	color: #000000;
+}
+.img{
+	height: 20px;
+	width: 20px;
+}
+/*列表小图标*/
+#i1{
+	position: relative;
+	top: 4px;
+	left: -4px;
+}
+#i2{
+	position: relative;
+	top: 4px;
+	left: -4px;
+}
+#i3{
+	position: relative;
+	top: 4px;
+	left: -4px;
+}
+#i4{
+	position: relative;
+	top: 4px;
+	left: -4px;
+	height: 25px;
+}
+#i5{
+	position: relative;
+	top: 4px;
+	left: -2px;
+	height: 17px;
+	width: 17px;
+}
+#i6{
+	position: relative;
+	top: 4px;
+	left: -4px;
+}
+#ul1{
+	position: fixed;
+	left: 410px;
+	top: 300px;
+}
+#ul2{
+	position: fixed;
+	left: 800px;
+	top: 300px;
+}
+/*底部*/
+#foot{
+	position: fixed;
+	left: 200px;
+	bottom: 15px;
+	font-size: 13px;
+}
+.gengduo{
+	color: #A9A9A9;
+	margin: 10px;
+}
+.daohang:hover{
+	color: blue;
+}

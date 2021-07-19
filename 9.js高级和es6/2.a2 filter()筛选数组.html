@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- current：过滤//返回新的数组
+	array.filter (function ( currentValue,index,arr))//参数都可以省，用了谁就写谁
+	filter()方法创建一个新的数组，新数组中的元素
+	是通过检查指定数组中符合条件的所有元素,主要用于筛选数组	过滤器()方法			创建一个新的数组，	注意它直接返回一个新数组
+	currentValue:数组当前项的值
+	index:数组当前项的索引
+	arr:数组对象本身
+	
+	例子：筛选出数组中>20的数	var arr=[12,66,22,50];
+	var arr1=arr.filter(function(value,index ){
+		return value>20;
+	});
+	console.log(arr1);
+	
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr=[12,66,22,50];
+			var arr1=arr.filter(function(value,index ){
+				return value>20;
+			});
+			console.log(arr1);
+			
+		</script>
+	</body>
+</html>

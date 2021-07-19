@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- 
+例：
+		Vue.component('button-counter',{
+			data:function(){
+				return {
+					count:0
+				}
+			},
+			template:'<button @click="bt1">点击了多少次{{count}}</button>',
+			 methods:{
+				 bt1:function(){
+					 this.count++;
+				 }
+			 }
+		})
+	组件注意事项:
+	1.data必须是一个函数  函数里返回的值必须是个对象
+	2.组件模板内容template部分必须是单个的根元素，
+		比如例子中的button必须是单个（因为这里button就是根元素）
+		不能像下面一样弄俩个button
+		template:'<button></button><button></button>',
+		但是可以这样写用一个div把俩个button包裹起来
+		template:'<div><button></button><button></button></div>'
+	3.组件模板内容可以是模板字符串（ES6语法规则）如:
+		(常规语法不能换行)
+		(提高代码可读性)
+			template:`
+				<div>
+					<button></button>
+					<button></button>
+				</div>
+			`
+	4.组件命名规则
+		1短横线方式如：button-count(推荐)
+		2.驼峰方式如：buttonCount
+			驼峰模式只能在字符串模板内部使用，
+			如果不是在字符串模板内部则必须使用短横线方式
+			驼峰式和短横线式是相通的 button-count=buttonCount
+			
+	5.可以组件里面套组件
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id='vue1'>
+			<!-- 2.使用下面声明的button-counter组件 -->
+			<button-counter></button-counter>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+	//1. 声明组件
+		Vue.component('button-counter',{
+			data:function(){
+				return {
+					count:0
+				}
+			},
+			//使用常规语法(常规语法不能换行)
+			// template:'<div><button @click="bt1">点击了多少次{{count}}</button><button>按钮</button></div>',
+			//使用模板字符串（ES6语法）
+			template:`<div>
+							<button @click="bt1">点击了多少次{{count}}</button>
+							<button>按钮</button>
+							</div>`,
+			 methods:{
+				 bt1:function(){
+					 this.count++;
+				 }
+			 }
+		})
+		let vue=new Vue({
+			el:'#vue1',
+			})
+	</script>
+</html>

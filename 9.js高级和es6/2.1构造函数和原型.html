@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- 
+js在es6之前没有class的概念，我们利用下面三个方法创建对象
+	创建对象的三种方式
+	1.var obj1=new Object();
+
+	2.利用对象字面量创建 
+	var obj2={};
+	
+	3.利用构造函数构建
+	function Star(uname,age){
+		this.uname=uname;
+		this.age=age;
+		this.sing =function(){
+			console.log("im sing");
+		}
+	}
+	
+	var ldh =new Star('刘德华','18');
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Star(uname,age){
+				this.uname=uname;
+				this.age=age;
+				this.sing =function(){
+					console.log("im sing");
+				}
+			}
+			
+			var ldh =new Star('刘德华','18');
+			ldh.sing();
+			console.log(ldh.uname);
+		</script>
+	</body>
+</html>

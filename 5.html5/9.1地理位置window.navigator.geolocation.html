@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+	在移动设备（如手机、平板电脑等）中，如果浏览器支持定位功能，
+	我们就可以使用HTML5的geolocation对象来获取用户的地理位置信息。
+	语法：
+	
+	window.navigator.geolocation
+	
+	geolocation对象的方法
+	属性						说明
+	getCurrentPosition()	当前位置
+	watchPosition()			监视位置
+	clearWatch()			清除监视
+	
+	1、getCurrentPosition()方法
+	在geolocation对象中，我们可以使用getCurrentPosition()
+	方法获取当前位置的坐标（经度和纬度）。
+	
+	语法：
+	navigator.geolocation.getCurrentPosition(function(position){
+	    ……
+	}, error, option);
+	
+	navigator.geolocation.getCurrentPosition(这里写获取地理信息之后的操作,这里写获取信息情况的错误反馈)
+	
+	position对象的方法
+	属性								说明
+	coords.longitude				经度
+	coords.latitude					纬度
+	coords.accuracy					准确度
+	coords.altitue					海拔
+	coords.altitudeAccuracy			海拔准确度
+	coords.heading					行进方向
+	coords.speed					行走速度
+	new Date(position, timestamp)	时间戳
+	
+	2、watchPosition()
+	在geolocation对象中，我们可以使用watchPosition()方法
+	来持续不断地获取当前位置的坐标，也就是追踪移动中的用户的位置。
+	
+	语法：
+	navigator.geolocation.watchPosition(function(position){
+	    ……
+	}, error, option);
+		
+	3、clearWatch ()
+	watchPosition()会一直监视位置，不过在geolocation对象中，
+	我们可以使用clearWatch()方法来取消这个监视过程。
+	
+	语法：
+	var watchID = navigator.geolocation.watchPosition(function(position){
+	    ……
+	}, error, option);
+	navigator.clearWatch(watchID);
+	
+//	在实际开发中，我们经常使用百度地图API来开发各种应用。
+	 
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	<p id="demo">点击按钮获取您当前坐标（可能需要比较长的时间获取）：</p>
+	<button onclick="getLocation()">点我</button>
+	<script>
+	var x=document.getElementById("demo");
+	function getLocation()
+	{
+		if (navigator.geolocation)
+		{
+			navigator.geolocation.getCurrentPosition(showPosition,showError);
+		}
+		else
+		{
+			x.innerHTML="该浏览器不支持定位。";
+		}
+	}
+	function showPosition(position)
+	{
+		x.innerHTML="纬度: " + position.coords.latitude + 
+		"<br>经度: " + position.coords.longitude;	
+	}
+	function showError(error)
+	{
+		switch(error.code) 
+		{
+			case error.PERMISSION_DENIED:
+				x.innerHTML="用户拒绝对获取地理位置的请求。"
+				break;
+			case error.POSITION_UNAVAILABLE:
+				x.innerHTML="位置信息是不可用的。"
+				break;
+			case error.TIMEOUT:
+				x.innerHTML="请求用户地理位置超时。"
+				break;
+			case error.UNKNOWN_ERROR:
+				x.innerHTML="未知错误。"
+				break;
+		}
+	}
+	</script>
+</body>
+</html>

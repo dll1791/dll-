@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- 
+	align-content设置侧轴上  子元素排列的方式 多行
+	他与 justify-content的属性值是差不多的
+	默认是Y轴
+	只能用于有换行的情况（flex-wrap:wrap;）
+	属性：
+	1. flex-start 贴着顶
+	2.flex-end  贴着底
+	3.space-around 侧轴上等比排列
+	4.space-between 侧轴俩端紧贴俩个边 中间的均匀布局
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	<style type="text/css">
+			div{
+				border: 2px solid green;
+				width: 300px;
+				height: 200px;
+				display: flex;
+				
+				justify-content: space-between;
+				/* 有换行时才可使用align-content */
+				flex-wrap: wrap;
+				align-content: space-between;
+			}
+			span{
+				border: 2px solid green;
+				height: 20px;
+				width: 80px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+			<span>4</span>
+			<span>4</span>
+			<span>4</span>
+			<span>4</span>
+			<span>4</span>
+			<span>4</span><span>4</span>
+			<span>4</span>
+			<span>4</span>
+		</div>
+	</body>
+</html>

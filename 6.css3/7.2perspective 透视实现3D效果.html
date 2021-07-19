@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- 
+(规定距离视图多少px所看到的平面效果 )
+	与 perspective-origin 属性一同使用该属性，
+	能够改变 3D 元素的底部位置。
+	
+	当为元素定义 perspective 属性时，其子元素
+	会获得透视效果，而不是元素本身。
+	
+	语法
+	perspective: number|none;
+	
+	值	描述
+	number	元素距离视图的距离，以像素计。
+	none	默认值。与 0 相同。不设置透视。 单位px
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#div1
+			{
+			position: relative;
+			height: 150px;
+			width: 150px;
+			margin: 50px auto;
+			padding:10px;
+			border: 1px solid black;
+			
+			perspective:250px;
+			
+			/* -webkit-perspective:150; /* Safari and Chrome */ 
+			}
+			#div2
+			{
+			padding:50px;
+			position: absolute;
+			border: 1px solid black;
+			background-color: yellow;
+			transform: rotateX(45deg);
+			-webkit-transform: rotateX(45deg); /* Safari and Chrome */
+			}
+		</style>
+	</head>
+	<body>	
+		<div id="div1">
+		  <div id="div2">HELLO</div>
+		</div>
+	</body>
+</html>

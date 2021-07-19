@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- 
+	 解构赋值是对赋值运算符的扩展。
+	 他是一种针对数组或者对象进行模式匹配，然后对其中的变量进行赋值。
+	 在代码书写上简洁且易读，语义更加清晰明了；也方便了复杂对象中数据
+	 字段获取。
+	 
+1. 数组模型的解构
+	 基本
+	 let [a, b, c] = [1, 2, 3]; a=1 b=2 c=3
+	 
+	 可嵌套
+	 let [a, [[b], c]] = [1, [[2], 3]];	a=1 b=2 c=3
+	 
+	 可忽略
+	 let [a, , b] = [1, 2, 3]; a=1 b=3
+	 
+	 字符串等
+	 在数组的解构中，解构的目标若为可遍历对象，皆可进行解构赋值
+	 。可遍历对象即实现 Iterator 接口的数据。
+	 let [a, b, c, d, e] = 'hello';  a=h b=e c=l d=l e=o;
+	 
+	 解构默认值
+	 let [a = 2] = [undefined]; // a = 2
+	 
+	 当解构模式有匹配结果，且匹配结果是 undefined 时，
+	 会触发默认值作为返回结果。
+	 let [a = 3, b = a] = [];     // a = 3, b = 3 
+	 let [a = 3, b = a] = [1];    // a = 1, b = 1
+	 let [a = 3, b = a] = [1, 2]; // a = 1, b = 2
+	 
+2. 对象模型的解构//对象的赋值   let {f}={f:'a'}  直接这样是不行的{f:a}
+	 基本
+	 let { foo, bar } = { foo: 'aaa', bar: 'bbb' };// foo = 'aaa'   bar = 'bbb'
+	 let { foo: baz } = { foo: "aaa", bar: "bbb" };
+	 //{ foo: baz } 相当于声明了一个对象而baz是对象foo的变量 foo: "aaa"
+	  定义foo的变量为aaa,则baz='aaa';
+		   
+	  let { foo, bar } 这个是简写全称应该为
+	 let { foo: foo, bar: bar } = { foo: "aaa", bar: "bbb" };
+	对象的解构赋值的内部机制，是先找到同名属性，然后再赋给对应的变量。
+	真正被赋值的是后者，而不是前者。
+	注意，采用这种写法时，变量的声明和赋值是一体的。
+	对于let和const来说，变量不能重新声明，
+	所以一旦赋值的变量以前声明过，就会报错。
+	
+	 可嵌套可忽略
+	 let obj = {p: ['hello', {y: 'world'}] };
+	 let {p: [x, { y }] } = obj;   // x = 'hello'   y = 'world'
+	//let {p: [x, { y }] }=let {p: ['hello', {y: 'world'}] }
+	 //注意，这时p是模式，不是变量，因此不会被赋值。
+	 
+	 let obj = {p: ['hello', {y: 'world'}] };
+	 let {p: [x, {  }] } = obj;
+	 // x = 'hello'
+	 
+	 对象的解构也可以指定默认值
+	 var {x = 3} = {}; x // 3
+	 var {x, y = 5} = {x: 1}; x // 1 		y // 5 
+	 var {x:y = 3} = {}; y // 3 
+	 var {x:y = 3} = {x: 5}; y // 5
+	 默认值生效的条件是，对象的属性值严格等于undefined，如果等于null
+	 则不生效var {x = 3} = {x: null};  x // null。
+	 
+	 如果解构模式是嵌套的对象，而且子对象所在的父属性不存在，那么将会报错。
+	  // 报错 var {foo: {bar}} = {baz: 'baz'};
+	  对象的解构赋值，可以很方便地将现有对象的方法，赋值到某个变量。
+	   let { log, sin, cos } = Math;
+	   
+	   由于数组本质是特殊的对象，因此可以对数组进行对象属性的解构。
+		var arr = [1, 2, 3];
+		 var {0 : first, [arr.length - 1] : last} = arr; 		first // 1 last // 3
+	 //0    [arr.length - 1]相当于数组的下标
+ -->
+ 
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			{
+				var arr = [1, 2, 3];
+				var {2 : first, [arr.length -2] : last} = arr;
+				console.log(last);
+				//上面代码中，let命令下面一行的圆括号是必须的，
+				// 否则会报错。因为解析器会将起首的大括号，
+				// 理解成一个代码块，而不是赋值语句。
+			}
+		</script>
+	</body>
+</html>

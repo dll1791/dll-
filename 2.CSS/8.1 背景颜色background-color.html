@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<!--在CSS中，背景样式包括两个方面：背景颜色和背景图片。
+	在Web1.0时代，都是使用
+	background或者bgcolor这两个“HTML属性”（不是CSS属性）来为元素定义背景颜色或背景图片。
+	不过在Web2.0时代，对于元素的背景样式，我们都是使用CSS属性来实现。
+	
+	在CSS中，我们可以使用background-color属性来定义元素的背景颜色。
+	语法：
+	background-color: 颜色值;颜色值有两种，一种是“关键字”，
+	另外一种是“16进制RGB值”。其中关键字指的是颜色的英文名称，如red、green、blue等。而16进制RGB值指的是类似“#FBE9D0”形式的值。-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width:80px;
+				height: 80px;
+				
+			}
+			#div1{
+				background-color: red;
+			}
+			#div2{
+				background-color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">红色背景</div>
+		<div id="div2">绿色背景</div>
+		color属性用于定义“文本颜色”，而background-color属性用于定义“背景颜色”，这两个要区分好了。
+	</body>
+</html>

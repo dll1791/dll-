@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		Math对象跟其他对象不一样，我们不需要使用new关键字来创造，而是直接使用它的属性和方法就行。
+	
+		语法：	
+		Math.属性
+		Math.方法
+
+		1.Math对象的属性
+		在JavaScript中，Math对象的属性往往都是数学中经常使用的“常量”。
+		对于Math对象的属性，我们只需要掌握“Math.PI”这一个就够了。
+		角度表示方法：度数*Math.PI/180
+		
+		用法
+		Math.max(a,b,n)
+		方法				说明
+		max(a,b,…,n)	返回一组数中的最大值
+		min(a,b,…,n)	返回一组数中的最小值
+		
+		sin(x)			正弦（常用三角函数）
+		cos(x)			余弦（常用三角函数）
+		
+		tan(x)			正切
+		asin(x)			反正弦
+		acos(x)			反余弦
+		atan(x)			反正切
+		
+		atan2(x)		反正切（常用三角函数）
+		
+		floor(x)		向下取整	 如Math.floor(1.8)=1;
+		ceil(x)			向上取整   如Math.ceil(1.1)=2;
+		random()		生成随机数
+		
+		3.三角函数
+		 x表示角度值，用弧度来表示，常用形式为：
+			度数*Math.PI/180
+		atan2(x)跟atan(x)是不一样的，atan2(x)能够精确判断角度对应哪一个角，而atan(x)不能。因此在高级动画开发时，我们大多数用的是atan2(x)，基本用不到atan(x)；
+		反三角函数用得很少（除了atan2()），一般都是用三角函数，
+		
+		常用的有：sin()、cos()和atan2()这3个；
+		
+		4.随机数
+		Math.random()生成【0，1）的随机数
+		Math.random()*10表示生成0~10之间的随机数
+		Math.random()*10+8生成8~18之间的随机数
+		Math.random()*10-8表示生成-8~2之间的随机数
+		Math.random()*10-10表示生成-10~0之间的随机数
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+//			生成随机-10到0的整数
+			for(var i=0;i<20;i++)
+			document.writeln(Math.floor(Math.random()*10-10));
+		</script>
+	</head>
+	<body>
+		<br />
+		<script>
+			/*生成随机验证码*/
+       var str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        var arr = str.split("");
+        var result = "";
+        for(var i=0;i<10;i++)
+        {
+            var n = Math.floor(Math.random() * arr.length);
+            result += arr[n];
+        }
+        document.write(result);
+        
+    </script>
+<br />
+	<script>
+		/*生成随机颜色*/
+        function getRandomColor() {
+            var r = Math.floor(Math.random() * (255 + 1));
+            var g = Math.floor(Math.random() * (255 + 1));
+            var b = Math.floor(Math.random() * (255 + 1));
+            var rgb = "rgb(" + r + "," + g + "," + b + ")";
+            return rgb;
+        }
+        document.write(getRandomColor());
+    </script>
+
+	</body>
+</html>

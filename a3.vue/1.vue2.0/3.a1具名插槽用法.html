@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- 
+	具名插槽：有名字的插槽
+	可以根据父组件中的slot属性的值来将内容插入子组件中，
+	然后在页面中显示
+	1.简单用法：
+	例如：
+	父组件：<slot-out>
+				<p slot='slot1'>slot1内容</p>
+				<p slot='slot2'>slot2内容</p>
+				<p slot='slot3'>slot3内容</p>
+			</slot-out>
+			
+	子组件：
+	template: `
+		<div>
+			<strong>内容显示：</strong>
+			<slot name='slot1'></slot>
+			//name的值(slot1)与<p slot='slot1'>slot1内容</p>中slot的值相等
+			//slot1内容就插在 <slot name='slot1'></slot>的空隙中
+			<slot name='slot2'></slot>
+			<slot name='slot3'></slot>
+		</div>
+	`
+	2.复杂用法
+	template是固定的（vue的API ）
+	//作用:临时包裹slot信息,可以将多行内容插入到子组件中
+	//template本身不会被渲染到浏览器中
+	<slot-out>
+		<template slot='slot1'>
+			<p>dll</p>
+			<p>太帅了</p>
+		</template>
+	</slot-out>
+ -->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 简单用法 -->
+			<slot-out>
+				<p slot='slot1'>slot1内容</p>
+				<p slot='slot2'>slot2内容</p>
+				<p slot='slot3'>slot3内容</p>
+			</slot-out>
+			<br>
+			<!-- 复杂用法 -->
+			<slot-out>
+				<template slot='slot1'>
+					<p>dll</p>
+					<p>太帅了</p>
+				</template>
+			</slot-out>
+		</div>
+		<script type="text/javascript" src="0.0vue.js"></script>
+		<script type="text/javascript">
+			/*
+      组件插槽：父组件向子组件传递内容
+    */
+		Vue.component('slot-out', {
+			// 根据父组件的内容
+			template: `
+				<div>
+					<strong>内容显示：</strong>
+					<slot name='slot1'>slot1默认内容</slot>
+					<slot name='slot2'>slot2默认内容</slot>
+					<slot name='slot3'>slot3默认内容</slot>
+				</div>
+			`
+			});
+			var vm = new Vue({
+				el: '#app',
+				data: {
+
+				}
+			});
+		</script>
+	</body>
+</html>
+

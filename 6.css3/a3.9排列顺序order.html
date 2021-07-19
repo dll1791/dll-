@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用order属性来定义弹性盒子内部“子元素”的排列顺序。
+	语法：
+	order:整数
+	说明：
+	order属性取值是一个正整数，即1、2、3等。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.f{
+				display: flex;
+				height: 200px;
+				width: 200px;
+				border: #000000 2px solid;
+				flex-flow:  wrap;
+			}
+			.s1,.s2,.s3{
+				height: 49%;
+				width: 49%;
+				border: #008000 1px solid;
+			}
+			.s1{
+				order:3;
+			}
+			.s2{
+				order:2;
+			}
+			.s3{
+				order:1;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="f">
+			<div class="s1">1</div>
+			<div class="s2">2</div>
+			<div class="s3">3</div>
+		</div>
+	</body>
+</html>

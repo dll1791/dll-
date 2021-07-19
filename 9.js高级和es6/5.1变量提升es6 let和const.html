@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--  
+	(非变量提升指的是语言必须先声明再使用)
+	变量提升是指就算没有声明变量，直接使用
+	但只要在后面声明了这个变量，那么这个变量就可以正常使用
+	例如：
+			console.log(a=6);
+			var a=1;//输出6
+	1.有变量提升是不好的所以es6新增let来防止变量提升
+	let只在{}内生效（块级作用域）
+		1.用let来写循环for(let i=0;i<5;i++)
+		2.let关键字会有暂时性死区现象
+		例如:
+		var num=10
+		if(true){
+			console.log(num);//报错说num没有定义
+			let num=20;
+		}
+		//当使用let时let会与当前的{}绑定，前面用var声明的同名变量
+		在这个{}块级作用域将无效
+		
+	2.const规定一个只读的常量
+		1.const a= 6;这时a=6且a不能被修改，const也有块级作用域
+		2.const声明时必须赋值否则会报错
+		3.用const声明一个数组（这种复杂类型的值）
+		数组虽然不能更改但是其里面的值是可以更改的
+		例:
+		const ary=[1,2];
+		ary[0]=2;//(输出2,2)
+	
+-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			const ary=[1,2];
+			ary[0]=2;
+			console.log(ary);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+	1.在Canvas中，我们可以使用lineWidth属性来定义线条的宽度。
+		语法：
+		context.lineWidth = 整数;单位px
+	
+	2.在Canvas中，我们可以使用lineCap属性来定义线条开始处和结尾处的线帽样式。
+		语法：
+		context.lineCap="属性值";
+		值		描述
+		butt	默认。向线条的每个末端添加平直的边缘。
+		round	向线条的每个末端添加圆形线帽。
+		square	向线条的每个末端添加正方形线帽。
+	butt和square的区别在于square俩端会加俩个正方形线帽因此square要比butt更长一截
+	
+	3.在Canvas中，我们可以使用lineJoin属性定义两个线条交接处的样式。
+		语法：
+		cxt.lineJoin = "属性值";
+		值		描述
+		bevel	创建斜角。(尖角斜着割一块)
+		round	创建圆角。(尖角割出一块圆弧)
+		miter	默认。创建尖角。
+		
+	4.在Canvas中，我们可以使用setLineDash()方法来定义线条的虚实样式。
+		语法：
+		cxt.setLineDash([array]);
+		
+		ctx.setLineDash(segments);
+		segments一个Array数组。一组描述交替绘制线段和间距（坐标空间单位）长度的数字。
+		 数组的元素会被复制并重复。
+		 例如， [5, 15, 25] 会变成 [5, 15, 25, 5, 15, 25]。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300" style="border: 1px blue solid;"></canvas>
+		<script type="text/javascript">
+			var a=c.getContext("2d");
+			a.moveTo(20,20);
+			a.lineTo(200,150);
+			a.lineTo(50,150)
+			a.lineWidth=20;
+			a.strokeStyle="#87CEFA";
+
+//			a.lineCap="square";
+			a.lineCap="round";
+			
+//			a.lineJoin="bevel";
+			a.lineJoin="round";
+			
+//			a.setLineDash([10,30,30,20]);
+			a.stroke();
+		</script>	
+		<img src="../../图片与文件/虚线原理图setLineDash.png" alt="" title="原理图"/>
+	</body>
+</html>

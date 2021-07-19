@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		为了操作HTML元素的属性，JavaScript为我们提供了4种方法：
+		  getAttribute()
+		  setAttribute()
+		  removeAttribute()
+		  hasAttribute()
+		
+		1.getAttribute()
+		在JavaScript中，我们可以使用getAttribute()方法来获取元素的某个属性的值。
+		getAttribute()可以获取“固有属性值”，也可以获取“自定义属性值”。
+		
+		语法：
+		obj.getAttribute("attr")
+		
+		2、setAttribute()
+		在JavaScript中，我们可以使用setAttribute()方法来设置元素的某个属性的值。
+		
+		语法：
+		obj.setAttribute("attr","值")
+		
+		3、removeAttribute()
+		在JavaScript中，我们可以使用removeAttribute()方法来删除元素的某个属性。
+		removeAttribute()更多情况下是结合class属性来“整体”控制元素的样式属性的。
+		
+		语法：
+		obj.removeAttribute("attr")
+		
+		4、hasAttribute()
+		在JavaScript中，我们可以使用hasAttribute()方法来判断元素是否含有某个属性。
+		
+		语法：
+		obj.hasAttribute("attr")
+		
+		“对象属性方式”和“对象方法方式”，这两种方式都不仅可以操作静态HTML的属性，也可以操作动态DOM的属性；
+ 		只有“对象方法方式attribute(本方法)”才可以操作自定义属性；
+		
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<input type="button" name="name" id="id" value="value" />
+		<p id="p"></p>
+		<p id="p1"></p>
+		<script type="text/javascript">
+			p.innerHTML=id.getAttribute("type");
+			id.onclick=function(){
+				id.value="value";
+				if(id.type=="button"){
+					id.setAttribute("type","text");
+					p.innerHTML=id.getAttribute("type");
+				}
+				else{
+					id.setAttribute("type","button");
+					p.innerHTML=id.getAttribute("type");
+					id.removeAttribute("value");
+				}
+				p1.innerHTML=id.hasAttribute("name");
+			}
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

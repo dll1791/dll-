@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在Canvas中，我们可以使用阴影属性来为图形或文字添加阴影效果。
+		阴影也分为两种：图形阴影和文字阴影。
+	1.	shadowColor
+		定义和用法
+	shadowColor 属性设置或返回用于阴影的颜色。
+	注意：请将 shadowColor 属性与 shadowBlur 属性一起使用，来创建阴影。
+	提示：请通过使用 shadowOffsetX 和 shadowOffsetY 属性来调节阴影效果。
+	默认值：	#000000
+	 语法：	context.shadowColor=color;
+	
+	2.shadowBlur
+	定义和用法
+	shadowBlur 属性设置或返回阴影的模糊级数。
+	默认值：	0
+	JavaScript 语法：	context.shadowBlur=number;
+	属性值
+	值	描述
+	number	阴影的模糊级数
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300" style="border: 2px aquamarine solid;"></canvas>
+		<script type="text/javascript">
+			var ctx=c.getContext("2d");
+			ctx.shadowBlur=40;
+			ctx.shadowColor="#0000FF";
+			ctx.fillStyle="red";
+			ctx.fillRect(20,20,100,80);
+		</script>
+	</body>
+</html>

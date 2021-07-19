@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+	HTML5之前：onmousedown、onmousemove、onmouseup共同完成。
+	HTML5之中：为元素添加draggable属性，并结合相应事件来实现。
+	
+	源事件触发的事件
+	事件			说明
+	ondragstart	开始拖放
+	ondrag		拖放过程中
+	ondragend	结束拖放
+	
+	目标事件触发的事件
+	事件			说明
+	ondragenter	当被拖放的元素进入本元素时
+	ondragover	当被拖放的元素正在本元素范围内和移动时
+	ondragleave	当被拖放的元素离开本元素时
+	ondrop		当源元素释放到本元素时
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1" style="background-color: #7FFF00; height: 100px;width: 100px;text-align: center;line-height: 100px;" draggable="true">
+			可拖拽元素
+		</div>
+		<div id="div2" style="background-color: #DCDCDC; height: 100px;width: 100px;text-align: center;position: relative; top:150px;left: 150px;" draggable="true">
+			把元素拖拽到此处
+		</div>
+		
+		<p id="p1"></p>
+		<p id="p2"></p>
+		<script type="text/javascript">
+			div1.ondragstart=function(){
+				p1.innerHTML="元素开始拖放";
+			}
+			div1.ondrag=function(){
+					p2.innerHTML="元素正在拖放";
+			}
+			div1.ondragend=function(){
+				p1.innerHTML="";
+				p1.innerHTML="元素拖放完成";
+				setTimeout(function(){
+					p1.innerHTML="";
+					p2.innerHTML="";
+				},1000)
+			}
+			div2.ondragenter=function(){
+				div2.style.backgroundColor="red";
+			}
+			div2.ondragleave=function(){
+				div2.style.backgroundColor="#DCDCDC";
+			}
+			
+		</script>
+	</body>
+</html>

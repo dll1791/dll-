@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- 
+	Vue-router 是官方提供的路由管理器
+	(实际开发中常用Vue-router管理路由而不是像上一节一样自己写路由)
+	通过Vue-router可以方便的用于SPA应用程序开发
+	功能：
+	1.支持HTML5历史模式或hash模式
+	2.支持嵌套路由
+	3.支持路由参数	4.支持编程式路由
+	5.支持命名路由
+	Vue-router 使用步骤：
+	1.引入相关的库文件
+	2.添加路由链接
+	3.添加路由填充位
+	4.定义路由组件
+	5.配置路由规则并创建路由实例
+	6.把路由挂载到Vue根实例中
+	
+ -->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<!-- 导入 vue 文件 -->
+		<script src="0.0vue.js"></script>
+		<!-- vue-router 和vue存在依赖关系，所以vue-router要放在vue下面  -->
+		<!-- 1.引入库文件 -->
+		<script src="0.0vue-router.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- 被 vue 实例控制的 div 区域 -->
+		<div id="app">
+			<!-- 2.添加路由链接 router-link默认被渲染为a标签
+					to默认为href属性，to的属性值会被渲染为#开头的hash地址-->
+				<router-link to='/user'>User</router-link>
+				<router-link to='/register'>register</router-link>
+				<!-- 3.添加路由填充位 ，通过路由规则的组件都会被渲染在
+				 router-view所在的位置-->
+				 <router-view></router-view>
+		</div>
+
+		<script>
+		//4.定义路由组件
+			let User={
+				template:`<h1>User组件</h1>`
+			}
+			let Register={
+				template:`<h1>Register组件</h1>`
+			}
+		//5.配置路由规则并创建路由实例
+			const router=new VueRouter({
+				// routes数组设置路由规则
+				//一个路由组件是一个对象 必须包含path 和component
+				routes:[
+					{path:'/user',component:	User},
+					//path的值就是第二步中<router-link to='/user'>to的值
+					//component只接收一个组件对象就是第四步中定义的组件名称
+					{path:'/register',component: Register}
+					//表示如果路由的地址是/register就展示Register组件
+				]
+			})
+		
+			const vm = new Vue({
+				el: '#app',
+				data: {
+					
+				},
+				//	6.把路由挂载到Vue根实例中
+				router:router,//这里的router是第五步的VueRouter的实例对象
+				// 注册私有组件
+			})
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--  
+	fetch:(相对传统ajax更简单更方便)
+	fetch 就是 ajax + Promise. 
+	1.更加简单的获取数据方式，功能更强大更灵活
+	2.基于promise实现
+	语法：
+	fetch(url).then(fn2)
+					.then(fn3)
+					......
+					.catch(fn)
+	例:				
+	fetch('http://localhost:3000/fdata')
+	.then(function(data){
+		return data.text();
+		//这里data无法直接获取数据他需要调用fetch的text()API
+		//text()返回的是一个promise实例对象，所以将他return出去
+		//通过下一个then来获取最终的数据
+	})
+	.then(function(data){
+		console.log(data)
+	})
+-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			fetch('http://localhost:3000/fdata')
+			.then(function(data){
+				return data.text();
+				//这里data无法直接获取数据他需要调用fetch的text()API
+				//text()返回的是一个promise实例对象，所以将他return出去
+				//通过下一个then来获取最终的数据
+			})
+			.then(function(data){
+				console.log(data)
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		getElementsByTagName()类似于CSS中的“元素选择器”。
+		getElementsByTagName()方法获取的是一个“类数组”。
+		 
+		 语法：
+		document.getElementsByTagName("标签名")
+		
+		getElementById()获取的是1个元素，
+		而getElementsByTagName()获取的是 多个元素（伪数组）；
+		getElementById()前面只可以接document，
+		也就是document.getElementById()
+		；getElementsByTagName()前面不仅可以接document，还可以接其他DOM对象；  
+		getElementById()不可以操作动态创建的DOM元素，而getElementsByTagName()可以操作动态创建的DOM元素；
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="" id="" value="点击" />
+		<script type="text/javascript">
+			document.getElementsByTagName("input")[0].onclick=function(){
+				this.style.cursor="pointer";
+				if(this.type=="button"){
+					this.type="text";
+				}
+				else{
+					this.type="button";
+				}
+			}
+			
+		</script>
+	</body>
+</html>

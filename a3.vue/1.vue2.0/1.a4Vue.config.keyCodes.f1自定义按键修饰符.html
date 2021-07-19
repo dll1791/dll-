@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- 
+	自定义按键修饰符
+	1.Vue.config.keyCodes.f1=112;//112是F1按键的唯一标识
+		相当于给键值为112的按键取了个名叫做f1
+		用法：在script标签中添加这个,声明一个名为f1的修饰符操作
+	2.@keyup.112='function' 按下F1触发事件function
+		也可以直接使用112作为触发的键值但是这样不直观
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id='d1'>
+			<!-- 按下f1键显示内容-->
+				<!-- 声明绑定 -->
+			<input type="text" @keyup.f1='f1()' id='input' placeholder="按下f1">
+				<!-- 直接键值绑定 -->
+			<input type="text" @keyup.112='f10()' id='input' placeholder="按下f1">
+			<div>{{num}}</div>
+		</div>
+		<script type="text/javascript">
+			Vue.config.keyCodes.f1=112;//给键值为112 的键取了个名字叫f1
+			let vue=new Vue({
+				el:'#d1',
+				data:{
+					num:'',
+				},
+				methods:{
+					f1:function(){
+						this.num='你用声明修饰符绑定名称按下了f1键';
+					},
+					f10:function(){
+						this.num='你用键值绑定按下了f1键';
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
+

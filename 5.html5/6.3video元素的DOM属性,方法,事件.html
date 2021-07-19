@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+	属性				说明
+	volume			音量(将视频音量设置为 20%：myVid=document.getElementById("video1");myVid.volume=0.2;)
+	currentTime		当前播放时间（单位：秒）属性设置或返回音频/视频播放的当前位置（以秒计）。当设置该属性时，播放会跳跃到指定的位置。
+	startTime		设置播放时间（单位：秒），也就是在哪里开始播放
+	duration		总的播放时间（单位：秒） 智能返回当前视频长度
+	playbackRate	当前播放速率，默认值为1
+	muted			是否静音，默认值为false
+	paused			检测是否处于暂停，取值为true或false myVid.paused
+	end				检测是否播放完毕，取值为true或false
+	
+	video元素的DOM方法
+	方法		说明
+	play()	播放
+	pause()	暂停
+
+	video元素的DOM事件
+	事件			说明
+	ontimeupdate	视频时间改变时触发
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<video id="video" src="../../图片与文件/梦想视频1.mp4" height="500px" controls="controls"></video>
+		<button id="b1">播放</button>
+		<button id="b2">暂停</button>
+		<p id="p">改变视频时间试试</p>
+		<script type="text/javascript">
+			video.volume=0.2;
+			video.currentTime=5;
+			video.playbackRate=1;
+			b1.onclick=function(){
+				video.play();
+			}
+			b2.onclick=function(){
+				video.pause();
+			}
+			
+			video.ontimeupdate=function(){
+				p.innerHTML=video.currentTime;
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>

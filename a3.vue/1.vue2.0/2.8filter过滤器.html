@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- 
+	过滤器：格式化数据，比如将日期格式化为指定的格式
+	定义:
+	Vue.filter('upper',function(val){
+		//val表示你要处理的数据，upper过滤器名称
+		return val.charAt(0).toUpperCase()+val.slice(1);
+		//和计数器一样过滤器也需要返回一个值
+	})
+	使用的方式:
+	1.	插值表达式<div>{{dll|upper}}</div>
+		<div>{{dll|upper|lower}}</div>过滤器可以同时使用多个
+	2.属性绑定值 :value='dll|upper'  同样也支持多个过滤器
+	<input type="text" :value='dll|upper' >//:=v-bind:
+	3.局部过滤器
+	先在vue中添加filters属性
+	filters:{
+		//upper1是过滤器<strong></strong>名称
+		upper1:function(val){
+			return val.charAt(0)+ val.charAt(1).toUpperCase()+val.slice(2);
+		}
+	}
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- 把首字母大写 -->
+		<div id='vue1'>
+			<input type="text" v-model="dll" placeholder="输入一个单词首字母自动大写">
+			<!-- 插值表达式使用过滤器 -->
+			<div>一个过滤器大写：{{dll|upper}}</div>
+			<div>多重过滤器大写变小写：{{dll|upper|lower}}</div>
+			<!-- 属性绑定过滤器 -->
+			<input type="text" :value='dll' placeholder="使用属性绑定值绑定过滤器">
+			<!-- 局部过滤器 -->
+			<div>局部过滤器：{{dll|upper1}}</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+	// 定义过滤器
+	Vue.filter('upper',function(val){
+		//val表示你要处理的数据，upper过滤器名称
+		return val.charAt(0).toUpperCase()+val.slice(1);
+		//和计数器一样过滤器也需要返回一个值
+	})
+	Vue.filter('lower',function(val){
+		return val.charAt(0).toLowerCase()+val.slice(1);
+	})
+		let vue=new Vue({
+			el:'#vue1',
+			data:{
+				dll:''
+			},
+			filters:{
+				upper1:function(val){
+					return val.charAt(0)+ val.charAt(1).toUpperCase()+val.slice(2);
+				}
+			}
+			})
+	</script>
+</html>

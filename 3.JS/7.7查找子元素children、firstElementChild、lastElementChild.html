@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在JavaScript中，我们可以使用以下2组方式来获得父元素中的所有子元素或某个子元素。
+		  	childNodes、firstChild、lastChild（不常用）
+ 			children、firstElementChild、lastElementChild（常用）
+		其中，childNodes那三个方式获取的是所有的子节点。
+		注意，这个子节点是包括元素节点以及文本节点的。
+		而children这三个方式获取的是所有的元素节点，不包括文本节点。
+		(文档节点的 childNodes 属性中包含了它的所有子节点，
+		这些子节点可能是元素、文本、注释、处理指令节点。)
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="d1">
+			<a href="http://www.baidu.com">123</a>
+			<p>nihao</p>
+			<input type="button" name="" id="" value="b" />
+		</div>
+		<script type="text/javascript">
+			document.writeln(d1.children[0].href)
+			document.writeln(d1.children[1].value)
+			document.write(d1.children[2].type);
+		</script>
+	</body>
+	
+</html>

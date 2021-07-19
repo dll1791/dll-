@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- 
+	1.axios的post请求：添加参数请求（默认提交的是JSON数据）
+	
+	2.post也可以传递表单形式的数据（string类型）
+		通过URLSearchParams传递参数
+		1.创建URLSearchParams实例对象
+		2.params.append('uname','dll')放入参数
+		3.把params作为参数传入axios.post
+		axios.post('http://localhost:3000/axios',{
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="../../../axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		//方式一传递JSON形式数据
+		//post请求默认提交格式是json形式的
+			axios.post('http://localhost:3000/axios',{
+				//post直接在这里写要传递的参数即可（只有这点不同）
+				uname:'戴林朗',
+				pwd:'123'
+			}).then(function(ret){
+				console.log(ret.data);
+			})
+			
+			//方式2传递表单形式的数据（string类型）
+			var params=new URLSearchParams();
+			params.append('uname','dll')
+			params.append('pwd','456')
+			axios.post('http://localhost:3000/axios',params).then(function(ret){
+				console.log(ret.data);
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- 
+	局部自定义指令，实际上就是换了种形式和其他的局部指令结果没有任何变化
+	//之前的称为全局指令，局部指令只能在本组件中使用，全组件则没有这个限制
+	用法：//
+	1.在声明的vue中添加一个directives
+	2.起一个名字，剩下的部分与前面的一样
+	let vue=new Vue({
+		el:'.vue1',
+		data:{
+			binding1:{
+				color:'green'
+			}
+		},
+		methods:{
+			
+		},
+		directives:{
+			color:{//起的名字交color
+				inserted:function(el,binding){
+					//改变元素背景
+					el.style.backgroundColor=binding.value.color//el表示指令所绑定的元素	可以由用户自定义
+					console.log(binding.name);
+				}
+			}
+		}
+	})
+ -->
+<html>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="./0.0vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class='vue1'>
+			<input type="text" v-color='{color:"orange"}'>
+		</div>
+		<script type="text/javascript">
+		let vue=new Vue({
+			el:'.vue1',
+			data:{
+				binding1:{
+					color:'blue'
+				}
+			},
+			methods:{
+				
+			},
+			directives:{
+				color:{
+					inserted:function(el,binding){
+						//改变元素背景
+						el.style.backgroundColor=binding.value.color//el表示指令所绑定的元素	可以由用户自定义
+						console.log(binding.name);
+					}
+				}
+			}
+		})
+		</script>
+	</body>
+</html>
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用flex-flow属性来同时设置flex-direction、
+	flex-wrap这两个属性。说白了，flex-flow属性就是一个简写形式，
+	语法：
+	flex-flow: direction wrap;
+	参数direction是flex-direction的取值，参数wrap是flex-wrap的取值。
+	因此，flex-flow属性的默认值为“row nowrap”。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				text-align: center;
+				font-size: 28px;
+			}
+			.f{
+				height: 100px;
+				width: 200px;
+				border: 2px solid black;
+				display: flex;
+				flex-flow: column wrap-reverse; 
+			}
+			.s1,.s2,.s3{
+				height: 50%;
+				width: 50%;
+			}
+			.s1{
+				background: #0000FF;
+			}
+			.s2{
+				background: #7CFC00;
+			}
+			.s3{
+				background: #FF0000;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="f">
+			<div class="s1">1</div>
+			<div class="s2">2</div>
+			<div class="s3">3</div>
+		</div>
+	</body>
+</html>

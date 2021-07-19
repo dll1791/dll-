@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，如果想要为某个元素同时定义多种滤镜效果，我们可以将filter属性的取值
+	设置为一个“值列表”的形式来实现。
+	语法：
+	filter: 值列表;
+	说明：
+	在值列表中，两个值之间需要用空格隔开。
+	
+	例如：filter:brightness(120%) contrast(200%) blur(1px);
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#a1{
+				filter:brightness(120%) contrast(200%) blur(0.5px);
+			}
+		</style>
+	</head>
+	<body>
+		<img id="a1" src="../../图片与文件/梦想3.jfif" style="height: 400px;"title="复古"/>
+		<img src="../../图片与文件/梦想3.jfif" style="height: 400px;"/>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- #region 
+  1、a元素（download属性点击进入下载界面）
+    属性	    说明
+    download	定义可被下载的目标（如文件、图片等）
+    media	    定义被链接文档为何种媒介/设备优化的
+    type	    定义被连接文档的MIME类型
+
+  media和type这两个属性用得很少，我们只需要掌握download这一个属性即可。
+  语法：
+  <a href="文件地址" download="新文件名"></a>
+  
+  2、ol元素
+  HTML5为ol元素新增了一个reversed属性，用于设置列表顺序为降序显示。
+  语法：
+  <ol reversed>
+      <li></li>
+      <li></li>
+      <li></li>
+  </ol>
+
+  3、small元素
+  在HTML5中，我们可以使用更具有语义化的small元素来表示“小字印刷体”的文字。
+  一般用于网站底部的免责声明、版权声明等。
+
+  4、script元素
+  HTML5为script元素新增了两个属性：async和defer。
+  这两个属性的作用都是为了加快页面的加载速度，两者区别如下。
+（1）defer：用于异步加载外部JavaScript文件，当异步加载完成后，
+该外部JavaScript文件先不会执行，而是等到整个HTML文档加载完成才会执行。
+（2）async：用于异步加载外部JavaScript文件，当异步加载完成后，
+该外部JavaScript文件会立即执行，即使整个HTML文档还没有加载完成。
+
+
+-->
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <a href="../../图片与文件/梦想4.jfif" download="美少女">可下载图片</a>
+  <ol reversed start="3">
+    <li></li>
+    <li></li>
+    <li></li>
+  </ol>
+  <small>此网站出自182072</small>
+
+</body>
+
+</html>

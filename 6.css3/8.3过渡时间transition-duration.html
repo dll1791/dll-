@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用transition-duration属性来定义过渡的持续时间。
+	语法：
+	transition-duration: 时间;
+	transition-duration: time;
+
+	值		描述
+	time	规定完成过渡效果需要花费的时间（以秒或毫秒计）。 默认值是 0，意味着不会有效果。
+
+	
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				margin: 200px;
+				background: #66FF2F;
+			}
+			div:hover{
+				transition-property: width,height;
+				width: 150px;
+				height: 150px;
+				transition-duration: 1500ms;
+			}
+		</style>
+	</head>
+	<body>
+		将鼠标放在上面
+		<div id="d1">
+			
+		</div>
+	</body>
+</html>

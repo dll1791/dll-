@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			1、“字符串”转为“数字”
+
+			共有2种方法：（1）Number；（2）parseInt()和parseFloat()。
+			Number()方法只能将纯“数字型字符串”转换为数字，不能将其他字符串（即使字符串内有数字字符）转换为数字。
+			
+				Number("123")：123
+				Number("3.1415")：3.1415
+				Number("hao123")：NaN
+				Number("100px")：NaN
+				
+			parseInt()会从左到右进行判断，如果第1个字符是数字，则继续判断，直到出现非数字为止（小数点也是非数字）；
+			如果第1个字符是非数字，则直接返回NaN。
+			parseInt()可以接受第1个字符是“+”或“-”。
+			
+				parseInt("123")：123
+				parseInt("3.1415")：3
+				parseInt("hao123")：NaN
+				parseInt("100px")：100
+				parseInt("+123")：123
+				parseInt("-123")：-123
+				parseInt("12a2222"):12
+			parseFloat()跟parseInt()非常类似，都是从第1个字符从左到右开始判断。
+			如果第1个字符是数字，则继续判断，直到出现
+			除了数字和小数点之外的字符为止；如果第1个字符是非数字，则直接返回NaN。
+
+				parseFloat("123")：123
+				parseFloat("3.1415")：3.1415
+				parseFloat("hao123")：NaN
+				parseFloat("100px")：100
+
+		-->
+		<script type="text/javascript">
+			document.writeln(Number("123a"));
+			document.writeln(parseInt("12a2222"));
+			document.writeln(parseInt("123.12"));
+			document.writeln(parseFloat("123.12"));
+			document.writeln(parseFloat("123.2ad"));
+			var a="123";
+			var b=parseInt(a)+1;
+			document.write(b);
+		</script>
+	</body>
+</html>

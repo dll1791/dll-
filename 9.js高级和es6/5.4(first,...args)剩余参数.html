@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- 
+	剩余参数
+	当函数实参个数大于形参个数时，我们可以将剩余的实参放在一个数组中
+	例：
+	function sum(first,...args){//...表示接收所有参数
+		console.log(first);
+		console.log(args);
+	}
+	sum('arry',1,2,3);//输出arry和一个数组1 2 3 
+
+	用法：用解构函数和...args接收数组
+	let ary1=[1,2,3];
+	let[s1,...s2]=ary1;
+	console.log(s1+' '+s2);
+	s1是1  s2是一个包含2,3的数组
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let ary1=[1,2,3];
+			let[s1,...s2]=ary1;
+			console.log(s1+' '+s2);
+		</script>
+	</body>
+</html>

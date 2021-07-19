@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- 
+	核心原理利用call()把父类型的this指向子类型的this,
+	这样就可以实现子类型继承父类型的属性。
+	1.继承属性
+	//1.父构造函数
+	function Father(uname,age){
+		//this指向父构造函数的对象实例
+		this.uname=uname;
+		this.age=age;
+	}
+	Father.prototype.money=function(){
+		console.log(1000);
+	}
+	//1.子构造函数
+	function Son(uname,age){
+		//this指向子构造函数的对象实例
+		Father.call(this,uname,age);
+		//调用父构造函数并利用call使其指向子构造函数的对象实例
+		Father.call
+	}
+	var son=new Son ('刘德华','18');
+	console.log(son.uname);
+	
+	2.继承方法
+	 Son.prototype=new Father();
+	将son的原型变为父亲的实例化对象
+	然后根据原型链的查找，son就会顺着
+	原型链往上找到父亲的方法，因此son
+	也就可以调用父亲的方法了
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1.父构造函数
+			function Father(uname,age){
+				//this指向父构造函数的对象实例
+				this.uname=uname;
+				this.age=age;
+			}
+			Father.prototype.money=function(){
+				console.log(1000);
+			}
+			//1.子构造函数
+			function Son(uname,age){
+				//this指向子构造函数的对象实例
+				Father.call(this,uname,age);
+				//调用父构造函数并利用call使其指向子构造函数的对象实例
+				Father.call
+			}
+			Son.prototype=new Father();//利用对象修改了原型对象,其
+			Son.prototype.constructor=Son;//用constructor重新指回原来的构造函数
+			var son=new Son ('刘德华','18');
+			console.log(son.uname);
+		</script>
+	</body>
+</html>

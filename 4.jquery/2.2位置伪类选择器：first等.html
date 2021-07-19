@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		<!--
+	位置伪类选择器，指的是根据页面中的位置来选取元素。
+	
+	选择器	说明
+
+	:first	选取某种元素的第一个	《例如$("ul li:first").css("color","#0000FF");》
+	:last	选取某种元素的最后一个
+	:odd	选取某种元素中序号为“奇数”的所有元素，序号从О开始
+	:even	选取某种元素中序号为“偶数”的所有元素，序号从О开始
+	:eq(n)	选取某种元素的第n个，n是一个整数，从О开始
+	:lt(n)	选取某种元素中小于n的所有元素，n是一个整数，从О开始
+	:gt(n)	选取某种元素中大于n的所有元素，n是一个整数，从О开始
+	
+	例如：
+	<label><input type="radio" name="gender" value="男">男</label>
+	<label><input type="radio" name="gender" value="女">女</label>
+	$(":radio[name='gener']:eq(0)").prop("checked", true)
+	
+	设置“男”这个选项为选中状态
+
+-->
+	
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8">
+		</script>
+	</head>
+	<body>
+		<ul id="a">
+			<li>小城里</li>
+			<li>岁月流过去</li>
+			<li>清澈的勇气</li>
+			<li>洗涤过的回忆</li>
+			<li>我记得你</li>
+			<li>骄傲的活下去</li>
+			<a href="">标签</a>
+		</ul>
+				
+			<script type="text/javascript">
+				$("ul a:eq(0)").css("color","#0000FF");
+			</script>
+	</body>
+</html>

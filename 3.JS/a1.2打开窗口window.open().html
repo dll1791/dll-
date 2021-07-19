@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在JavaScript中，我们可以使用window对象
+		的open()方法来打开一个新窗口。
+		（window.open返回的是一个对应的window对象 [object Window]）
+		语法：
+		window.open(url, [name], [configuration])
+		
+		其中：
+		url， 为要新打开页面的url
+		name，为新打开窗口的名字，可以通过此名字获取该窗口对象
+		configuration，为新打开窗口的一些配置项，比如是否有菜单栏、滚动条、长高等等信息
+		
+		
+		channelmode=yes|no|1|0	是否要在影院模式显示 window。默认是没有的。仅限IE浏览器
+		directories=yes|no|1|0	是否添加目录按钮。默认是肯定的。仅限IE浏览器
+		fullscreen=yes|no|1|0	浏览器是否显示全屏模式。默认是没有的。在全屏模式下的 window，还必须在影院模式。仅限IE浏览器
+		height=pixels			窗口的高度。最小.值为100
+		left=pixels				该窗口的左侧位置
+		location=yes|no|1|0		是否显示地址字段.默认值是yes
+		menubar=yes|no|1|0		是否显示菜单栏.默认值是yes
+		resizable=yes|no|1|0	是否可调整窗口大小.默认值是yes
+		scrollbars=yes|no|1|0	是否显示滚动条.默认值是yes
+		status=yes|no|1|0		是否要添加一个状态栏.默认值是yes
+		titlebar=yes|no|1|0		是否显示标题栏.被忽略，除非调用HTML应用程序或一个值得信赖的对话框.默认值是yes
+		toolbar=yes|no|1|0		是否显示浏览器工具栏.默认值是yes
+		top=pixels				窗口顶部的位置.仅限IE浏览器
+		width=pixels			窗口的宽度.最小.值为100
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id='b'>点开新窗口</button>
+		<script type="text/javascript">
+			window.document.write("高度"+window.innerHeight+" 宽度"+window.innerWidth);
+			b.onclick=function(){
+				
+			 var a=window.open("http://www.baidu.com","页面名字","height=200,width=200,left=600");	
+			}
+			
+		</script>
+	</body>
+</html>

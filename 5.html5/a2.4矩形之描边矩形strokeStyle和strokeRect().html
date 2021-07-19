@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+	在Canvas中，我们可以配合使用strokeStyle属性和strokeRect()方法来画一个描边矩形。
+	语法：
+	cxt.strokeStyle = 属性值;
+	cxt.strokeRect(x, y, width, height);//x,y是左顶点的起始位置
+	
+	strokeStyle 属性
+	color	指示绘图笔触颜色的 CSS 颜色值。默认值是 #000000。
+	gradient	用于填充绘图的渐变对象（线性 或 放射性）。
+	pattern	用于创建 pattern 笔触的 pattern 对象。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		 <canvas id="c" width="200" height="200" style="border: 3px solid bisque;">
+		 	你的浏览器不支持动画
+		 </canvas>
+		 <script type="text/javascript">
+		 	var ctx=c.getContext("2d");
+		 	ctx.strokeStyle="red";
+		 	ctx.strokeRect(75,75,50,50);
+		 </script>
+		 
+	</body>
+</html>

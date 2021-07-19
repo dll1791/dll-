@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--在CSS中，我们可以使用background-image属性来为元素定义背景图片。
+	语法：
+	background-image: url(图片路径);-->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="8.2.1图片样式.css"/>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*body{
+				background-image: url(../../图片与文件/savanna1.jfif);
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+				background-attachment: fixed;/*随页面滚动*/
+			/*}body 里面可以设置background-size已达到背景图片全覆盖的情况。但div这类的不能用background-size*/
+		 	div{
+		 		background-image: url(../../图片与文件/savanna1.jfif);
+		 		width: 500px;
+		 		height: 400px;
+		 		color: red;
+		 		
+		 		font-size: 50px;
+		 		/*不设置width和height图片无法显示，width和height与图片原本大小要一样不然无法显示完整图片*/
+		 	}
+		</style>
+	</head>
+	<body>
+		<div id="">
+			这里是背景
+		</div>
+		怎么回事，为什么背景图片没有显示出来呢？
+		这是因为我们没有给div元素定义width和height，此时div元素的宽度和高度都为0，那背景图片肯定不会显示啊！
+	</body>
+</html>

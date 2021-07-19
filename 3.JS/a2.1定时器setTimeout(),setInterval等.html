@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		(定时器里的秒是以微秒作为单位的)
+		所谓的定时器，指的是每隔一段时间就执行一次代码。
+		在JavaScript中，对于定时器的实现，有以下2组方法：
+		  setTimeout(function,time)和clearTimeout()  
+		  setInterval(function,time)和clearInterval()
+		 
+		1. “一次性”地调用函数
+		在JavaScript中，我们可以使用setTimeout()方法来“一次性”地调用函数，并且可以使用clearTimeout()来取消执行setTimeout()。
+		
+		语法：
+		setTimeout(code, time);
+		2.“重复性”地调用函数
+		在JavaScript中，我们可以使用setInterval()方法来“重复性”地调用函数，并且可以使用clearInterval()来取消执行setInterval()。
+		语法：
+		setInterval(code, time);
+		
+		对于setInterval()来说，下面3种方式都是正确的，不过我们只需要掌握前面2种即可：
+		  setInterval(function(){…}, 2000)
+		  setInterval('代码段', 2000)
+		  setInterval("alertMes()", 2000)
+
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#d{
+				width:200px;
+				height: 200px;
+				border: 2px blanchedalmond solid;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d">
+			
+		</div>
+		<button id="b1">开始变色</button>
+		<button id="b2">暂停</button>
+		<script type="text/javascript">
+			function colorRandom(){
+				var a="0123456789ABCDEF";
+				var str="#";
+				for(var i=0;i<6;i++)
+				{
+					var dom=Math.floor(Math.random()*16);
+					str=str+a[dom];
+				}
+				
+				return str;
+			}
+			function bgcolor(){
+				d.style.backgroundColor=colorRandom();
+			}
+			
+			
+			var interval=b1.onclick=function(){
+				window.s=setInterval(function bgcolor(){
+				d.style.backgroundColor=colorRandom();
+				
+			},1500);
+				
+			return 
+			}
+			b2.onclick=function(){
+				clearInterval(window.s);
+			};
+			
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+	1.dropEffect属性
+	
+　　其中，通过dropEffect属性可以知道被拖动的元素能够执行哪种行为。
+	这个属性的四个值如下：
+　　none：不能把拖动的元素放在这里。这是除了文本框之外所有元素默认的值。
+　　move：应该把拖动的元素移动到放置目标。
+　　copy：应该把拖动的元素复制到放置目标。
+　　link：放置目标会打开拖动的元素(但拖动的元素必须是个链接，有URL地址)。
+　　把元素拖动到放置目标上的时候，以上每一个值都会导致光标显示为不同的符号。
+	
+	2.effectAllowed属性
+	
+　　光有dropEffect属性是不咋管用的。
+	只有结合effectAllowed属性一起使用才能发挥功效。
+	effectAllowed属性表示允许拖动元素的哪种行为(dropEffect)。
+	effectAllowed属性也有很多值，其值如下：
+	
+　　uninitialized：没有给被拖动元素设置任何放置行为。
+　　none：被拖动的元素不能有任何行为。
+　　copy：只允许值为”copy”的dropEffect。
+　　link：只允许值为”link”的dropEffect。
+　　move：只允许值为”move”的dropEffect。
+　　copyLink：允许值为”copy”和”link”的dropEffect。
+　　copyMove：允许值为”copy”和”move”的dropEffect。
+　　linkMove：允许值为”link”和”move”的dropEffect。
+　　all：允许任意dropEffect。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+</html>

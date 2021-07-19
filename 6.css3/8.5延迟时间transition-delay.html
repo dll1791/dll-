@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用transition-delay属性来定义过渡效果的延迟时间。
+	语法：
+	transition-delay: time;
+	
+	值			描述
+	time	指定等待切换效果开始的时间 单位s ms
+	
+	//这里延时等待时间是开始和结束都有触发的
+	简写：transition: all 1s 0.5s;
+-->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				margin: 100px;
+				height: 100px;
+				width: 100px;
+				background: #66FF2F;
+				transition: all 1s 0.5s;
+			}
+			div:hover{
+				width: 300px;
+				height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

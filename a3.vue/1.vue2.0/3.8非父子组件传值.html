@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- 
+	兄弟直接的组件交互通过事件中心（第三方）进行交互
+	例子：(兄弟组件ab,a向b发送数据的流程)
+	a->事件中心->b
+	方法：
+	1.建立一个事件中心
+		var hub=new Vue();  hub的名是自定义的
+	2.	点击按钮时声明一个事件并向事件中心发送消息
+	methods: {
+				btn1: function() {
+					//$emit表示当按钮按下时声明一个名为add2-event的事件 
+					//触发并向hub(事件中心)传递一个值2
+				hub.$emit('add2-event', 2);
+				}
+			},
+	3.兄弟组件利用钩子函数对事件进行监听
+		mounted:function(){
+			//用生命周期的函数监听事件（模板加载完成时触发）
+			//通过事件中心hub 的$on监听名为 add2-event的事件是否触发
+			hub.$on('add2-event',(val)=>{//val是事件add1-event传过来的值
+				this.num +=val;
+			})
+		}
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id='vue1'>父组件
+			<test-add1></test-add1>
+			<test-add2></test-add2>
+		</div>
+	</body>
+	<div>
+	</div>
+	<script type="text/javascript">
+		//声明事件中心
+		var hub = new Vue();
+		// 兄弟组件1
+		Vue.component('test-add1', {
+			data: function() {
+				return {
+					num: 0
+				}
+			},
+			template: `
+				<div>
+					<div>add1:{{num}}</div>
+					<button @click="btn1">点击使add2加2</button>
+				</div>
+			`,
+			methods: {
+				btn1: function() {
+				//$emit表示当按钮按下时声明一个名为add2-event的事件
+				//触发并向hub传递一个值2
+					hub.$emit('add2-event', 2);
+				}
+			},
+			mounted:function(){
+				//用生命周期的函数监听事件（模板加载完成时触发）
+				//事件中心hub  用$on监听名为 add1-event的事件是否触发
+				hub.$on('add1-event',(val)=>{//val是事件add1-event传过来的值
+					this.num +=val;
+				})
+			}
+		});
+		// 兄弟组件2
+		Vue.component('test-add2', {
+			data: function() {
+				return {
+					num: 0
+				}
+			},
+			template: `
+				<div>
+					<div>add2:{{num}}</div>
+					<button @click="btn2">点击使add1加1</button>
+				</div>
+			`,
+			methods: {
+				btn2: function() {
+					//$emit表示声明一个事件add1-event 向hub传送一个值1
+					hub.$emit('add1-event', 1);
+				}
+			},
+			mounted: function() {
+				//用生命周期的函数监听事件（模板加载完成时触发）
+				hub.$on('add2-event', (val) => {
+					this.num += val;
+				})
+			}
+		});
+		let vue = new Vue({
+			el: '#vue1',
+		})
+	</script>
+</html>

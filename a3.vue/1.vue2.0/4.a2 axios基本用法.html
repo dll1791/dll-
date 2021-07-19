@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- 
+	axios:第三方的js库实现接口调用，相比之下比fetch的api更加强大
+	基于promise的客户端
+	 功能：
+	1.支持浏览器和node,promise
+	2.能拦截请求和响应
+	3.自动转换JSON数据(后台传过来的JSON数据自动转换前端直接用就可以了)
+	
+	用法：
+	axios.get('/adata')
+	.then(ret=>{//ret是形参自定义的
+		//data属性名称是固定的，用于获取后台响应数据
+		console.log(ret.data)
+	})
+	
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="../../../axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			axios.get('http://localhost:3000/adata').then(function(ret){
+				//ret不是我们需求的数据，ret.data才是
+				console.log(ret.data);
+			})
+		</script>
+	</body>
+</html>

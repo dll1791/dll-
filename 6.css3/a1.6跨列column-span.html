@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用column-span属性来实现多列布局的跨列效果。
+	这个属性跟表格中的colspan属性类似，我们可以对比理解一下。
+
+	语法：
+	column-span: 取值;
+	说明：
+	column-span属性取值只有2种，如下表所示。
+	
+	属性值	说明
+	none	不跨列
+	all	跨所有列（跟none相反）
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		body
+        {
+            width:400px;
+            padding:10px;
+            border:1px solid silver;
+            /*column-count:4;*/
+            column-width: 85px;
+            column-gap: 20px;
+            column-rule: #000000 1px solid;
+        }
+        h1
+        {
+            height:60px;
+            line-height:60px;
+            text-align:center;
+            background-color:silver;
+            column-span: all;
+        }
+        p
+        {
+            font-family:"微软雅黑";
+            font-size:14px;
+            text-indent:28px;
+        }
+		</style>
+	</head>
+	<body>
+		<h1>匆匆</h1>
+	    <p>燕子去了，有再来的时候；杨柳枯了，有再青的时候；
+	    	桃花谢了，有再开的时 候。但是，聪明的，你告诉我，
+	    	我们的日子为什么一去不复返呢？——是有人偷了他们罢：
+	    	那是谁？又藏在何处呢？是他们自己逃走了罢——如今又到了哪里呢？</p>
+	    <p>……</p>
+	    <h1>大小姐驾到</h1>
+	    <p>在逃去如飞的日子里，在千门万户的世界里的我能做些什么呢？只有徘徊罢了，只有匆匆罢了；
+	    	在八千多日的匆匆里，除徘徊外，又剩些什么呢？过去的日子如轻烟，被微风吹散了，
+	    	如薄雾，被初阳蒸融了；我留着些什么痕迹呢？我何曾留着像游丝样的痕迹呢？
+	    	我赤裸裸来到这世界，转眼间也将赤裸裸地回去罢？但不能平的，为什么偏要白白走这一遭啊？</p>
+	    <p>你聪明的，告诉我，我们的日子为什么一去不复返呢？</p>
+	</body>
+</html>

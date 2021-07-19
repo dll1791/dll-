@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- 
+	1.v-on
+	<input type="button" v-on:click='num++'>
+	2.简写
+	<input type="button" @click='num++'>
+	3.为click添加方法
+		1.在Vue对象中添加methods子对象，
+		在这个子对象中添加对应的方法（可以有多个方法）
+		let vue=new Vue({
+			el:'#d1',
+			data:{
+				num:0
+			},
+			methods:{	
+				btn1=function(){
+						this.num++;
+				}
+			}
+		})
+		2.函数的调用方式
+			1.直接绑定函数名称
+			@click='function'
+			2.绑定调用函数
+			可以传递参数进去
+			@click='function()'
+				1.传递事件对象
+				@click='function("hi",$event)'
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			[v-cloak]{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='d1'>
+			<div v-cloak>{{num}}</div>
+			<!-- 更改页面中input的值对应页面的内容也会发生改变 -->
+			<div >
+				<!-- 点击按钮让data 中的num++ -->
+				<button @click="num++">直接++</button>
+				<!-- 俩种方式调用函数 -->
+				<button @click="btn1">用方法1调用函数使num++</button>
+				<button @click="btn1()">用方法2调用函数使num++</button>
+			</div>
+		</div>
+		<script type="text/javascript">
+			let vue=new Vue({
+				el:'#d1',
+				data:{
+					dll:'hello dll',	
+					num:0
+				},
+				methods:{
+					btn1:function(){
+						this.num++;//这里的this就是vue
+					},
+				}
+			})
+		</script>
+	</body>
+</html>

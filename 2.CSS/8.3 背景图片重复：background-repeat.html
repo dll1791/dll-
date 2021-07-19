@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--在CSS中，我们可以使用background-repeat属性来定义背景图片的重复方式。
+	语法：
+	background-repeat: 取值;
+	
+	background-repeat属性取值有4个，如下表所示。
+	表1 background-repeat属性取值
+	属性值	说明
+	repeat	在水平方向和垂直方向上同时平铺（默认值）
+	repeat-x	只在水平方向（x轴）上平铺
+	repeat-y	只在垂直方向（y轴）上平铺
+	no-repeat	不平铺-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*body{
+				background-image: url(../../图片与文件/小图标1.gif);
+				background-repeat: repeat-y;
+			}*/ 
+		
+		div
+        {
+            width:200px;
+            height:130px;
+            border: 1px solid silver;
+            background-image: url(../../图片与文件/小图标1.gif);
+        }
+        #div2{background-repeat: repeat-x}
+        #div3{background-repeat: repeat-y}
+        #div4{background-repeat: no-repeat}
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+	    <div id="div2"></div>
+	    <div id="div3"></div>
+	    <div id="div4"></div>
+	</body>
+</html>

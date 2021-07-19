@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用transform属性的translate()方法来实现元素的平移效果。
+	语法：
+	transform: translateX(x);        /*沿X轴方向平移*/
+	transform: translateY(y);        /*沿Y轴方向平移*/
+	transform: translateZ(z);			/*沿Z轴平移*/
+	transform: translate(x, y);      /*沿X轴和Y轴同时平移*/
+	
+	两者的单位可以为px、em和百分比等。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				height: 100px;
+				width: 100px;
+				background: #ADD8E6;
+				transform: translateZ(500px) ;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="b1">x平移</button>
+		<button id="b2">Y平移</button>
+		<button id="b3">x，Y平移</button>
+		<div id="d">自带浏览器不兼容</div>
+		<script type="text/javascript">
+			b1.onclick=function(){
+				d.style.transform="translateX(40px)";
+			}
+			b2.onclick=function(){
+				d.style.transform="translateY(40px)";
+			}
+			
+			b3.onclick=function(){
+				d.style.transform="translate(200px,200px)";
+			}
+		</script>
+	</body>
+</html>

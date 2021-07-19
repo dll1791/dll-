@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在jQuery中，我们可以使用clone()方法来复制某一个元素。
+		
+		语法：
+		$("复制目标元素").clone()
+		
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<p id="p1">复制这个段落然后在按钮下显示他</p>
+		<button id="bt">点击复制上面的段落</button>
+		<script type="text/javascript">
+			$("button").click(function(){
+				$("button").after($('#p1').clone());
+			})
+			
+		</script>
+	</body>
+</html>

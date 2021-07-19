@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- 
+	路由组件之间传递参数：
+	通过props为路由传参（函数类型）
+	(可以同时获取动态uid，和多个参数)
+方式三：传函数给props props:true
+	1.在路由规则中设定可以使用props传参
+		{path:'/user/:uid',component:	User,props:true},
+	2.组件中用props接收参数(和组件之间通信一样)
+		props:['uid'],
+		template:`<h1>User组件---用户id为：{{uid}}</h1>`
+ -->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<!-- 导入 vue 文件 -->
+		<script src="0.0vue.js"></script>
+		<!-- vue-router 和vue存在依赖关系，所以vue-router要放在vue下面  -->
+		<script src="0.0vue-router.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- 被 vue 实例控制的 div 区域 -->
+		<div id="app">
+				<router-link to='/user/1'>User1</router-link>
+				<router-link to='/user/2'>User2</router-link>
+				<router-link to='/user/3'>User3</router-link>
+				<router-link to='/register'>register</router-link>
+				 <router-view></router-view>
+		</div>
+
+		<script>
+			let User={
+				//2. *************************
+				props:['uid','uname','age'],
+				template:`<h1>User组件---用户id为：{{uid}}--姓名:{{uname}}--年龄--{{age}}</h1>`
+			}
+			let Register={
+				template:`<h1>Register组件</h1>`
+			}
+			const router=new VueRouter({
+				routes:[
+					{path:'/',redirect:'/user/1'},
+//********************1.方式三.props 函数类型传参 *********************
+					{path:'/user/:uid',component:	User,
+					props: route=>{
+						return {uname:'dll',age:22,uid:route.params.uid}
+					} },
+				//	简写：route=>({uname:'dll',age:22,uid:route.params.uid})
+					//这里的route是自定的名 ,利用箭头函数返回一个对象
+					//uid就是动态参数
+					{path:'/register',component: Register}
+				]
+			})
+		
+			const vm = new Vue({
+				el: '#app',
+				data: {
+					
+				},
+				router:router,
+			})
+			
+		</script>
+	</body>
+</html>

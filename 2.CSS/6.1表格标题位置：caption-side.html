@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--默认情况下，表格标题是在表格的上方。
+	我们可以使用caption-side属性来定义表格标题的位置 
+	语法：
+	caption-side: 取值;
+	
+	属性值	说明
+	top		标题在顶部（默认值）
+	bottom	标题在底部
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table,td,th{
+				border:5px solid red;
+				caption-side: bottom;
+			}
+			caption{
+				border: 5px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<table >
+			<caption>表格标题</caption>
+			<tr>
+				<th>表头1</th>
+				<th>表头2</th>
+			</tr>
+			<tr>
+				<td>单元格1</td>
+				<td>单元格2</td>
+			</tr>
+			<tr>
+				<td>单元格1</td>
+				<td>单元格2</td>
+			</tr>
+			<tr>
+				<td>单元格1</td>
+				<td>单元格2</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<!--在CSS中，我们可以使用cursor属性来定义鼠标样式。
+	语法：
+	cursor: 取值;
+	cursor: url(地址),属性值; 自定义鼠标样式
+	
+	在实际开发中我们一般只会用到3个：default、pointer和text。
+	属性			取值
+	default		默认鼠标箭头
+	pointer		手
+	text		I-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1:hover{
+				cursor: text;
+				background-color: yellow;
+			}
+			#div2{
+				cursor: pointer;
+				background-color: yellow;
+			}
+			#div3{
+				cursor: url(../../图片与文件/小图标1.gif),pointer;
+				background-color: greenyellow;
+			}
+			/*这里hover和不加hover效果是一样的*/
+		</style>
+	</head>
+	<body>
+		<div id="div1">鼠标文本样式</div>
+    	<div id="div2">鼠标手状样式</div>
+    	<div id="div3">自定义鼠标样式</div>
+    	
+	</body>
+</html>

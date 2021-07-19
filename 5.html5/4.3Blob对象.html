@@ -1,0 +1,49 @@
+<!--
+		在HTML5中，还新增了一个Blob对象，用于代表原始二进制数据。
+		实际上，前面介绍的File对象其实也继承于Blob对象。
+		语法：
+		var blob = new Blob(dataArray, type);
+		
+	-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+</head>
+<body>
+    <textarea id="txt" cols="30" rows="10" placeholder="输入内容点击下载将其下载下来"></textarea><br />
+    <input id="btn" type="button" value="下载文件">
+    <script>
+        window.onload = function () {
+            var oTxt = document.getElementById("txt");
+            var oBtn = document.getElementById("btn");
+            var oDiv = document.getElementById("container");
+
+            oBtn.onclick = function () {
+                //Blob中数据为“文字”，默认编码为“utf-8”
+                var text = oTxt.value;
+                var blob = new Blob([text], { type: "text/html" });
+
+                //通过createObjectURL()方法创建文字链接
+                //object用于创建 URL 的 File 对象、Blob 对象或者 MediaSource 对象。
+​
+                var oA = document.createElement("a");
+                var url = window.URL.createObjectURL(blob);
+                oA.download = "download";
+                oA.href = url;
+
+                //添加元素
+                document.body.appendChild(oA);
+
+                //触发点击
+                oA.click();
+
+                //移除元素
+                document.body.removeChild(oA);
+            };
+        }
+    </script>
+</body>
+</html>

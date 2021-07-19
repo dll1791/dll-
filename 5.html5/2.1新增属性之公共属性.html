@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- #region 
+    所谓的公共属性，指的是可以应用于大多数元素的属性，
+    而并不只限用于某一个种元素。其中，HTML5新增的常见公共属性有4个。
+      hidden
+      draggable
+      contenteditable
+      data-*
+    
+      1、hidden属性
+      在HTML5中，我们可以使用hidden属性来显示或隐藏某一个元素。
+      语法：
+      <element hidden="hidden"></element>
+
+      2、draggable属性(仅仅是可以拖动但不能偏移原来的位置)
+      在HTML5中，我们可以使用draggable属性来定义某一个元素是否可以被拖动。
+      语法：
+      <element draggable="true或false"></element>
+
+      3、contenteditable属性(可以让一个P元素变成一个文本元素)
+      在HTML5中，我们可以使用contenteditable属性来定义某个元素的内容是否可以被编辑。
+      语法：
+      <element contenteditable="true或false"></element>
+
+      4、data-*属性
+      在HTML5中，我们可以使用data-*属性来为元素实现自定义属性。
+      语法：
+      <element data-*="属性值" >
+        在使用JavaScript获取data-*属性的值时，要注意一下书写格式。
+      （1）如果是data-xxx格式，则应该写成obj.dataset.xxx。
+      例如data-color应该写成obj.dataset.color，
+      而data-content应该写成obj.dataset.content。
+      （2）如果是data-xxx-yyy，则应该写成obj.dataset.xxxYyy。
+      例如data-fruit-price应该写成obj.dataset.fruitPrice，
+      而data-animal-type应该写成obj.dataset.animalType。
+
+
+
+
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p hidden>该元素已被隐藏</p>
+  <p draggable="true" style="background-color: beige; width: 100px;">可拖动元素</p>
+  <p contenteditable="true">可编辑的</p>
+  <p id="a1" data-animal="龙">点击获取动物属性</p>
+  <script>
+    a1.onclick = function () {
+      var a = this.getAttribute("data-animal");
+      this.innerHTML=a1.dataset.animal;
+      alert(a);
+    }
+  </script>
+</body>
+
+</html>

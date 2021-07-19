@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- 
+	js中是没有replaceAll方法的
+	想要实现replaceAll
+	就在正则表达式的后方加一个g就可以了
+	例：
+	var str= '干！我操你大爷！';
+	var st=str.replace(/(草|擦|操|干)+/g,'*');
+	console.log(st);
+	
+	1.正则表达式中的参数
+	/表达式/[swich]
+	swich属性值：
+	1.g 全局匹配
+	2.i 忽略大小写
+	3.gi 全局匹配忽略大小写
+	例如：
+	var str= 'a A b B c C1234';
+	var st=str.replace(/(d|c|b|a)+/gi,'*');
+	console.log(st);
+	
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str= 'a A b B c C1234';
+			var st=str.replace(/(d|c|b|a)+/gi,'*');
+			console.log(st);
+		</script>
+	</body>
+</html>

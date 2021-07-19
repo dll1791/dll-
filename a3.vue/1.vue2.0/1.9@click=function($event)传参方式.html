@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- 
+//打开控制台看现象
+	@click='function()'
+		1.传递普通参数
+			@click='function(1)'直接放在函数的参数中
+		2.传递事件对象
+			1.@click='function("hi",$event)'事件对象必须放在最后一个,$event名字是固定的
+			2.@click='function'默认传递事件
+		如果事件直接绑定函数名称则默认传递事件 形参中的第一个作为所传递的事件
+		如果没有形参event就作为所传递的事件
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			[v-cloak]{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='d1'>
+			<div v-cloak>{{num}}</div>
+			<!-- 更改页面中input的值对应页面的内容也会发生改变 -->
+			<div >
+				<button @click="btn1(1,$event)">有参传递事件对象</button>
+				<button @click="btn2">无参传递事件</button>
+			</div>
+		</div>
+		<script type="text/javascript">
+			let vue=new Vue({
+				el:'#d1',
+				data:{
+					dll:'hello dll',	
+					num:0
+				},
+				methods:{
+					btn1:function(p,event){//event拿到触发事件的对象
+						this.num++;//这里的this就是vue
+						this.num+=p;
+						console.log(event.target.tagName+1);
+						//event事件对象 target值标签 target.tagName触发事件的标签的名称
+					},
+					btn2:function(a){
+						//有参数a时a就相当于event
+						console.log(a.target.tagName+2);
+						//或者没有设置形参时event就是所传递的事件
+						console.log(event.target.tagName+3);
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

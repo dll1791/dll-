@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- 
+	带参数的过滤器
+	定义:
+	Vue.filter('upper',function(value,arg1){
+		//value是要处理的date数据
+		//arg1是所传的参数  可以有多个参数
+	//过滤器的参数是从第二个参数开始处理的，因为第一个参数是默认的待处理数据value
+	})
+	案例：使用过滤器格式化日期
+	<div>{{date|format('yyyy-MM-dd')}}</div>
+	filters:{
+					format:function(val,arg){
+						if(arg=="yyyy-MM-dd"){
+							var ret='';
+							ret+=val.getFullYear()+"-"+(val.getMonth()+1)+"-"+val.getDate();
+						}
+						return ret;
+					}
+				}
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- 使用过滤器格式化日期 -->
+		<div id='vue1'>
+			<div>原格式：{{date}}</div>
+			<div>过滤后的格式：{{date|format('yyyy-MM-dd')}}</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+		let vue=new Vue({
+			el:'#vue1',
+			data:{
+				date:new Date()//产出一个时间对象
+			},
+			filters:{
+				format:function(val,arg){
+					if(arg=="yyyy-MM-dd"){
+						var ret='';
+						ret+=val.getFullYear()+"-"+(val.getMonth()+1)+"-"+val.getDate();
+					}
+					return ret;
+				}
+			}
+			})
+	</script>
+</html>

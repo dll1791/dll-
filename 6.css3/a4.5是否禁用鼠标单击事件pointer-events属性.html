@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用pointer-events属性来定义元素是否禁用鼠标单击事件。
+	pointer-events属性是一个与JavaScript有关的属性。
+	
+	语法：
+	pointer-events: 取值;
+	说明：
+	pointer-events属性取值
+	属性值	说明
+	auto	不禁用鼠标单击事件（默认值）
+	none	禁用鼠标单击事件
+	常见于发送验证码
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			input[type="text"]{
+				pointer-events: none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="" id="" value="此段禁止点击" />
+	</body>
+</html>

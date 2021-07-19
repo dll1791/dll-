@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- 
+	1.侦听器：
+	当声明的vue中，data的数据发生变化时就会触发侦听器事件
+	就可以在里面写数据
+	2.应用场景：数据变化时执行异步（ajax）或开销较大(比较耗时)的操作
+		1)验证用户名的可用性
+	3.用法：将watch添加至声明的vue中
+	watch:{
+		//firstName与data中的数据要一致他表示当这个数据发生改变时触发这个事件
+		firstName: function(val){
+		//val表示修改后的firstName的值
+		  this.fullName=val+" "+this.lastName
+		  }
+ -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div>
+		<!-- 输入姓名使得下方的值发生改变 -->
+      <span>名：</span>
+      <span>
+        <input type="text" v-model='firstName'>
+      </span>
+    </div>
+    <div>
+      <span>姓：</span>
+      <span>
+        <input type="text" v-model='lastName'>
+      </span>
+    </div>
+    <div>{{fullName}}</div>
+  </div>
+  <script type="text/javascript" src="0.0vue.js"></script>
+  <script type="text/javascript">
+    /*
+      侦听器
+    */
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        firstName: 'Jim',
+        lastName: 'Green',
+        fullName: 'Jim Green'
+      },
+	  // 使用侦听器对div中的值进行改变
+	  watch:{
+		  //firstName与data中的数据要一致他表示当这个数据发生改变时触发这个事件
+		  firstName: function(val){
+			  //val表示修改后的firstName的值
+			  this.fullName=val+" "+this.lastName
+		  },
+		  lastName: function(val){
+		  			  //val表示修改后的firstName的值
+		  			  this.fullName=this.firstName+" "+val
+		  }
+	  }
+    });
+  </script>
+</body>
+</html>

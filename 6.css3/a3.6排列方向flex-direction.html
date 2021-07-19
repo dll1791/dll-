@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+	direction：方向   row:行   column：列
+	在CSS3中，我们可以使用flex-direction属性来定义弹性盒子内部“子元素”的排列方向。
+	也就是定义子元素是横着排，还是竖着排。
+	语法：
+	flex-direction: 取值;
+	说明：
+	flex-direction属性取值有4个，如下表所示。
+	属性值	说明
+	row				横向排列（默认值）
+	row-reverse		横向反向排列
+	column			纵向排列
+	column-reverse	纵向反向排列
+	
+	flex-direction 作用于父元素规定内部的子元素排列方式
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<style type="text/css">
+			#wrapper
+        {
+            display:flex;
+            flex-direction:column;
+            width:200px;
+            height:150px;
+        }
+        #box1,#box2,#box3
+        {
+            height:150px;
+            line-height: 150px;
+            text-align: center;
+            font-size:30px;
+            color:white;
+        }
+        #box1
+        {
+            background:red;
+            flex: 1;
+        }
+        #box2
+        {
+            background:blue;
+            flex: 2;
+        }
+        #box3
+        {
+            background:orange;
+            flex: 3;
+        }
+		</style>
+		<div id="wrapper">
+        <div id="box1">1</div>
+        <div id="box2">2</div>
+        <div id="box3">3</div>
+    </div>
+	</body>
+</html>

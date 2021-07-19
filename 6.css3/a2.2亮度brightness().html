@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用brightness()方法来实现亮度滤镜效果。
+	亮度滤镜可以减弱或增强图片的亮度。
+		语法：
+		filter: brightness(百分比);
+		说明：
+		brightness()方法的取值是一个百分比，其中0%~100%表示减弱图片的亮度，
+		例如0%就是完全黑色。100%以上表示增强图片的亮度，例如200%就是将亮度提高2倍。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#a1{
+				filter: brightness(150%);
+			}
+		</style>
+	</head>
+	<body>
+		<img id="a1" src="../../图片与文件/梦想3.jfif" style="height: 400px;"title="增加亮度"/>
+		<img src="../../图片与文件/梦想3.jfif" style="height: 400px;"/>
+	</body>
+</html>

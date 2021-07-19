@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- 
+1.	axios响应结果的属性：
+	axios的ret返回的是一个对象方法
+	如：下面的ret 这个对象方法的属性有如下四个属性
+	axios.get('http:',).then(function(ret){})
+	1.data:实际后台返回的数据		axios内部会直接将后台的数据转为json
+	2.headers:响应头信息
+	3.status:响应转台码 200表示状态正常
+	4.satusText:响应状态信息
+	
+2.axios的全局配置发送请求之前可以做一些事情（设置超时时间等）
+	1.超时时间   axios.defaults.timeout=3000(了解一下就行)
+	2.默认地址	axios.defaults.baseURL='http://localhost:3000/axios-json'
+	3.设置请求头 axios.defaults.headers['mytoken']='aqwer...'
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="../../../axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		// axios的全局配置
+			//1.配置请求的基准地址 下发在申请请求时就可以自动拼接上前面的部分
+			axios.defaults.baseURL='http://localhost:3000';
+			//2.配置请求头信息
+			//(跨域问题，后台设置允许的请求头传递，否则错误的请求头消息发不出去)
+			//mytoken 和后面的值都是自定义的
+			axios.defaults.headers['mytoken']='hello';
+			axios.get('axios-json').then(function(ret){
+				//从后台传回一个json数据 axios内部直接将数据变为json
+				console.log(ret.data);
+			})
+			
+		</script>
+	</body>
+</html>

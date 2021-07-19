@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+	对于透明处理，我们都是在得到像素数组后，将该数组中每一个像素的透明度乘以n，
+	然后保存像素数组，最后使用putImageData()方法将图像重新绘制在画布上。
+	语法：
+		for (var i = 0; i < data.length; i += 4) 
+	{
+	    data[i + 3] = data[i + 3]*n;//n 是透明度，0是透明， 1是完全不透明
+	}
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300" style="border: 2px aquamarine solid;"></canvas>
+		<script type="text/javascript">
+			var a=c.getContext("2d");
+			a.fillStyle="#66FF2F"
+			a.fillRect(10,10,20,20);
+			a.fillStyle="#8A2BE2";
+			a.fillRect(10,30,20,20);
+			a.fillStyle="#FF0000";
+			a.fillRect(30,30,20,20);
+			a.fillStyle="#FFFF00";
+			a.fillRect(30,10,20,20);
+			
+			var img=a.getImageData(10,10,40,40);
+			for (var i = 0; i < img.data.length; i += 4) 
+			{
+			    img.data[i + 3] = img.data[i + 3]*0.5;
+			}
+			a.putImageData(img,50,50);
+		</script>
+	</body>
+</html>

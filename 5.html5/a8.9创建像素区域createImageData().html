@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+	createImageData()用于在画布中创建一个区域，我们可对这个区域进行像素操作。
+	如果没有创建像素操作区域，我们是没办法进行像素操作的。
+	语法：
+	cxt.createImageData(sw,sh);        //第1种格式
+	cxt.createImageData(imageData);    //第2种格式
+	
+	参数				描述
+	width		ImageData 对象的宽度，以像素计。
+	height		ImageData 对象的高度，以像素计。
+	imageData	另一个 ImageData 对象。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<canvas id="c" width="300" height="300" style="border: 2px aquamarine solid;"></canvas>
+		<button id="bt">开始像素操作</button>
+		<script type="text/javascript">
+			var a=c.getContext("2d");
+			a.fillStyle="#66FF2F"
+			a.fillRect(10,10,20,20);
+			a.fillStyle="#8A2BE2";
+			a.fillRect(10,30,20,20);
+			a.fillStyle="#FF0000";
+			a.fillRect(30,30,20,20);
+			a.fillRect(60,120,100,100);
+			a.fillStyle="#FFFF00";
+			a.fillRect(30,10,20,20);
+			a.fillRect(60,10,100,100);
+			var img=a.createImageData(300,300);
+			for (var i = 0; i < img.data.length; i += 4) 
+			{
+			   	img.data[i+0]=255;
+				img.data[i+1]=0;
+				img.data[i+2]=0;
+				img.data[i+3]=255;
+			}
+			bt.onclick=function(){
+				a.putImageData(img,0,0);
+			}
+		</script>
+		
+	</body>
+</html>

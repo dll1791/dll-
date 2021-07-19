@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在JavaScript中，想要设置一个CSS属性的值，我们有2种方式来实现：
+		 style对象
+ 		 cssText()方法
+		
+		element.style.属性
+		
+		window.getComputedStyle(element[,pseudo-element]);
+		对多数属性智能读不能改
+		
+		getComputedStyle()，从名字上就可以看出来：get computed style（获取计算后的样式）
+		。所谓“计算后的样式”，就是不管你是内部样式，还是行内样式，最终获取的是根据CSS优先级计算后的结果。
+		
+		
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0px;
+				margin: 0px;
+			}
+			div{
+				height: 20%;
+				width: 20%;
+				border: 3px chartreuse solid;
+				position:fixed;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="a">
+			
+		</div>
+		<script type="text/javascript">
+//			var a=document.getElementById("a");
+			a.style.backgroundColor="pink";
+		alert(window.getComputedStyle(a,null).height);//getComputedStyle方法只能读不能改
+		</script>
+	</body>
+</html>

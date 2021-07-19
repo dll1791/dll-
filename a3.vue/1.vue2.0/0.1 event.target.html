@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!-- 
+	1.$event
+		在标签中加入$event代表当前事件
+		例如：
+		<input type="text" :bind='msg' @input:='msg=$event.target.value'>
+		//把输入框中的值赋值给msg  在把msg和输入框的值绑定在一起
+		//实现双向数据绑定
+	2.event.target
+		event是事件对象 target就成了该事件对象的标签
+		可以通过event.target.value访问该事件对象的值
+		event.target.tagName访问标签的名称
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

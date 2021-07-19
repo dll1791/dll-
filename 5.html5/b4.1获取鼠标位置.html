@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+	在Canvas中，鼠标事件分为3种。
+	  鼠标按下：mousedown
+	  鼠标松开：mouseup
+	  鼠标移动：mousemove
+	
+	鼠标点击位置坐标
+	1.相对于屏幕
+	如果是涉及到鼠标点击确定位置相对比较简单，获取到鼠标点击事件后，
+	事件screenX，screenY获取的是点击位置相对于屏幕的左边距与上边距，
+	不考虑iframe因素，不同游览器下表现的还算一致。
+	
+	function getMousePos(event) {
+	      var e = event || window.event;
+	      return {'x':e.screenX,'y':screenY}
+	}
+	
+	2.相对于游览器窗口
+	简单代码即可实现，然而这时还不够，因为绝大多数情况下我们
+	希望获取鼠标点击位置相对于游览器窗口的坐标，event的clientX，
+	clientY属性分别表示鼠标点击位置相对于文档的左边距，上边距。
+	
+	function getMousePos(event) {
+	      var e = event || window.event;
+	      return {'x':e.clientX,'y':clientY}
+	}
+	3.相对于文档
+	clientX与clientY是获取相对于当前屏幕的坐标，忽略了页面滚动因素，
+	这在很多环境下很有用，但当我们需要考虑页面滚动，也就是相对于文档（body元素）
+	的坐标时怎么办呢？只要加上滚动的位移就可以了。
+	在chrome可以通过document.body.scrollLeft，
+	document.body.scrollTop计算出页面滚动位移，
+	而在IE下可以通过document.documentElement.scrollLeft，
+	document.documentElement.scrollTop
+	
+	复制代码
+	function getMousePos(event) {
+	       var e = event || window.event;
+	       var scrollX = document.documentElement.scrollLeft || document.body.scrollLeft;
+	       var scrollY = document.documentElement.scrollTop || document.body.scrollTop;
+	       var x = e.pageX || e.clientX + scrollX;
+	       var y = e.pageY || e.clientY + scrollY;
+	       //alert('x: ' + x + '\ny: ' + y);
+	       return { 'x': x, 'y': y };
+	}
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id='p' style="position:  fixed; height: 100%; width: 100%;"></p>
+		<div id="" style="position: fixed; 
+			left: 100px ;top:100px;background-color: #7FFF00;">
+			left:100px top:100px
+		</div>
+		<script type="text/javascript">
+			document.body.onmousemove=function(event){
+				var e = event || window.event;
+	     		p.innerHTML="鼠标位置 x:"+e.screenX+"鼠标位置y:"+e.screenY;
+			}
+		</script>
+	</body>
+</html>

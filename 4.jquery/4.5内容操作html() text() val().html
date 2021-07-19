@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		内容操作，指的是使用jQuery来操作一个元素的文本内容、值内容等。
+		在jQuery中，对于内容操作，我们有以下3种方法。
+		   html()
+		  text()
+		  val()
+		区别：（html设置的是所有元素，text设置的只是文本，val改变表单元素的文本值）
+		
+		1、html()
+		在jQuery中，我们可以使用html()方法来获取和设置一个元素中的“html内容”。
+		所谓的html内容，指的是所有的内部元素以及文本。
+		语法：
+		$().html()              //获取html内容
+		$().html("html内容")     //设置html内容
+		
+		2、text()
+		在jQuery中，我们可以使用text()方法来获取和设置一个元素的“文本内容”。
+		语法：
+		$().text()              //获取文本内容
+		$().text("文本内容")     //设置文本内容
+		
+		3、val()
+		在jQuery中，我们可以使用val()来获取和设置表单元素的值。
+		语法：
+		$().val()           //获取值
+		$().val("值内容")    //设置值
+		
+		html()、text()、val()这3个方法都可以实现两点：
+		无参数时用于“获取值”，有参数时用于“设置值”。一般来说，很多jQuery方法都有这个特点。
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<p>nihao</p>
+		
+		<script type="text/javascript">
+			$("p").html("<b>nihao1</b>");
+			$("p").text("<b>nihao1</b>");
+			
+		</script>
+		  
+	</body>
+</html>

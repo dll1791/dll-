@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- 
+	order规定子元素的排列顺序
+	默认是0 越大越靠后
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	<style type="text/css">
+			div{
+				border: 2px solid green;
+				width: 300px;
+				height: 200px;
+				display: flex;
+		
+				/* align-items: stretch; */
+			}
+			span{
+				border: 2px solid green;
+				width: 50px;
+				height: 50px;
+			}
+			div span:nth-child(3){
+				align-self: center;
+				/* 将第三个放最前面 */
+				order: -1;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+		</div>
+	</body>
+</html>
+

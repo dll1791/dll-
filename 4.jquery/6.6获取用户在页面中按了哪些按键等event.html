@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在jQuery中，我们可以通过event对象来获取一个事件的详细信息。
+		event对象就像飞机中的“黑匣子”
+		
+		用法evevt.keyCode
+		
+		属性				说明
+		type			事件类型
+		target			事件元素
+		which			鼠标左、中、右键
+		pageX、pageY		鼠标坐标
+		shiftKey		是否按下shift 键
+		ctrlKey			是否按下ctrl键
+		altKey			是否按下alt 键
+		keyCode			键码值
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<p id="p">任意按下按键</p>
+		<script type="text/javascript">
+			$("body").keydown(function(){
+				var a=event.keyCode;
+				p.innerHTML=a;
+			})
+			
+		</script>
+	</body>
+</html>

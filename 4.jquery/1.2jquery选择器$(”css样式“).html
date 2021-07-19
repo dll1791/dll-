@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		1.
+		所谓的基本选择器，指的是在实际开发中使用频率最高的选择器。其中，基本选择有以下4种。
+		  元素选择器
+		  id选择器
+		  class选择器
+		  群组选择器
+		
+		jQuery选择器跟CSS选择器是完全一样的。事实上，我们只需要把CSS选择器的写法套入
+		$("")中，就可以变成了jQuery选择器
+		
+		{例如：$("li").css("color","#0000FF")} 
+		2.
+		层次选择器，就是通过元素之间的层次关系来选择元素。
+		常见的层次关系包括：父子、后代、兄弟、相邻。
+		{例如：$("li+li").css("color","#0000FF")  }
+		
+		属性		说明
+		M  N	后代选择器，选择M元素内部后代N元素（所有N元素）
+		M > N	子代选择器，选择M元素内部子代N元素（所有第1级N元素）
+		M ~ N	兄弟选择器，选择M元素后面（所有的同级N元素）
+		M + N	相邻选择器，选择M元素相邻的（下一个N元素）（M、N是同级元素）
+		
+		3.	
+		属性选择器，指的是通过“元素的属性”来选择元素的一种方式。
+		{例如：$("[class]").css("color","#0000FF")}   
+		
+		选择器					说明
+		E[attr]				选择元素E，其中E元素必须带有attr属性
+		E[attr = "value"]	选择元素E，其中E元素的attr属性取值是value
+		E[attr!= "value"]	选择元素E，其中E元素的attr 属性取值不是value(实际会选择所有元素)
+		E[attr ^= "value"]	选择元素E，其中 E元素的attr 属性取值是以“value”开头的任何字符
+		E[attr $="value"]	选择元素E，其中E元素的attr 属性取值是以“value”结尾的任何字符
+		E[attr *= "value"]	选择元素E，其中E元素的attr 属性取值是包含“value”的任何字符
+		E[attr |= "value"]	选择元素E，其中E元素的attr 属性取值等于“value”或者以“value”开头
+		E[attr ~= "value"]	选择元素E，其中E元素的attr 属性取值等于“value”或者包含“value”
+
+
+		
+	-->
+	<head>
+		
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		 <ul>
+	        <li id="l1a">第1个元素 <a>导航</a></li>
+	        <li id="l2a" class="l">第2个元素</li>
+	        <li id="l3a">第3个元素</li>
+	        <li id="l4a">第4个元素</li>
+	        <li id="l5a">第5个元素</li>
+	        <a id="a1" class="a">第六个元素<span>123</span></a>
+	        <a id="a2">第7个元素</a>
+    </ul>
+    <input type="radio" name="a" id="" value="" />
+    <input type="radio" name="a" id="" value="" checked=""/>
+    
+     <script src="../../jquery-1.12.4.js"> </script>
+   		<script>
+		  $("[id*='1']").css("color","#0000FF")                      
+		</script>
+         		
+	</body>
+</html>

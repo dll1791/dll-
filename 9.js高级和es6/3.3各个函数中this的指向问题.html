@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- 
+	函数的调用：
+	1.普通函数
+	function fn(){
+		console.log('普通函数的this'+this);
+	}
+	fn();fn.call(); 
+	//完整的调用写法:window.fn()  实际上是window调用了这个函数
+	//因此fn的this指向window
+	
+	2.对象的方法
+	var o={//this指向对象o
+		sayHi:function(){
+			console.log('Hi')
+		}
+	}
+	o.sayHi();
+	
+	3.构造函数//this指向调用函数的实例对象(原型对象也是指向实例对象)
+	function Star(a){
+		this.a=a;
+	}
+	var ldh=	new Star();
+	
+	4.绑定事件函数//this指向btn这个元素(指向函数的调用者)
+	btn.onclick=function(){}
+	点击按钮调用
+	
+	5.定时器函数//this指向window
+	setInterval(function(){},1000)
+	每隔1s中调用一次
+	
+	6.立即执行函数//this指向window
+	(function(){
+		console.log("hi");
+	})();
+	自动调用
+-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

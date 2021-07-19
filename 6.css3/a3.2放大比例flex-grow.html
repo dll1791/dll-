@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用flex-grow属性来定义弹性盒子内部子元素的放大比例。
+	也就是当所有子元素宽度之和小于父元素的宽度时，子元素如何分配父元素的剩余空间。
+		语法：
+		flex-grow: 数值;
+		例如flex-grow: 1;
+		数值是比例的意思，例如三个子元素比例分别是 1 2 3那么第一个子元素的面积占
+		分配面积的1/6依次类推
+		
+	flex-grow属性取值是一个数值，默认值为0。当取值为0时，
+	表示不索取父元素的剩余空间。当取值大于0时，表示索取父元素的剩余空间（即子元素放大）。
+	取值越大，索取得越多。
+	放大只是根据子元素的宽度而言整体的高度不会有变化
+	
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.a{
+				border: #000000 5px solid;
+				height: 100px;
+				width: 300px;
+				display: flex;
+			}
+			.b{
+				height: 50px;
+				width: 10px;
+				flex-grow: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a">
+			<div class="b" style="background: green;"></div>
+			<div class="b" style="background: red;"></div>
+			<div class="b" style="background: blue;"></div>
+		</div>
+	</body>
+</html>

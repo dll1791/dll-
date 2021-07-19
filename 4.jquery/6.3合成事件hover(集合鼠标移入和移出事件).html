@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		jQuery为我们提供hover()方法一次性定义“鼠标移入”和“鼠标移出”这两个事件，
+		这就是所谓的“合成事件”。
+		
+		语法：
+		$().hover(fn1, fn2)
+		
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<p>鼠标移动到该段落</p>
+		<script type="text/javascript">
+			$("p").hover(function(){
+				$(this).css("background-color","#7FFF00");
+			},function(){
+				$(this).css("background-color","#0000FF");
+			})	
+		</script>
+	</body>
+</html>

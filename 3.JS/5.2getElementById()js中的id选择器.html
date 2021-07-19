@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		getElementById()类似于CSS中的“id选择器”，
+		只不过getElementById()是JavaScript的操作方式，而id选择器是CSS的操作方式。
+		
+		语法：
+		document.getElementById("id名")
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<label for=""><p id="p1">hello</p></label>
+		<script type="text/javascript">
+			document.getElementById("p1").onclick=function(){
+				if(this.innerHTML=="nihao"){
+					this.innerHTML="hello";
+				}
+				else{this.innerHTML="nihao"}
+			}
+			
+		</script>
+	</body>
+</html>

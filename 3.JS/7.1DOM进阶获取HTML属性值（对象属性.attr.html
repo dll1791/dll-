@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		HTML属性操作，指的是使用JavaScript来操作一个元素的HTML属性。
+		在JavaScript中，有2种操作HTML元素属性的方式，一种是使用“对象属性”，另外一种是使用“对象方法”。
+		不管是哪一种，都涉及以下2种操作：
+		
+		  获取HTML属性值
+  		设置HTML属性值
+  		
+  		1、获取HTML属性值
+		获取HTML元素的属性值，一般都是通过“属性名”来找到该属性对应的值。
+		
+		语法：
+		obj.attr
+		（obj是对象的id attr是对象下的属性）
+		
+		2、设置HTML属性值
+		设置HTML元素的属性值，同样也是通过“属性名”来设置的。
+		
+		语法：
+		obj.attr = "值";
+		
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="" id="b1" onclick="a()" value="nihao" />
+		<script type="text/javascript">
+			function a(){
+				b1.type="text";
+				b1.value="变成文本了";
+			}
+		</script>
+	</body>
+</html>

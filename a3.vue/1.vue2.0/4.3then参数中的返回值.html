@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- 
+	then参数的返回值
+	1.返回promise实例对象  返回的实例对象会调用下一个then
+	例如：
+	queryData('http://localhost:3000/data')
+	//情况1：return的是一个promise实例对象
+		.then(function(data) {//.then相当于queryDate.then
+			console.log(data);
+			return queryData('http://localhost:3000/data1');
+		})//queryDate就是封装好的promise
+//下面的then会被自动调用
+		.then(function(data) {//.then相当于queryDate.then.then
+			console.log(data+'***********');
+			return queryData('http://localhost:3000/data2');
+		});
+	
+	2.返回的普通值 
+	返回的普通值会直接传递给下一个then，通过then参数中函数的参数接收该值
+	例如：
+	queryData('http://localhost:3000/data')
+	//情况2返回一个普通值
+		.then(function(data){
+			console.log(data);
+			return 'dll hello';
+		})
+		//虽然返回的是一个普通数据，但是他会自动生成一个promise对象自动调用下面的then
+		.then(function(data){
+			//这里的data就会直接获取到上一个then return的dll hello
+			console.log(data);
+		})
+ -->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+
+		<script type="text/javascript">
+			function queryData(url) {
+				var p = new Promise(function(resolve, reject) {
+					//ajax的请求的数据处理内容封装在Promise函数里
+					var xhr = new XMLHttpRequest();
+					xhr.onreadystatechange = function() {
+						if (xhr.readyState != 4) return;
+						if (xhr.readyState == 4 && xhr.status == 200) {
+							// 处理正常的情况
+							resolve(xhr.responseText);
+						} else {
+							// 处理异常情况
+							reject('服务器错误');
+						}
+					};
+					xhr.open('get', url);
+					xhr.send(null);
+				});
+				return p;
+			}
+			queryData('http://localhost:3000/data')
+			//情况1：return的是一个promise实例对象
+				.then(function(data) {//.then相当于queryDate.then
+					console.log(data);
+					return queryData('http://localhost:3000/data1');
+				})//下面的then会被自动调用
+				.then(function(data) {//.then相当于queryDate.then.then
+					console.log(data+'***********');
+					return queryData('http://localhost:3000/data2');
+				});
+			
+			queryData('http://localhost:3000/data')
+			//情况2返回一个普通值
+				.then(function(data){
+					console.log(data);
+					return 'dll hello';
+				})
+				//虽然返回的是一个普通数据，但是他会自动生成一个promise对象自动调用下面的then
+				.then(function(data){
+					//这里的data就会直接获取到上一个then return的dll hello
+					console.log(data);
+				})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用animation属性来实现元素的动画效果。
+	transition属性（即CSS3过渡）只能实现一次性的动画效果，
+	而animation属性（即CSS3动画）可以实现连续性的动画效果。
+
+	简写：
+	animation:dllmove 5s infinite;动画名称	 动画执行时间   重复执行动画
+	animation:dllmove 5s;动画名称	 动画执行时间
+	animation: dllmove 2s ease-in;动画名称	 动画执行时间   动画方式
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				height: 100px;
+				width: 100px;
+				background: #008000;
+				position: relative;
+				animation:dllmove 5s infinite;
+			}
+			@keyframes dllmove{
+				0%{top:0px;}
+				50%{top:300px;}
+				100%{top:0px;}
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

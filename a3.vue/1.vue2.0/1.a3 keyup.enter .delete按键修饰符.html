@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- 
+//更多内容见官方文档
+	 按键修饰符
+	 1.keyup.enter
+	 把input中回车键的按键松开绑定一个事件
+	 直接在表单输入框中绑定按键修饰符，当按下回车时就触发事件更新
+	 div中的内容
+	 <input type="text" @keyup.enter='btn0()' id='input'>
+	 2.keyup.delete
+	 把input中删除键的按键松开绑定一个事件
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id='d1'>
+			<!-- 按下delete键清空div中的数据 -->
+			<input type="text" @keyup.enter='btn0()' id='input' @keyup.delete='clear'>
+			<!-- 点击提交 或输入框中按下回车显示输入的数据 -->
+			<button @click="btn0()">提交</button>
+			<div>{{num}}</div>
+		</div>
+		<script type="text/javascript">
+			// var input=document.querySelector('input');
+			let vue=new Vue({
+				el:'#d1',
+				data:{
+					num:'',
+				},
+				methods:{
+					btn0:function(){
+						this.num=input.value;
+					},
+					clear:function(){
+						this.num='';
+						input.value='';
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

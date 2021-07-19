@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- 
+v-if和v-for可以一起使用
+例如：
+<li v-if='index==0' :key='index' v-for="(value,index) in arr1">{{value+'------'+index}}</li>
+	1.v-for遍历数组
+		<li v-for="value in arr1"></li>
+		value 表示当前的数据 arr1表示遍历的数组
+		<li v-for="(value,index) in arr1">{{value+'------'+index}}</li>
+		value 表示当前的数据 index表示当前的数组索引
+	2.key的作用 帮助vue区分不同的元素提高性能
+		//不加也可以但是性能会比较低
+		//对于图层表现来说没有变化
+		key必须是唯一的用于标识每个数组的元素
+		<li :key='index' v-for="(value,index) in arr1">{{value+'------'+index}}</li>
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id='d1'>
+			<div>水果列表</div>
+			<ul>
+				<li v-if='index==1' :key='index' v-for="(value,index) in arr1">{{value+'------'+index}}</li>
+				<!-- item 表示当前的数据 arr1表示遍历的数组 -->
+			</ul>
+		</div>
+		<script type="text/javascript">
+			let vue=new Vue({
+				el:'#d1',
+				data:{
+					arr1:['apple','banana','orange']
+				},
+				methods:{
+				
+				}
+				});
+		</script>
+	</body>
+</html>

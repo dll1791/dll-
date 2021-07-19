@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+	什么是路径？
+	在Canvas中，“路径”是一个非常重要的概念。除了矩形，
+	其他所有Canvas基本图形，包括直线、多边形、圆形、
+	弧线、贝塞尔曲线，都是以路径为基础的。
+	
+	beginPath()和closePath()
+	使用beginPath()方法可以来开始一个新路径，使用closePath()方法可以关闭当前路径。
+	1、beginPath()
+	在Canvas中，我们可以使用beginPath()方法来开始一个新路径。
+	语法：
+	cxt.beginPath();
+	判断是否属于同一路径的标准是：是否使用了beginPath()，而不是视觉上是否有首尾连线。
+	2、closePath()
+	在Canvas中，我们可以使用closePath()来关闭当前路径。
+	语法：
+	cxt.closePath();
+
+	10.3  isPointPath()
+	在Canvas中，我们可以使用isPointInPath()方法来判断某一个点是否存在于当前的路径中。
+	语法：
+	cxt.isPointInPath(x , y);
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+		您的浏览器不支持 HTML5 canvas 标签。
+		</canvas>
+		<script>
+		var c=document.getElementById("myCanvas");
+		var ctx=c.getContext("2d");
+		ctx.rect(20,20,150,100);
+		if (ctx.isPointInPath(20,20))//如果20，20在当前路径中就回执一个矩形
+		{
+			ctx.stroke();
+		};
+		</script> 
+	</body>
+</html>

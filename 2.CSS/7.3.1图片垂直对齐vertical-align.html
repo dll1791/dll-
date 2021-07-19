@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+	vertical:垂直的
+	middle:中央 ，中部
+	//vetical 用于表格和图片，其他的没用
+-->
+<html>
+	<!--ertical指的是“垂直的”，align指的是“使排整齐”。学习CSS属性跟学习HTML标签一样，根据英文意思
+	去理解和记忆往往事半功倍。vertical-align属性取值有4个，如下表所示。
+	
+	语法：
+	vertical-align: 取值;
+	属性值		说明
+	top			顶部对齐
+	middle		中部对齐
+	baseline	基线对齐
+	bottom		底部对齐-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			 img{ width: 60px; height: 60px; }
+	        #img1{ vertical-align: top; }
+	        #img2{ vertical-align: middle; }
+	        #img3{ vertical-align: bottom; }
+	        #img4{ vertical-align: baseline; }
+		</style>
+	</head>
+	<body>
+		绿叶学习网<img id="img1" src="../../图片与文件/风景2.png" alt=""/>绿叶学习网（top）
+    <hr/>
+ 	   绿叶学习网<img id="img2" src="../../图片与文件/风景2.png" alt=""/>绿叶学习网（middle）
+    <hr/>
+    	绿叶学习网<img id="img3" src="../../图片与文件/风景2.png" alt=""/>绿叶学习网（bottom）
+    <hr/>
+  	  绿叶学习网<img id="img4" src="../../图片与文件/风景2.png" alt=""/>绿叶学习网（baseline）
+	</body>
+	<!--vertical-align属性的定义是极其复杂的，其中有一项是“vertical-align属性定义周围的行内元素或文本相对于该元素的垂直方式
+		所以当没有参照物时使用 vertical，图片位置是不会发生变化的
+	”-->
+</html>

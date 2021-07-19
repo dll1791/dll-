@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<!--
+		为了满足实际开发中各种动画设计的需求，jQuery为我们提供了一种“自定义动画”的解决方案。
+		对于自定义动画，我们分为以下3个方面来介绍。
+		 简单动画
+		 累积动画
+		 回调函数
+		
+		1、简单动画
+		在jQuery中，对于自定义动画，我们都是使用animate()方法来实现的。
+		语法：
+		$().animate(动画要做什么, speed, 动画结束后要做的事件)
+
+		$("div").animate({height:"300px"},1000); 
+		
+		2、累积动画
+		在jQuery中，对于元素的宽度和高度，我们可以结合+=和-=这两个运算符来实现累积动画。
+		{"width": "+=100px"}表示以元素本身的width为基点加上100px，
+		而{"width": "-=100px"}表示以元素本身的width为基点减去100px。
+		
+		3、回调函数
+		使用回调函数，可以使得在动画执行完成之后，再执行某些操作。
+		如果要想在animate()执行完之后才进行某个操作，
+		直接在这个方法后面再进行操作是不行的，必须在它的回调函数中进行，比如
+		：
+		例如：
+		$("#item").animate({height:"200px"}, function() {
+        alert("hello");
+    });
+	-->
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="../../jquery-1.12.4.js"></script>
+</head>
+<body>
+	<button>自定义动画</button>
+	<button>重置</button>
+	<button>回调</button>
+	<div style="height: 100px; width: 100px; background-color: aqua;"> 
+		
+	</div>
+	<span id="a1"></span>
+	<script>	
+		$("button:eq(0)").click(function(){
+			$("div").animate({height:"300px"},2000);
+		});
+		$("button:eq(1)").click(function(){
+			$("div").animate({height:"100px"});
+		})
+		$("button:eq(2)").click(function(){
+			$("div").animate({height:"+=50px"},function(){
+			a1.innerHTML="回调成功"
+			});
+		})
+		
+	</script>
+</body>
+</html>

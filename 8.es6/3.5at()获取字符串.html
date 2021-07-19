@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- 
+ ES5对字符串对象提供charAt方法，返回字符串给定位置的字符。
+ 该方法不能识别码点大于0xFFFF的字符。
+ 'abc'.charAt(0) // "a" 
+ '𠮷'.charAt(0) // "\uD842" charAt方法返回的是UTF-16编码的第一个字节
+ 提出字符串实例的at方法，可以识别Unicode编号大于0xFFFF的字符，返回正确的字符。
+ '𠮷'.charAt(0) // "� " 
+ '𠮷'.at(0) // "𠮷"//很多浏览器不兼容
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var text="𠮷a";
+			var a=text.charAt(0);
+			 var b=text.at(0);
+		
+			console.log(text.codePointAt(0));
+		</script>
+	</body>
+</html>

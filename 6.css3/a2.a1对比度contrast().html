@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--
+	contrast:对比，差异
+	
+	在CSS3中，我们可以使用contrast()方法来实现对比度滤镜效果。
+	语法：
+	filter: contrast(百分比)
+	说明：
+	contrast()方法的取值是一个百分比。其中，0%~100%表示减弱对比度，
+	例如0%则是灰度图片。100%以上表示增强对比度，例如200%表示增强对比度为原来的2倍。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#a1{
+				filter:contrast(150%);
+			}
+		</style>
+	</head>
+	<body>
+		<img id="a1" src="../../图片与文件/梦想3.jfif" style="height: 400px;"title="复古"/>
+		<img src="../../图片与文件/梦想3.jfif" style="height: 400px;"/>
+	</body>
+</html>

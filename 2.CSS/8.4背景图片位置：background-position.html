@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<!--在CSS中，我们可以使用background-position属性来定义背景图片的位置。
+		
+	语法：
+	background-position: 像素值/关键字;
+	
+	background-position属性常用取值有两种：一种是“像素值”；另外一种是“关键字”（这里不考虑百分比取值）。
+	
+	background-position属性的关键字取值如下表所示。
+	表1 关键字
+	属性值			说明
+	top left		左上
+	top center		靠上居中
+	top right		右上
+	center left		居中靠左
+	center center	正中
+	center right	居中靠右
+	bottom left		左下
+	bottom center	靠下居中
+	bottom right	右下
+	
+	语法：
+	background-position: 水平距离 垂直距离;（水平距离和垂直距离这两个数值之间要用空格隔开，两者取值都是像素值。）-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background-repeat: no-repeat;
+				background-image: url(../../图片与文件/梦想1.jfif);
+				background-position: 20px 40px;
+				background-size: 100% 100%;
+				 background-attachment: fixed;
+				}
+			div{
+				background-image: url(../../图片与文件/小图标1.gif);
+				height: 400px;
+				width: 400px;
+				background-color: red;
+				background-position: bottom right;
+				background-repeat: no-repeat;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

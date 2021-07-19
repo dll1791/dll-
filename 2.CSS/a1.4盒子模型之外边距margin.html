@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<!--外边距margin，指的是边框到“父元素”或“兄弟元素”之间的那一部分。
+		外边距是在元素边框的外部的。 
+		padding是在元素内部，而margin是在元素外部；
+		margin看起来不属于div元素的一部分，实际上div元素的盒子模型是包含margin的；
+		
+		margin局部样式
+		语法：
+		margin-top: 像素值;
+		margin-right: 像素值;
+		margin-bottom: 像素值;
+		margin-left: 像素值;
+		
+		margin整体样式
+		在实际开发中，我们往往使用简写形式，因为这样开发效率更高。
+		
+		语法：
+		margin:像素值;
+		margin:像素值1 像素值2;
+		margin:像素值1 像素值2 像素值3 像素值4;
+
+-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				background-color: lawngreen;
+				height: 50px;
+				width: 50px;
+				border: 1px black solid;
+			}
+			#d1{
+				margin: 20px 20px 0px 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div id="d1">
+			外边框
+		</div>
+	</body>
+</html>

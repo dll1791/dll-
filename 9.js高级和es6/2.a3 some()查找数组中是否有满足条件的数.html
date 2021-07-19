@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- 
+//返回一个布尔值
+ array.some (function (currentvalue, index,arr))//参数都可以省，用了谁就写谁
+some用于查找数组中是否有满足条件的数
+如果找到了就返回true反之false
+
+例子：查找有没有>20的数
+var arr=[10,30,4];
+			var f=arr.some(function(value){
+				return value>20;
+			})
+			console.log(f);
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr=[10,30,4];
+			var f=arr.some(function(value){
+				return value>20;
+			})
+			console.log(f);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- 
+function Star(uname,age){
+		this.uname=uname;
+		this.age=age;
+		}
+	Star.prototype.sing=function(){
+		console.log(this.uname+'会唱歌')
+	}
+	var ldh=new Star('刘德华',20);
+	var zxy=new Star('张学友',21);
+	ldh.sing();
+	zxy.sing();
+	
+	prototype和__proto__都有一个constructor属性//构造函数
+	constructor本身指向构造函数Star
+	//它的作用手动用constructor让指针指回原型对象
+	例子：当我们修改了原型对象
+	tar.prototype={
+		constructor: Star,
+		sing: function(){
+			
+		},
+		eat:function(){
+			
+		}
+	}
+	以这种赋值的方式修改，那么新的赋值的对象就会
+	覆盖掉以前的对象这时，Star的constructor指向的就
+	不是原来的Star了，我们加上constructor: Star,可以让
+	新的Star在赋值前重新被constructor所指，这就让本来
+	赋值的操作变成了在原有的Star上添加
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

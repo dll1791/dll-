@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用flex属性来同时设置flex-grow、flex-shrink、
+	flex-basis这3个属性。说白了，flex属性就是一个简写形式，就是一个“语法糖”。
+	语法：
+	flex: grow shrink basis;
+	参数grow是flex-grow的取值，参数shrink是flex-shrink的取值，
+	参数basis是flex-basis的取值。因此，flex属性的默认值为“0 1 auto”。
+	在实际开发中，优先使用flex属性，而不是单独写flex-grow、
+	flex-shrink、flex-basis这3个属性。
+	
+	“flex:1;”其实等价于“flex:1 1 auto;”，而“flex:2;”
+	等价于“flex:2 1 auto;”。也就是说flex取值只有一个数时，
+	表示只设置了flex-grow这个属性的取值。事实上，在实际开发中我们
+	一般也是只需要设置flex-grow属性，很少用得上另外两个属性。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

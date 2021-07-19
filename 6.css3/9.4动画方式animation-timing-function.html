@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用animation-timing-function属性来定义动画的动画方式。所谓“动画方式”，指的是动画在过渡时间内的速率变化方式。
+	语法：
+	animation-timing-function: 取值;
+	值			描述	
+	linear	动画从头到尾的速度是相同的。	
+	ease	默认。动画以低速开始，然后加快，在结束前变慢。	
+	ease-in	动画以低速开始。	
+	ease-out	动画以低速结束。	
+	ease-in-out	动画以低速开始和结束。	
+	cubic-bezier(n,n,n,n)	在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1 的数值。
+	-->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				height: 100px;
+				width: 100px;
+				background: #87CEFA;
+				position: relative;
+				animation: dllmove 2s ease-in;
+				
+			}
+			@keyframes dllmove{
+				from{top:0px}
+				to{top:100px}
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

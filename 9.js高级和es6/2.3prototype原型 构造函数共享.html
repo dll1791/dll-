@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- 
+prototype  原型对象
+ 构造函数虽然好用，但是存在浪费内存问题
+ 
+ function Star(uname,age){
+ 	this.uname=uname;
+ 	this.age=age;
+ 	this.sing =function(){
+ 		console.log("im sing");
+ 	}
+ }
+ 实例对象每开辟一次里面的方法就会再申请一次内存
+ 其实方法都是一样的，就相当于额外多占了一次内存
+ 
+使用prototype属性，就可以使构造函数中的方法共享，
+prototype对象每个构造函数里面都有（默认自带）
+只需要把方法定义在prototype里面就可以实现共享
+例：定义eat
+Star.prototype.eat=function(){
+	//该方法需要在{}外使用
+}
+直接用对象调用就可以
+
+对象身上的__proto__原型，（默认的）指向prototype
+这就是为什么对象可以调用prototype的原因
+proto是不能直接使用的
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Star(uname,age){
+				this.uname=uname;
+				this.age=age;
+				}
+			Star.prototype.sing=function(){
+				console.log(this.uname+'会唱歌')
+			}
+			var ldh=new Star('刘德华',20);
+			var zxy=new Star('张学友',21);
+			ldh.sing();
+			zxy.sing();
+		</script>
+	</body>
+</html>

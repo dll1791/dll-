@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- 
+	1.
+	window.age=100;
+	const obj={
+		age: 15,
+		say: ()=>{
+			console.log(this.age);
+		}
+	}
+	obj.say();//输出100
+	对象是没有作用域的因此和箭头函数一样是不存在this的
+	所以这里的this指向windows全局作用域，所以输出100
+	
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			window.age=100;
+			const obj={
+				age: 15,
+				say: ()=>{
+					console.log(this.age);
+				}
+			}
+			obj.say();
+		</script>
+	</body>
+</html>

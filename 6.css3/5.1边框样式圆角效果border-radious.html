@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用border-radius属性为元素添加圆角效果。
+	语法：
+	border-radius: 取值;
+	border-radius属性取值是一个长度值，单位可以是px、em和百分比等。
+	
+	值		描述
+	length	定义弯道的形状。
+	%		使用%定义角落的形状。  
+	//表示半径的长度r r越大那圆的弧度越大
+	语法
+	border-radius: 1-4 length|% / 1-4 length|%;
+	注意: 每个半径的四个值的顺序是：左上角，右上角，右下角，左下角。如果省略左下角，右上角是相同的。如果省略右下角，左上角是相同的。如果省略右上角，左上角是相同的。
+
+	值	描述
+	length	定义弯道的形状。
+	%	使用%定义角落的形状。
+	//border-radius:20px/40px;表示圆角的水平半径为20px，垂直半径为40px。
+
+	
+	派生子属性
+	border-radius属性可以分别为4个角设置相应的圆角值，这4个角的属性如下。
+	  border-top-right-radius：右上角
+	  border-bottom-right-radius：右下角
+	  border-bottom-left-radius：左下角
+	  border-top-left-radius：左上角
+	1.椭圆
+	  长方形设置radius为50%
+	 
+	2.半圆
+	实现原理：把高度（height）设为宽度（width）的一半，
+	并且左上角和右上角的圆角半径定义与元素的高度一致，而右下角和左下角的圆角半径定义为0。
+
+	
+	例子 1
+	border-radius:2em;
+	等价于：
+	border-top-left-radius:2em;
+	border-top-right-radius:2em;
+	border-bottom-right-radius:2em;
+	border-bottom-left-radius:2em;
+	
+	例子 2
+	border-radius: 2em 1em 4em / 0.5em 3em;
+	等价于：
+	border-top-left-radius: 2em 0.5em;
+	border-top-right-radius: 1em 3em;
+	border-bottom-right-radius: 4em 0.5em;
+	border-bottom-left-radius: 1em 3em;
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				height: 100px;
+				width: 200px;
+				margin-bottom: 30px;
+			}
+			#d1{
+				border: 3px solid greenyellow;
+				border-radius: 50%;
+			}
+			#d2{
+				border: 3px solid greenyellow;
+				border-radius: 100px 100px 0 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d1">
+			
+		</div>
+		<div id="d2">
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!-- 
+	1.给文本框双向绑定VUE中的值  v-model='uname'
+	 <input type="text" v-model='uname'>
+	 
+	 2.取消提交的默认行为 @click.prevent
+	<input type="submit" value="提交" @click.prevent='handle'>
+	
+	3.给单选框双向绑定vue中的值   v-model='gender' gender就与value绑定了
+	<input type="radio" id="male" value="1" v-model='gender'>
+	<label for="male">男</label>
+	<input type="radio" id="female" value="2" v-model='gender'>
+	<label for="female">女</label>
+	
+	4.给多选框双向绑定vue中的值   v-model='hobby'这里绑定的是数组
+	数组hobby与三个value绑定在一起
+	<span>爱好：</span>
+	<input type="checkbox" id="ball" value="1" v-model='hobby'>
+	<label for="ball">篮球</label>
+	<input type="checkbox" id="sing" value="2" v-model='hobby'>
+	<label for="sing">唱歌</label>
+	<input type="checkbox" id="code" value="3" v-model='hobby'>
+	<label for="code">写代码</label>
+	
+	5.下拉选项设置value用于区分 value绑定vue对象中的occupation
+	(单选就用一个值，多选就用数组 occupation: 3   occupation: ['0','2'],)
+	<span>职业：</span>
+	<select v-model='occupation' multiple >
+	  <option value="0">请选择职业...</option>
+	  <option value="1">教师</option>
+	  <option value="2">软件工程师</option>
+	  <option value="3">律师</option>
+	</select>
+	
+	6.给多行文本双向绑定VUE中的值  v-model='desc'
+	<textarea v-model='desc'></textarea>
+ -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+  
+  form div {
+    height: 40px;
+    line-height: 40px;
+  }
+  form div:nth-child(4) {
+    height: auto;
+  }
+  form div span:first-child {
+    display: inline-block;
+    width: 100px;
+  }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <form action="http://itcast.cn">
+      <div>
+        <span>姓名：</span>
+        <span>
+			<!-- 单行文本框 -->
+          <input type="text" v-model='uname'>
+        </span>
+      </div>
+      <div>
+        <span>性别：</span>
+        <span>
+			<!-- 3. -->
+          <input type="radio" id="male" value="1" v-model='gender' >
+          <label for="male">男</label>
+          <input type="radio" id="female" value="2" v-model='gender' >
+          <label for="female">女</label>
+        </span>
+      </div>
+      <div>
+		  <!-- 4.绑定 -->
+        <span>爱好：</span>
+        <input type="checkbox" id="ball" value="1" v-model='hobby'>
+        <label for="ball">篮球</label>
+        <input type="checkbox" id="sing" value="2" v-model='hobby'>
+        <label for="sing">唱歌</label>
+        <input type="checkbox" id="code" value="3" v-model='hobby'>
+        <label for="code">写代码</label>
+      </div>
+      <div>
+		  <!-- 5. -->
+        <span>职业：</span>
+        <select v-model='occupation' multiple >
+          <option value="0">请选择职业...</option>
+          <option value="1">教师</option>
+          <option value="2">软件工程师</option>
+          <option value="3">律师</option>
+        </select>
+      </div>
+      <div>
+		  <!-- 6. -->
+        <span>个人简介：</span>
+        <textarea v-model='desc'></textarea>
+      </div>
+      <div>
+		  <!-- 1.取消提交的默认行为 -->
+        <input type="submit" value="提交" @click.prevent='handle'>
+      </div>
+    </form>
+  </div>
+  <script type="text/javascript" src="0.0vue.js"></script>
+  <script type="text/javascript">
+    /*
+      表单基本操作
+    */
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        uname: 'lisi',
+        gender: 1, 
+        hobby: ['2','3'],
+        // occupation: 3
+        occupation: ['0','2'],
+        desc: '帅'
+      },
+      methods: {
+        handle: function(){
+          // console.log(this.uname)
+          // console.log(this.gender)
+          // console.log(this.hobby.toString())//toString()可以去掉vue自己加入的东西
+          // console.log(this.occupation)
+          console.log(this.desc)
+
+        },
+      }
+    });
+  </script>
+</body>
+</html>

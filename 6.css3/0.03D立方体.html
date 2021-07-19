@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CSS3制作3D图片立方体旋转特效</title>
+    <style type="text/css">
+    	
+    	.wrap{
+    	  width: 650px;
+    	  height: 200px;
+    	  margin: auto;
+    	  margin-top: 350px;
+    	  position: relative;
+    	  
+    	}
+    	
+    	.cube{
+    	  width: 200px;
+    	  height: 200px;
+    	  margin: 0 auto;
+    	  transform-style: preserve-3d;
+    	  transform: rotateX(-30deg) rotateY(-80deg);
+    	  -webkit-animation: rotate 20s infinite;
+    	  animation-timing-function: linear;
+    	}
+    	@-webkit-keyframes rotate{
+    	  from{transform: rotateX(0deg) rotateY(0deg);}
+    	  to{transform: rotateX(360deg) rotateY(360deg);}
+    	}
+    	.cube div{
+    	  position: absolute;
+    	  width: 200px;
+    	  height: 200px;
+    	  opacity: 0.8;
+    	  transition: all .4s;
+    	}
+    	
+    	.pic{
+    	  width: 200px;
+    	  height: 200px;
+    	}
+    	.cube .out_front{
+    	  transform: rotateY(0deg) translateZ(100px);
+    	  border: 1px solid;
+    	}
+    	.cube .out_back{
+    	  transform: translateZ(-100px) rotateY(180deg);
+    	  border: 1px solid;
+    	}
+    	.cube .out_left{
+    	  transform: rotateY(90deg) translateZ(100px);
+    	  border: 1px solid;
+    	}
+    	.cube .out_right{
+    	  transform: rotateY(-90deg) translateZ(100px);
+    	  border: 1px solid;
+    	}
+    	.cube .out_top{
+    	  transform: rotateX(90deg) translateZ(100px);
+    	  border: 1px solid;
+    	}
+    	.cube .out_bottom{
+    	  transform: rotateX(-90deg) translateZ(100px);
+    	  border: 1px solid;
+    	}
+    	
+    	img.span{
+    	  width: 100px;
+    	  height: 100px;
+    	}
+    	
+    	.cube span{
+    	  display: bloack;
+    	  width: 100px;
+    	  height: 100px;
+    	  position: absolute;
+    	  top: 50px;
+    	  left: 50px;
+    	  /*transition: all .4s;*/
+    	}
+    	.cube .in_pic{
+    	  width: 100px;
+    	  height: 100px;
+    	}
+    	.cube .in_front{
+    	  transform: rotateY(0deg) translateZ(50px);
+    	  border: 1px solid;
+    	}
+    	.cube .in_back{
+    	  transform: translateZ(-50px) rotateY(180deg);
+    	  border: 1px solid;
+    	}
+    	.cube .in_left{
+    	  transform: rotateY(90deg) translateZ(50px);
+    	  border: 1px solid;
+    	}
+    	.cube .in_right{
+    	  transform: rotateY(-90deg) translateZ(50px);
+    	  border: 1px solid;
+    	}
+    	.cube .in_top{
+    	  transform: rotateX(90deg) translateZ(50px);
+    	  border: 1px solid;
+    	}
+    	.cube .in_bottom{
+    	  transform: rotateX(-90deg) translateZ(50px);
+    	  border: 1px solid;
+    	}
+    	/*
+    	.cube:hover .in_front{
+    	  transform: rotateY(0deg) translateZ(100px);
+    	  border: 1px solid;
+    	}
+    	.cube:hover .in_back{
+    	  transform: rotateY( 180deg) translateZ(100px);
+    	  border: 1px solid;
+    	}
+    	.cube:hover .in_left{
+    	  transform: rotateY(90deg) translateZ(100px);
+    	  border: 1px solid;
+    	}
+    	.cube:hover .in_right{
+    	  transform: rotateY(-90deg) translateZ(100px);
+    	  border: 1px solid;
+    	}
+    	.cube:hover .in_top{
+    	  transform: rotateX(90deg) translateZ(100px);
+    	  border: 1px solid;
+    	}
+    	.cube:hover .in_bottom{
+    	  transform: rotateX(-90deg) translateZ(100px);
+    	  border: 1px solid;
+    	}
+    	*/
+    	
+    	.cube:hover .out_front{
+    	  transform: rotateY(0deg) translateZ(200px);
+    	  border: 1px solid;
+    	}
+    	.cube:hover .out_back{
+    	  transform: translateZ(-200px) rotateY(180deg);
+    	  border: 1px solid;
+    	}
+    	.cube:hover .out_left{
+    	  transform: rotateY(90deg) translateZ(200px);
+    	  border: 1px solid;
+    	}
+    	.cube:hover .out_right{
+    	  transform: rotateY(-90deg) translateZ(200px);
+    	  border: 1px solid;
+    	}
+    	.cube:hover .out_top{
+    	  transform: rotateX(90deg) translateZ(200px);
+    	  border: 1px solid;
+    	}
+    	.cube:hover .out_bottom{
+    	  transform: rotateX(-90deg) translateZ(200px);
+    	  border: 1px solid;
+    	}
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+        <div class="cube">
+            <div class="out_front">
+                <!--<img src="sg.jpg" class="pic">-->
+            </div>
+            <div class="out_back">
+                
+            </div>
+            <div class="out_left">
+                
+            </div>
+            <div class="out_right">
+                
+            </div>
+            <div class="out_top">
+                
+            </div>
+            <div class="out_bottom">
+                
+            </div>
+            <span class="in_front">
+                <!--<img src="sg.jpg" class="span">-->
+            </span>
+            <span class="in_back">
+                
+            </span>
+            <span class="in_left">
+                
+            </span>
+            <span class="in_right">
+                
+            </span>
+            <span class="in_top">
+                
+            </span>
+            <span class="in_bottom">
+
+            </span>
+        </div>
+    </div>
+</body>
+</html>

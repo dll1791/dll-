@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在jQuery，对于CSS属性的操作有两种情况：一种是“获取属性”；另外一种是“设置属性”。
+		
+		语法：
+		//获取属性
+		$().css("属性名")
+		//设置属性
+		$().css("属性", "取值")
+		$().css({"属性1":"取值1",..., "属性n":"取值n"})
+
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+		<button>添加样式</button>
+		<div id="d">
+			
+		</div>
+	</head>
+	<body>
+		<script type="text/javascript">
+			$("button").click(function(){
+				$("div").css({"height":"200px","width":"200px","background-color":"yellow"})
+			})
+		</script>
+	</body>
+</html>

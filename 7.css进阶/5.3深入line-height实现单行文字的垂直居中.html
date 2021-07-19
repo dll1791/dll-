@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+	在CSS中，我们可以使用line-height属性来定义文本的行高。
+	
+	1、line-height的定义
+	在CSS中，line-height还有一个更加准确的定义：
+	两行文字基线之间的距离。
+	
+	2.深入line-height
+	在CSS中，我们可以定义height和line-height
+	这两个属性值相等，从而实现单行文字的垂直居中。
+	当line-height值为百分比或者em值时，元素的行高是相对于
+	“当前元素”的font-size值来计算的。计算公式如下：
+	
+	line-height = （当前元素font-size）×（百分比）
+	line-height = （当前元素font-size）×（em值）
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				height: 50px;
+				width: 200px;
+				background: #00FF00;
+				
+			}
+			p{
+				font-size: 20px;
+				line-height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="../../图片与文件/文本模型.png"/>
+		<div><p>这是一个单行文字</p></div>
+	</body>
+</html>

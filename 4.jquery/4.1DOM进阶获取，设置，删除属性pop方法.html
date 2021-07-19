@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+	属性操作，指的是使用jQuery来操作一个元素的HTML属性。
+	在jQuery中，对于HTML属性的操作有以下4个方面。
+		  获取属性
+		  设置属性
+		  删除属性
+		prop()方法
+	
+	1、获取属性
+	在jQuery中，我们可以使用attr()方法来获取元素的某一个HTML属性值。
+	语法：
+	$().attr("属性名")
+
+	2、设置属性
+	在jQuery中，设置元素的某一个HTML属性的值，我们用的也是attr()方法。
+	语法：
+	//设置一个属性
+	$().attr("属性", "取值")
+	
+	//设置多个属性
+	$().attr({"属性1": "取值1", …, "属性n":"取值n"})
+	
+	3、删除属性
+	在jQuery中，我们可以使用removeAttr()方法来删除元素的某个属性。
+	语法：
+	$().removeAttr("属性名")
+	
+	4、prop()方法
+	jQuery官方建议：具有true和false这两种取值的属性，
+	如checked、selected或disabled等建议使用prop()来操作，
+	而其他的属性都建议使用attr()来操作。
+	prop()方法的出现就是为了弥补attr()方法在表单属性操作中的不足。
+	(记住一句话就行了：如果某个属性没法使用attr()获取或设置，改换prop()就可以搞定。)
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<button>点击变小</button>
+		<button>点击变大</button>
+		<p></p>
+		<img src="../../图片与文件/梦想3.jfif"/>
+		<script type="text/javascript">
+			$("button").click(function(){
+				$("img").attr("height","400px");
+			})
+			$("button:eq(1)").click(function(){
+				$("img").attr("height","");
+			})
+		</script>
+	</body>
+</html>

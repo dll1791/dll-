@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		  键盘按下：onkeydown
+		  键盘松开：onkeyup
+		对于键盘来说，都是先有“按下”才有“松开”，
+		也就是onkeydown发生在onkeyup之前。
+		键盘事件一般有2个用途：①表单操作；②动画控制。
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="p1" style="color:#7FFF00">按一下按键</p>
+		<script type="text/javascript">
+			document.body.onkeydown=function(){
+				p1.innerHTML="你按下了一个按键";
+			}
+			document.body.onkeyup=function(){
+				p1.innerHTML="你松开了一个按键";
+			}
+		</script>
+	</body>
+</html>

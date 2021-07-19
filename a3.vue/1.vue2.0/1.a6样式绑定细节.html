@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- 
+且''可以去掉
+	1.对象绑定可以和数组绑定结合在一起
+	<div :class=[Class2,{class1:isclass1}]></div>
+	
+	2.class绑定可以简化操作
+	<div :class='classArr'></div>
+		通过设置一个classArr数组来简化操作
+		classArr:['class1','class2']
+		classArr在data中定义里面的值就是css中定义的class值
+		同理用一个对象也可以
+		<div :class='classObj'></div>
+		classObj:{class1:true,class2:true}//对象方式简写
+	3.默认的class怎么处理
+		原始的class不会被覆盖会被保留
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			.class1{
+				border: 3px solid red;
+				width: 100px;
+				height: 100px;
+			}
+			.class2{
+				background: #c2c2c2;
+			}
+			.class3{
+				color:blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='d1'>
+			<!-- 1.对象和数组绑定相结合 -->
+			<div :class=[Class2,{class1:isclass1}]>对象和数组绑定相结合</div>
+			<!-- 2.class绑定的值简化操作 数组方式-->
+			<div :class='classArr'>class绑定的值简化操作 数组方式</div>
+			<!-- 2.class绑定的值简化操作 对象方式-->
+			<div :class='classObj'>class绑定的值简化操作 对象方式</div>
+			<!-- 3.默认的class处理 -->
+			<div class='class3' :class=classArr>默认class </div>
+		</div>
+		<script type="text/javascript">
+			let vue=new Vue({
+				el:'#d1',
+				data:{
+					isclass1:true,
+					isclass2:true,
+					Class2:'class2',
+					classArr:['class1','class2'],//数组方式简写
+					classObj:{class1:true,class2:true}//对象方式简写
+				},
+				methods:{
+					btn1:function(){
+						//控制isclass1的值在true或false值之间切换
+						this.isclass1=!this.isclass1;//!取反
+						this.isclass2=!this.isclass2;//!取反
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
+

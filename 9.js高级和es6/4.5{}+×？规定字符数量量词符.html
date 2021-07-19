@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- 
+	量词符规定某个字符出现的次数
+	1. 	*重复0次或更多次
+	2.		+重复一次或更多次
+	3.		？重复零次或一次
+	4.		{n}重复n次
+		var rg=/^a{3}$/;
+		var str='aaa';
+	5.		{n,}重复n次到更多次
+		var rg=/^a{3,}$/;
+		var str='aaaa';
+	6.		{n,m}重复n次到m次
+		/asd{3}/ d重复三次而不是asd重复三次
+		/(asd){3}/ 把asd重复三次
+		var rg=/^a{3,5}$/;
+		var str='aaaaa';
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var rg=/^a{1,5}$/;
+			var str='';
+			console.log(rg.test(str));
+		</script>
+	</body>
+</html>

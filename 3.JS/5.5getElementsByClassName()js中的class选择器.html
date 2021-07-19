@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		getElementsByClassName()类似于CSS中的“class选择器”。
+		跟getElementsByTagName相似，getElementsByClassName()获取的也是一个类数组。
+		语法：
+		
+		document.getElementsByClassName("标签名")
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title>随机颜色生成</title>
+	</head>
+	<body>
+		<label for="p">
+			<button class="p1" id="p">点击一下 随机颜色生成</button>
+			<p class="p1" id="p">随机颜色生成</p></label>
+		<script type="text/javascript">
+			function randomColor(){
+				var color="0123456789ABCDEF";
+				var s="#";
+				for(var i=0;i<6;i++){
+					var n=Math.floor(Math.random()*16);
+					s=s+color[n];
+				}
+				return s;
+			}
+			document.getElementsByClassName("p1")[0].onclick=function(){
+				document.getElementsByClassName("p1")[1].style.backgroundColor=randomColor();
+				document.getElementsByClassName("p1")[1].innerHTML=randomColor();
+			}
+			
+			
+		</script>
+	</body>
+</html>

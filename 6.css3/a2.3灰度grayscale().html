@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+	grayscale：灰度，灰度等级
+	
+	使用grayscale()方法，可以实现灰度滤镜效果。灰度滤镜可以将彩色图片转换成黑白图片。
+	语法：
+	filter: grayscale(百分比)
+	说明：
+	grayscale()方法的取值是一个百分比，其中0%表示不做任何修改，100%表示完全灰度（即黑白图片）。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#a1{
+				filter: grayscale(60%);
+			}
+		</style>
+	</head>
+	<body>
+		<img id="a1" src="../../图片与文件/梦想3.jfif" style="height: 400px;"title="增加灰度"/>
+		<img src="../../图片与文件/梦想3.jfif" style="height: 400px;"/>
+	</body>
+</html>

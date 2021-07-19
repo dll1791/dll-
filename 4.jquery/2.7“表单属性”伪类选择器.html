@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		表单属性伪类选择器，指的是根据表单元素的属性来选取的一种伪类选择器。
+
+			选择器	说明
+		:checked	选取所有被选中的表单元素，一般是单选框或复选框
+		:selected	选取被选中的表单元素的选项，一般是下拉列表
+		:enabled	选取所有可用的表单元素
+		:disabled	选取所有不可用的表单元素 在表单中添加disabled="disabled"变为不可用元素
+		:read-only	选取所有只读的表单元素
+		:focus		选取所有获得焦点的表单元素
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<form>
+			<input type="button" name="" id="a" value="按钮" disabled="disabled"/>
+			<input type="reset" id="b" name="" />
+			<input type="submit" />
+		</form>
+		<script type="text/javascript">
+			$(":focus").css("background-color","#00BFFF")
+		</script>
+	</body>
+</html>

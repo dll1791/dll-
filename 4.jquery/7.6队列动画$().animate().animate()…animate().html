@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在jQuery中，队列动画，指的是元素按照一定的顺序来执行多个动画效果。
+		
+		语法：
+		$().animate().animate().…….animate()
+		
+		在jQuery中，队列动画可以是任何动画形式，包括：
+		显示与隐藏、淡入与淡出、滑上与滑下、自定义动画等。
+		
+
+	-->
+	
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js"></script>
+	</head>
+	<body>
+		<button>队列动画</button>
+		<div style="width: 100px;height: 100px; background-color: aquamarine;">
+		</div>
+		<script>
+			$("button").click(function () {
+				$("div").animate({width:"+=50px"}).animate({height:"+=50px"}).fadeOut(2000).show(2000);
+			});
+		</script>
+	</body>
+</html>

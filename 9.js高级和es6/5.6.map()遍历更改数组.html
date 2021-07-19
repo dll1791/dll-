@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- 
+	1.
+	它返回一个新的数组，数组中的元素为
+	原始数组调用函数处理后的值,类似于filter()。
+	
+	array.map(function(currentValue, index, arr), thisIndex)
+	
+	currentValue：必须。当前元素的值。
+	index：可选。当前元素的索引。
+	arr：可选。当前元素属于的数组对象。
+	
+	let arr=[1,2,3];
+	let arr1=arr.map(value=> value*value);
+	console.log(arr1);
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let arr=[1,2,3];
+			let arr1=arr.map((value)=>{
+				return value*value;
+			} );
+			console.log(arr1);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在JavaScript中，我们可以使用replaceChild()方法来实现替换元素。
+		语法：
+		
+		A.replaceChild(new,old);
+		
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="b">按住替换，松开还原</button>
+		<ul id="a">
+			<li>歌名</li>
+			<li>小城里</li>
+			<li>岁月流过去</li>
+			<li>清澈的勇气</li>
+			<li>洗涤过的回忆</li>
+			<li>我记得你</li>
+			<li>骄傲的活下去</li>
+		</ul>
+		<script type="text/javascript">
+			b.onmousedown=function b1(){
+				var c=document.createTextNode("霍元甲");
+				var d=document.createElement("li");
+				d.appendChild(c);
+				a.replaceChild(d,a.childNodes[1]);
+			}
+			b.onmouseup=function b1(){
+				var c=document.createTextNode("歌名");
+				var d=document.createElement("li");
+				d.appendChild(c);
+				a.replaceChild(d,a.childNodes[1]);
+			}
+		</script>
+	</body>
+</html>  

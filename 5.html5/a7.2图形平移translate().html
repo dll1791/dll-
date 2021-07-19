@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--
+	在Canvas中，我们可以使用translate()方法来平移图形。
+	所谓的平移，指的是图形沿着x轴或y轴进行直线运动。平移不会改变图形的形状和大小。
+	语法：
+	cxt.translate(x,y);//translate只是把画布这块区域的坐标移到指定位置，
+	但里面的图画并未移动，需要重新构造
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300"style="border: 2px solid goldenrod;"></canvas>
+		<script type="text/javascript">
+			var a = c.getContext("2d");
+			a.fillRect(0,0,100,100);
+			a.translate(100,100);
+			a.fillRect(0,0,100,100);
+		</script>
+	</body>
+</html>

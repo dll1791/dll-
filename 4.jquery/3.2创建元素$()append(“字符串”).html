@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在jQuery中，我们可以使用字符串的形式来创建一个元素节点，
+		然后再通过append()、before()等方法把这个字符串插入到现有的元素节点中。
+		
+		语法：
+		//方式1
+		var str = "字符串";
+		$().append(str);		<append是插入到元素里面   before是插入到这个元素外面>
+		//方式2
+		$().append("字符串")
+		
+		创建元素：
+		$("button").append("<button>jq创建</button>");
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<p id="p0">first </p>
+		<button id="bt">js创建</button>
+		<p id="p"></p>
+		
+		<script type="text/javascript">
+			bt.onclick=function(){
+				var a=document.createElement("button");
+				var b=document.createTextNode("js创建");
+				a.appendChild(b);
+				p.appendChild(a);
+			}
+			var a=$("button").append("<button>jq创建</button>");
+			
+			
+		</script>
+	</body>
+</html>

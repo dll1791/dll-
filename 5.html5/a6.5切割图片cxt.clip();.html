@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+	在Canvas中，我们可以使用clip()方法来切割Canvas中绘制的图片。
+	语法：
+	cxt.clip();//切割，切割之前需要先用rect矩形等元素划分切割的区域；
+	切割好了之后只有切割出来的地方能显示画布的效果
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300"style="border: 2px solid goldenrod;"></canvas>
+		<script type="text/javascript">
+			var a=c.getContext("2d");
+			a.rect(50,20,200,120);
+			a.strokeStyle="#000000"
+			a.stroke();
+			a.clip();
+			a.fillStyle="red";
+			a.fillRect(0,0,100,100);
+			
+			
+		</script>
+	</body>
+</html>

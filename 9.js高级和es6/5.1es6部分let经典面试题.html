@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- 
+	面试题1
+	var arr=[];
+	for(var i=0;i<2;i++){
+		arr[i]=function(){
+			console.log(i);
+		}
+	}
+	arr[0]();
+	arr[1]();//结果输出俩个2
+	
+	把var i变为let结果输出  0 1
+	var arr=[];
+	for(let i=0;i<2;i++){
+		arr[i]=function(){
+			console.log(i);
+		}
+	}
+	arr[0]();
+	arr[1]();
+	//这里因为用了let所以产生了一个块级作用域
+	//虽然本体的i已经消亡，但是块级作用域中的i仍然存在
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr=[];
+			for(var i=0;i<2;i++){
+				console.log(i);
+				arr[i]=function(){
+					console.log(i);
+				}
+			}
+			arr[0]();
+			arr[1]();
+		</script>
+	</body>
+</html>

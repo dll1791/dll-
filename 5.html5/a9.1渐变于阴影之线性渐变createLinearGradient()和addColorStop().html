@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+	1.
+	在Canvas中，我们可以配合使用createLinearGradient()
+	和addColorStop()这两个方法来实现线性渐变。
+	语法：
+	var gnt = cxt.createLinearGradient(x1, y1, x2, y2);
+	gnt.addColorStop(value1,color1);
+	gnt.addColorStop(value2,color2);
+	cxt.fillStyle = grd;
+	cxt.fill();
+	
+	context.createLinearGradient(x0,y0,x1,y1);
+	参数值
+	参数		描述
+	x0	渐变开始点的 x 坐标
+	y0	渐变开始点的 y 坐标
+	x1	渐变结束点的 x 坐标
+	y1	渐变结束点的 y 坐标
+	
+	2.
+	addColorStop()方法规定渐变对象中的颜色和位置。
+	语法：gradient.addColorStop(stop,color);
+	参数		描述
+	stop	介于 0.0 与 1.0 之间的值，表示渐变中开始与结束之间的位置。
+	color	在 stop 位置显示的 CSS 颜色值。
+-->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300" style="border: 2px aquamarine solid;"></canvas>
+		<script type="text/javascript">
+			var ctx=c.getContext("2d");
+
+			var grd=ctx.createLinearGradient(0,20,0,220);
+			grd.addColorStop(0,"black");
+			grd.addColorStop(0.2,"magenta");
+			grd.addColorStop(0.4,"blue");
+			grd.addColorStop(0.6,"green");
+			grd.addColorStop(0.8,"yellow");
+			grd.addColorStop(1,"red");
+			
+			ctx.fillStyle=grd;
+			ctx.fillRect(20,20,200,200);
+
+		</script>
+		<img src="../../图片与文件/线性渐变原理图.png" height="200px" />
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		从广义上来说，jQuery插件可以分为以下3种。
+		 方法类插件
+		 函数类插件
+		 选择器插件
+		 
+		1、方法类插件
+		在jQuery中，我们可以使用$.fn.extend()方法来定义一个方法类插件。
+		方法类插件，说白了就是：首先你使用了jQuery选择器来获取一个jQuery对象，
+		然后针对你获取的这个jQuery对象添加一个方法。
+		语法：
+		(function($){
+		    $.fn.extend({
+		        "插件名": function(参数){
+		            ……
+		        }
+		    });
+		})(jQuery);
+		
+		2、函数类插件
+		在jQuery中，我们可以使用$.extend()方法来定义一个函数类插件。
+		语法：
+		(function($){
+		    $.extend({
+		        "插件名": function(){
+		            ……
+		        }
+		    });
+		})(jQuery)
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

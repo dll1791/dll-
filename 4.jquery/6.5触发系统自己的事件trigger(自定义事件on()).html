@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		(用一个系统自带事件触发另一个事件；这个事件可以是自己设置的函数，
+		也可以是系统自己的事件，比如点击按钮触发文本选中事件)
+		一、添加自定义事件
+
+		通过jQuery的bind()或者on()方法 添加自定义事件
+		如下代码 自定义了一个mychange事件
+		$("#postionId").on("mychange",function () {
+		    console.log(11);
+		    validForm.check(false,"#postionName");
+		
+		});
+		二、触发自定义事件
+		
+		通过jQuery的trigger()方法 触发自定义事件mychange
+		$("#postionId").trigger("mychange");
+	
+		三、应用场景
+		解决 Validform 实时验证表单某一个元素 的问题时，对jQuery 自定义事件以及触发自定义事件恍然大悟；
+			-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+		</script>
+	</body>
+</html>

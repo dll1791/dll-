@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- 
+ constructor里面的this指向的是创建的实例对象
+函数里的this指向调用这个方法的对象
+var that;
+class Star {
+				constructor(uname) {
+				    this.name=uname;
+					this.btn=document.querySelector('button');
+					this.btn.onclick=this.sing;//这里的sing如果加了()就会被立马调用
+															//我们希望他在被点击按钮后再被调用所以不能加()
+				}
+				sing(){
+					console.log(this.name+"在唱歌");//这里的this指向button所以不行 ,如果想要输出
+																			//名字就需要用一个外面的that指向本地的this见下
+				}
+			}
+			var ldh=new Star('刘德华');
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button>	调用</button>
+		<script type="text/javascript">
+			var that;
+			class Star {
+				constructor(uname) {
+					that=this;
+				    this.name=uname;
+					this.btn=document.querySelector('button');
+					this.btn.onclick=this.sing;
+				}
+				sing(){
+					console.log(this);//这里的this指向调用的btn
+					console.log(that.name+"在唱歌");
+					
+				}
+			}
+			var ldh=new Star('刘德华');
+		</script>
+	</body>
+</html>

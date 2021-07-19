@@ -1,0 +1,76 @@
+9 <!DOCTYPE html>
+<!--
+	(moveTo是起点,lineTo是终点，stroke()是创建线条将起点和终点链接在一起)
+	(动画都是在canvas这个框中进行的)
+	我们经常见到的坐标系是数学坐标系，不过Canvas使用的坐标系是W3C坐标系，
+	这两种坐标系唯一的区别在于y轴正方向的不同。
+	
+	 数学坐标系：y轴正方向向上。
+	 W3C坐标系：y轴正方向向下。  开始绘制图形
+	
+	在Canvas中，我们可以使用moveTo()和lineTo()这两个方法配合使用来画直线。
+	利用这两个方法，我们可以画一条直线，也可以同时画多条直线。
+	
+	2d绘图步骤：
+	1.var ctx=c.getContext("2d");(为id为c的canvas元素实行2d构图)
+	
+	
+	(创建起点)
+	2.moveTo(x,y) 方法把路径移动到画布中的指定点，不创建线条。
+		参数	描述
+		x	路径的目标位置的 x 坐标。
+		y	路径的目标位置的 y 坐标。
+	(创建终点)
+	3.lineTo(x,y) 方法添加一个新点，然后创建从该点到画布中最后指定点的线条（该方法并不会创建线条）。
+		
+		参数	描述
+		x	路径的目标位置的 x 坐标。
+		y	路径的目标位置的 y 坐标。
+	(为线条附加颜色)
+	4.ctx.strokeStyle="red";
+	(创建连接线)
+	5.stroke() 方法会实际地绘制出通过 moveTo() 和 lineTo() 方法定义的路径。默认颜色是黑色。
+	提示：请使用 strokeStyle 属性来绘制另一种颜色/渐变。
+		javaScript 语法：	context.stroke();
+	
+	
+	
+	语法：(一条直线）
+	cxt.moveTo(x1, y1);
+	cxt.lineTo(x2, y2);
+	cxt.stroke();
+	
+	语法：(多条直线）
+	cxt.moveTo(x1, y1);
+	cxt.lineTo(x2, y2);
+	cxt.lineTo(x3,y3);
+	……
+	cxt.stroke();
+
+(一般来说一个moveTo匹配一个lineTo，如果没有moveTo lineTo的起点就以上一次lineTo为准)
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300" style="border: 2px black solid;stroke-"></canvas>
+		<script type="text/javascript">
+			var ctx=c.getContext("2d");
+			
+			ctx.moveTo(150,0);
+			ctx.lineTo(300,150);
+			ctx.lineTo(150,300);
+			ctx.lineTo(0,150);
+			ctx.lineTo(150,0);
+			ctx.moveTo(0,0);
+			ctx.lineTo(300,300);
+			ctx.moveTo(300,0);
+			ctx.lineTo(0,300);
+			ctx.strokeStyle="red";
+			ctx.stroke();
+		</script>
+	</body>
+</html>

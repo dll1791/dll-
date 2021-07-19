@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+	1.fillStyle 属性设置或返回用于填充绘画的颜色、渐变或模式。
+	默认值：	#000000
+	JavaScript 语法：	context.fillStyle=color|gradient|pattern;
+	
+	值			描述
+	color		指示绘图填充色的 CSS 颜色值。默认值是 #000000。
+	gradient	用于填充绘图的渐变对象（线性 或 放射性）。	 
+	pattern		用于填充绘图的 pattern 对象
+	
+	2.在Canvas中，我们可以配合使用fillStyle属性和fillRect()方法来画一个填充矩形。
+	语法：
+	cxt.fillStyle=属性值;
+	cxt.fillRect(x, y, width, height);
+
+	
+	
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="200px" height="200px" style="border: 2px solid red;">这个浏览器不适用canvas动画</canvas>
+		<script type="text/javascript">
+			var ctx=c.getContext("2d");
+			ctx.fillStyle="red";
+			ctx.fillRect(75,75,50,50);
+		</script>
+	</body>
+</html>

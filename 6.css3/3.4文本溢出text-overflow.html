@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用text-overflow属性来定义文本的溢出样式。
+	需要搭配overflow 和 white-space来实现效果
+	语法：
+	text-overflow: 取值;
+	
+	值			描述
+	clip		修剪文本。(默认值)
+	ellipsis	显示省略符号来代表被修剪的文本。
+	string		使用给定的字符串来代表被修剪的文本。(只在 Firefox 浏览器下有效):
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			div{
+				white-space:nowrap;
+				border: 2px solid black;
+				height: 20px;
+				width: 120px;
+				overflow: hidden;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="d1"style="text-overflow: clip;">
+			我的批话多的说都说不完
+		</div>
+		<br /><br /><br />
+		<div id="d2" style="text-overflow: ellipsis">
+			我的批话多的说都说不完
+		</div>
+		<br /><br /><br />
+		<div id="d3" style="text-overflow: '>>'">
+			我的批话多的说都说不完
+		</div>
+	</body>
+</html>

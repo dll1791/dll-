@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+	1、font属性		font属性值生效第一个font
+	在Canvas中，我们可以使用font属性来定义文本的字体样式。
+	context.font的用法与CSS中的font属性用法是一样的。
+	语法：
+		context.font = "font-style font-weight 
+		font-size/line-height font-family";
+		
+		简写：a.font="20px 仿宋";
+		示例：context.font="italic small-caps bold 12px arial";
+		
+		值						描述
+		font-style				规定字体样式。可能的值：normal，italic，oblique
+		font-variant			规定字体变体。可能的值：normal，small-caps
+		font-weight				规定字体的粗细。可能的值：normal,bold,bolder,lighter,100,200等一直到900
+		font-size/line-height	规定字号和行高，以像素计。
+		font-family				规定字体系列。
+		caption					使用标题控件的字体（比如按钮、下拉列表等）。
+		icon					使用用于标记图标的字体。
+		menu					使用用于菜单中的字体（下拉列表和菜单列表）。
+		message-box				使用用于对话框中的字体。
+		small-caption			使用用于标记小型控件的字体。
+		status-bar				使用用于窗口状态栏中的字体。
+	2、textAlign属性
+	在Canvas中，我们可以使用textAlign属性来定义文本水平方向的对齐方式。
+	语法：
+		cxt.textAlign = "属性值";
+		context.textAlign="center|end|left|right|start";
+		
+		值		描述
+		start	默认。文本在指定的位置开始。
+		end		文本在指定的位置结束。
+		center	文本的中心被放置在指定的位置。
+		left	文本在指定的位置开始。
+		right	文本在指定的位置结
+		
+	3、textBaseline属性
+	在Canvas中，我们可以使用textBaseline属性来定义文本垂直方向的对齐方式。
+	语法：
+		cxt.textBaseline = "属性值";
+		
+		值				描述
+		alphabetic	默认。文本基线是普通的字母基线。
+		top			文本基线是 em 方框的顶端。
+		hanging		文本基线是悬挂基线。
+		middle		文本基线是 em 方框的正中。
+		ideographic	文本基线是表意基线。
+		bottom		文本基线是 em 方框的底端。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300" style="border: 1px blue solid;"></canvas>
+		<script type="text/javascript">
+			var a=c.getContext("2d");
+			a.font="20px 仿宋  ";
+//			a.textAlign="center";
+			a.textBaseline="bottom";
+			a.fillText("壮士一起兮不复还",20,100);
+			
+		</script>
+	</body>
+</html>

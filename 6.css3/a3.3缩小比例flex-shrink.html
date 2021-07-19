@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- shrink:收缩，变小减少
+	在CSS3中， flex-shrink属性用于定义弹性盒子内部子元素的缩小比例。
+	也就是当所有子元素宽度之和大于父元素的宽度时，子元素如何缩小自己的宽度。
+	语法：
+	flex-shrink: 数值;
+	
+	flex-shrink属性取值是一个数值，默认值为1(及按照原比例分配)。当取值为0时，表示子元素不缩小。
+	当取值大于1时，表示子元素按一定的比例缩小。取值越大，缩小得越厉害。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.a{
+				border: #000000 5px solid;
+				height: 100px;
+				width: 100px;
+				display: flex;
+			}
+			.b{
+				height: 100px;
+				width: 50px;
+				flex-shrink: 0;
+			}
+			.b1{
+				height: 100px;
+				width: 100px;
+				flex-shrink: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a">
+			<div class="b"  style="background: green;"></div>
+			<div class="b1"  style="background: red;"></div>
+			
+		</div>
+	</body>
+</html>

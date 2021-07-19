@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在jQuery中，我们可以使用each()方法轻松实现元素的遍历操作。
+		语法：
+		$().each(方法运行一次执行的语法)
+		$().each(function(index, element){
+		    ……
+		})
+
+	-->
+	<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+		</ul>
+		<button>遍历</button>
+<!--.index()是指定元素对其他指定元素的相对位置。-->
+		<script type="text/javascript">
+			$("button").click(function(){
+				var arr = ["red", "orange", "yellow", "green", "blue"];
+	 			function a(index){
+	                $(this).text(arr[index]);
+	            }
+	            $("li").each(a);
+			})
+            
+      		//
+		</script>
+	</body>
+</html>

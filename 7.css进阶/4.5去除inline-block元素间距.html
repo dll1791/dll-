@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+	在CSS中，我们可以为父元素定义一个“font-size:0;”来去除inline-block元素的间距。
+	语法：
+	父元素{font-size: 0;}
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*p{
+				
+				font-size:0;
+			}*/
+			span{
+				display: inline-block;
+				height: 100px;
+				width: 100px;
+				background: #0000FF;
+			}
+			a{
+				font-size: 17px;
+			}
+		</style>
+	</head>
+	<body>
+		<p>
+			<span></span>	<a href="">123</a>
+		</p>
+		<button id="b1">点击去除间距</button>
+		<button id="b2">点击还原间距</button>
+		<script type="text/javascript">
+			var p=document.getElementsByTagName("p");
+			b1.onclick=function(){
+				p[0].style.fontSize="0px";
+			}
+			b2.onclick=function(){
+				p[0].style.fontSize="initial";
+			}
+		</script>
+	</body>
+</html>

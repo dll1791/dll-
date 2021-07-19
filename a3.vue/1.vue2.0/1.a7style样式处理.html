@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- 
+	1.对象语法
+		<div :style="{border:borderStyle,width:widthStyle,height:heightStyle}"></div>
+		<div :style="objStyles"></div>
+		data:{
+			borderStyle:'2px solid blue',
+			widthStyle:'100px',
+			heightStyle:'200px',
+			objStyles:{
+				border:'2px solid green',
+				width:'200px',
+				height:'100px'
+			}
+	2.数组语法
+	<div :style='[objStyles]'></div>
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id='d1'>
+			<!-- 1.对象方式 -->
+			<div :style="{border:borderStyle,width:widthStyle,height:heightStyle}"></div>
+			<!-- 对象方式简写 -->
+			<div :style="objStyles"></div>
+			<!-- 2.数组方式 -->
+			<div :style='[objStyles]'></div>
+		</div>
+		<script type="text/javascript">
+			let vue=new Vue({
+				el:'#d1',
+				data:{
+					borderStyle:'2px solid blue',
+					widthStyle:'100px',
+					heightStyle:'200px',
+				
+					objStyles:{
+						border:'2px solid green',
+						width:'200px',
+						height:'100px'
+					},
+					
+				},
+				methods:{
+					
+					}
+				});
+		</script>
+	</body>
+</html>

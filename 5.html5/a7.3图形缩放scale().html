@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+	在Canvas中，我们可以使用scale()方法来对图形进行缩放操作。
+	缩放，指的是“缩小”和“放大”的意思。
+	语法：
+	cxt.scale(x,y);
+	
+	context.scale(scalewidth,scaleheight);
+	
+		参数				描述
+	scalewidth	缩放当前绘图的宽度（1=100%，0.5=50%，2=200%，依次类推）。
+	scaleheight	缩放当前绘图的高度（1=100%，0.5=50%，2=200%，依次类推）。
+	
+	
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<canvas id="c" width="300" height="300"style="border: 2px solid goldenrod;"></canvas>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var ctx=c.getContext("2d");
+			ctx.strokeRect(5,5,25,15);
+			ctx.scale(2,2);
+			ctx.strokeRect(5,5,25,15);
+			ctx.scale(2,2);
+			ctx.strokeRect(5,5,25,15);
+			ctx.scale(2,2);
+			ctx.strokeRect(5,5,25,15);
+		</script>
+	</body>
+</html>

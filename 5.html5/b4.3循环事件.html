@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+	window.requestAnimationFrame() 告诉浏览器——你希望执行一个动画，
+	并且要求浏览器在下次重绘之前调用指定的回调函数更新动画。
+	该方法需要传入一个回调函数作为参数，该回调函数会在浏览器下一次重绘之前执行
+	
+	注意：若你想在浏览器下次重绘之前继续更新下一帧动画，
+	那么回调函数自身必须再次调用window.requestAnimationFrame()
+	
+	在Canvas中，我们都是使用requestAnimationFrame()方法来实现循环，从而实现动画效果。
+	语法：
+	(function frame(){
+	    window.requestAnimationFrame(frame);
+	    cxt.clearRect(0, 0, cnv.width, cnv.height);
+	    ……
+	})();
+	Canvas动画的原理是：使用requestAnimationFrame()方法不断地清除Canvas，然后重绘图形。
+
+-->
+<html>
+	
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300" style="border: 2px solid #FFD700;"></canvas>
+		<script type="text/javascript">
+			var ctx=c.getContext("2d");
+			ctx.fillStyle="#66FF2F";
+			ctx.fillRect(10,10,100,100);
+			function repet(){
+				window.requestAnimationFrame(repet);
+				ctx.clearRect(0,0,300,300);
+				ctx.fillStyle="#66FF2F";
+				ctx.fillRect(10,10,100,100);
+			}
+			repet();
+		</script>
+	</body>
+</html>

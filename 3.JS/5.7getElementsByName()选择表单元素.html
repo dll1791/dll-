@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		getElementsByName()只用于表单元素，一般只用于单选按钮和复选框。
+		
+		语法：
+		document.getElementsByName("name名")
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#a{
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<input type="radio" name="a" id="a" value="" />
+		<input type="radio" name="a" id="a" value="" />
+		<input type="radio" name="a" id="a" value="" />
+		<script type="text/javascript">
+			document.getElementsByName("a")[0].type="button";
+		</script>
+	</body>
+</html>

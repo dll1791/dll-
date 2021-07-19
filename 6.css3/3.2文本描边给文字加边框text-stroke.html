@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用text-stroke属性为文本添加描边效果。
+	所谓的“描边效果”，指的是给文字添加边框。
+	语法：
+	-webkit-text-stroke: width color;
+
+	text-stroke是text-stroke-width和text-stroke-color
+	（给文本填充颜色）两个属性的简写。
+	text-stroke属性常常配合text-fill-color
+	text-fill-color一般设置为transparent（透明色）
+	（text-fill-color属性是给文本填充颜色）一起使用：
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			h1{
+				-webkit-text-stroke:1px gold;
+				-webkit-text-fill-color: transparent;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>艺术字</h1>
+	</body>
+</html>

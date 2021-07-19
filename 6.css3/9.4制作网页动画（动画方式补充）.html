@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+	//相当于把图片分成了7个部分 然后让这七个部分依次在这个框内显示
+	animation-timing-function 除了上面的几种常用方式之外，还有个一实用的函数，
+	steps(number_of_steps, direction)，这个函数叫做阶梯函数，这个函数能够起到定格动画的效果。
+	阶梯函数不像其他定时函数那样，平滑的过渡，而是以帧的方式过渡。
+	他有两个参数：
+	 number_of_steps ：阶梯数（必须是一个正整数），他将动画的总时长按照阶梯数等距划分
+	 direction ：可选值为start或end，默认end，也可以不写；
+	 start表示动画的第一帧会被立即执行,直接从第二帧开
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#pic {
+			  height:90px;
+			  width:65px;
+			  background-position: -40px -44px;
+			  background-image: url(../../图片与文件/动画制作动图.png);
+			  animation: 550ms go steps(7) infinite;
+			}
+			 @keyframes go  {
+			   0% {
+			      background-position-x: -40px;
+			   }
+			   100% {
+			      background-position-x: -1040px;
+			   }
+			}
+		</style>
+	</head>
+	<body>
+		<div id="pic"></div>
+		<img src="../../图片与文件/动画制作动图.png"/>
+	</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- 
+	作用域插槽：使父组件对子组件的内容进行加工处理
+	用法：
+	1.父组件中添加<template slot-scope='slotProps'>标签
+	 slot-scop定义接收子组件（solt标签）变量名称为
+	 slotProps（名称自定义），这里 slotProps就代表子组件
+	 
+	2.调用子组件的数据
+	<template slot-scope='slotProps'>
+		<strong v-if='slotProps.info.id==2' class="current">{{slotProps.info.name}}</strong>
+		<span v-else>{{slotProps.info.name}}</span>
+	</template>
+	slotProps.info意思就是调用子组件中的info属性，
+	这里因为info绑定了一个数组对象，所以slotProps.info就是操作数组对象
+ -->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<style type="text/css">
+		.current {
+			color: orange;
+		}
+	</style>
+	<body>
+		<div id="app">
+			<fruit-list :list='list'>
+				<template slot-scope='slotProps'>
+					<!--slotProps就相当于时子组件本身slotProps.info就是只子组件的info属性  -->
+					<!-- slotProps.info.name获取list数组中水果的名称 -->
+					<strong v-if='slotProps.info.id==2' class="current">{{slotProps.info.name}}</strong>
+					<!-- slotProps是自定义的变量用于接收子组件传递过来的值 -->
+					<span v-else>{{slotProps.info.name}}</span>
+				</template>
+			</fruit-list>
+		</div>
+		<script type="text/javascript" src="0.0vue.js"></script>
+		<script type="text/javascript">
+			/*
+      作用域插槽
+    */
+		Vue.component('fruit-list', {
+			props: ['list'],
+			template: 
+				`<div>
+				  <li :key='item.id' v-for='item in list'>
+				  <!-- // info的名字是自定义的 info绑定了
+				  item也就是绑定了当前遍历中list数组中的值-->
+					<slot :info='item'></slot>
+				  </li>
+				</div>`
+			});
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					list: [{
+						id: 1,
+						name: 'apple'
+					}, {
+						id: 2,
+						name: 'orange'
+					}, {
+						id: 3,
+						name: 'banana'
+					}]
+				}
+			});
+		</script>
+	</body>
+</html>

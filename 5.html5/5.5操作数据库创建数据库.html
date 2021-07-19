@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+	在HTML5中，我们使用indexedDB对象的open()方法来创建或者打开一个数据库。
+	var request = window.indexedDB.open(数据库名, 版本号);
+	request.onerror = function(){
+	    console.log("创建或打开数据库失败！");
+	};
+	request.onsuccess = function(){
+	    console.log("创建或打开数据库成功！");
+	};
+
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var request = window.indexedDB.open("DB", "1");
+			request.onerror = function(){
+			    console.log("创建或打开数据库失败！");
+			};
+			request.onsuccess = function(){
+			    console.log("创建或打开数据库成功！");
+			};
+		</script>
+	</body>
+</html>

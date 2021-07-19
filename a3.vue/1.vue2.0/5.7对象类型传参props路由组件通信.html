@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- 
+	路由组件之间传递参数：
+	(无法获取动态uid，但是可以获取多个参数)
+方式二：
+1.传一个对象给props:{uname:'dll',age:'22'}
+2.在组件的props数组中定义	props:['uid','uname','age'],
+3.	template:`<h1>User组件---用户id为：{{uid}}--姓名:{{uname}}--年龄--{{age}}</h1>`
+ -->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<!-- 导入 vue 文件 -->
+		<script src="0.0vue.js"></script>
+		<!-- vue-router 和vue存在依赖关系，所以vue-router要放在vue下面  -->
+		<script src="0.0vue-router.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- 被 vue 实例控制的 div 区域 -->
+		<div id="app">
+				<router-link to='/user/1'>User1</router-link>
+				<router-link to='/user/2'>User2</router-link>
+				<router-link to='/user/3'>User3</router-link>
+				<router-link to='/register'>register</router-link>
+				 <router-view></router-view>
+		</div>
+
+		<script>
+			let User={
+				//2. *************************
+				//在组件的props数组中定义	props:['uid','uname','age'],
+				props:['uid','uname','age'],
+				template:`<h1>User组件---用户id为：{{uid}}--姓名:{{uname}}--年龄--{{age}}</h1>`
+			}
+			let Register={
+				template:`<h1>Register组件</h1>`
+			}
+			const router=new VueRouter({
+				routes:[
+					{path:'/',redirect:'/user/1'},
+//********************1.方式二.props 对象类型传参 *********************
+					{path:'/user/:uid',component:	User,props:{uname:'dll',age:'22'}},
+					//用了对象后这里的uid就没办法获取了
+					{path:'/register',component: Register}
+				]
+			})
+		
+			const vm = new Vue({
+				el: '#app',
+				data: {
+					
+				},
+				router:router,
+			})
+			
+		</script>
+	</body>
+</html>

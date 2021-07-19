@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<!--
+	在JavaScript中，我们可以使用window.close()来关闭一个新窗口。
+	语法：
+		win.window.close()
+			
+		-->
+	<head>
+		
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="b">打开新窗口</button>
+		<button id="b1">关闭新窗口</button>
+		<script type="text/javascript">
+			b.onclick=function(){
+				m=window.open("http://seer.61.com/","window1","left:300px,height:400px,width:400px");
+			}
+			b1.onclick=function(){
+				//document.getName("window1")=window.close();
+				m=window.close();
+				//window.close并不能直接关闭窗口他只是让窗口缩小了（对于谷歌浏览器来说）
+			}
+		</script>
+	</body>
+</html>

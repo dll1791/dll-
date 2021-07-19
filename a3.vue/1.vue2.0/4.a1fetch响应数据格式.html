@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- 
+	fetch有俩种响应数据的格式
+	1.text() 前端接收字符串格式对象
+	2.json() 前端接收JSON形式对象相当于 JSON.parse(data);//强制类型转换为JSON类型
+	用法：把text换成json就可以了
+	
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			fetch('http://localhost:3000/json').then(function(data){
+				return data.json();//和text一样返回的是一个promise实例对象
+				//也可以用text接收后台传来的json对象，但是json会变为字符串类型
+				//就无法使用对象的方法
+			}).then(function(data){
+				console.log(data);
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		JavaScript新增了querySelector()和querySelectorAll()这2个方法，
+		使得我们可以使用CSS选择器的语法来获取我们所需要的元素。
+		querySelector()表示选取满足选择条件的第1个元素。
+		querySelectorAll()表示选取满足条件的所有元素。
+		语法：
+		
+		document.querySelector("css选择器");
+		document.querySelectorAll("css选择器");
+		
+		例如：
+		document.querySelector("#main")
+		document.querySelector("#list li:nth-child(1)")
+		document.querySelectorAll("#list li")
+		document.querySelectorAll("input:checkbox")
+
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="a" value="" style="width: 200px;height: 40px; background-color: #7CFC00;"/>
+		<script type="text/javascript">
+			document.querySelector("#a").onmouseover=function(){
+				this.style.width="100px";
+				this.style.height="100px";
+				this.style.backgroundColor="yellow";
+			}
+			document.querySelector("#a").onmouseout=function(){
+				this.style.width="200px";
+				this.style.height="40px";
+				this.style.backgroundColor="#7CFC00";
+			}
+		</script>
+	</body>
+</html>

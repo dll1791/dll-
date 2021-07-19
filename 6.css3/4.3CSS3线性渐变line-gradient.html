@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+	线性渐变，指的是在一条直线上进行的渐变。我们见到的大多数渐变效果都是线性渐变。
+	语法：
+	background:line-gradient(方向, 开始颜色, 中间颜色...（可选）,结束颜色)
+		向下/向上/向左/向右/对角方向/使用角度渐变
+		
+		线性渐变 - 从上到下（默认情况下）
+		linear-gradient(to bottom,#e66465, #9198e5);
+		
+		线性渐变 - 从左到右
+		linear-gradient(to right, red , yellow);
+		
+		从左上角到右下角的线性渐变
+		linear-gradient(to bottom right, red, yellow);//right bottom和bottom right
+		效果一样
+		
+		自定义角度
+		如果你想要在渐变的方向上做更多的控制，你可以定义一个角度单位 deg 顺时针方向的圆(圆心的指向)
+		deg相当于是圆心所指的方向与X轴的夹脚的度数  取值：0~180 0~ -180 180和-180一样
+		
+		重复的线性渐变
+		repeating-linear-gradient(red 20%, yellow 40%, green 80%);
+		background: linear-gradient(red 10%, green 85%, blue 90%)
+		其中：
+		10% 到 85% 是 red-green 的过渡色，85%-90% 是 green-blue 的过渡色。
+		
+		属性值		对应角度	说明
+		to top		0deg	从下到上
+		to bottom	180deg	从上到下（默认值）
+		to left		270deg	从右到左
+		to right	90deg	从左到右
+		to top left			从右下角到左上角（斜对角）
+		to top right		从左下角到右上角（斜对角）
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				height: 100px;
+				width: 100px;
+				border: 1px solid #9ACD32;
+				margin-top: 20px;
+			}
+			.d1{
+				background: linear-gradient(to bottom,red,green,yellow,blue);
+			}
+			.d2{
+				background: linear-gradient(to right,red,green,yellow,blue);
+			}
+			.d3{
+				background: linear-gradient(to bottom right,red,green,yellow,blue);
+			}
+			.d4{
+				background: linear-gradient(80deg,red,green,yellow,blue);
+			}
+			.d5{
+			    background: repeating-linear-gradient(red,green 20%,blue 30%);
+			}
+		</style>
+	</head>
+	<body>
+		<p>上->下</p>
+		<div class="d1"></div>
+		<p>左->又</p>
+		<div class="d2"></div>
+		<p>左上角->右下角</p>
+		<div class="d3"></div>
+		<p>自定义角度</p>
+		<div class="d4"></div>
+		
+		<img src="../../图片与文件/线性渐变自定义角度原理图.png"/>
+		<p>重复渐变</p>
+		<div class="d5"></div>
+	</body>
+</html>

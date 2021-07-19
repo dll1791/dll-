@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+	平移translate()、缩放scale()和旋转rotate()
+	这3种方法本质上是用变换矩阵transform()方法来实现的。
+	也就是说，我们仅仅通过transform()
+	这一个方法就可以实现平移、缩放和旋转这3种操作。
+	
+	语法：
+	cxt.transform(a,b,c,d,e,f);
+		参数		描述
+		a	水平缩放绘图。
+		b	水平倾斜绘图。//上下边顺时针方向倾斜
+		c	垂直倾斜绘图。//左右俩边逆时针方向
+		d	垂直缩放绘图。
+		e	水平移动绘图。
+		f	垂直移动绘图。
+	
+	setTransform()和transform()方法非常相似，
+	都可以对图形进行平移、缩放、旋转等操作，不过两者也有着本质的区别
+	：每次调用transform()方法，参考的都是上一次变换后的图形状态
+	，然后再进行变换。但是setTransform()方法不一样，
+	setTransform()方法会重置图形的状态，然后再进行变换。
+	
+	在Canvas中，变形操作除了可以用于图形之外，还可以用于文字和图片。
+-->
+
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300" style="border: 2px aquamarine solid;"></canvas>
+		<script type="text/javascript">
+			var a=c.getContext("2d");
+			a.fillStyle="yellow";
+			a.fillRect(0,0,250,150);
+			
+			a.transform(1,0.2,-0.2,1,0,0)
+			a.fillStyle="#0000FF";
+			a.fillRect(0,0,250,150);
+			
+			a.transform(1,0.2,-0.2,1,0,0)
+			a.fillStyle="#7FFF00";
+			a.fillRect(0,0,250,150);
+		</script>
+	</body>
+</html>

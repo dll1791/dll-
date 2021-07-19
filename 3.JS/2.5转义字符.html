@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<!--转义字符，指的是在默认情况下某些字符在浏览器是无法显示的，
+		不过为了能够让这些字符能够显示出来，我们可以使用这些字符对应的转义字符来代替。
+		
+		转义字符	说明
+		\’		英文单引号
+		\”		英文双引号
+		\\n		换行符
+		
+		字符串中的换行，有2种情况：
+		
+		 如果是在document.write()中换行，则应该用：<br/>
+		 如果是在alert()中换行，则应该用：\n
+
+-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+		<script type="text/javascript">
+			document.writeln("\\n\'");
+		</script>
+	<body>
+	</body>
+</html>

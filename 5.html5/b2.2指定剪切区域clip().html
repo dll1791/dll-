@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+	在Canvas中，我们可以结合使用“clip()方法”和“基本图形的绘制”来指定一个“剪切区域”。
+	语法：
+	cxt.clip()
+	
+	从画布中剪切 200*120 像素的矩形区域。然后，绘制一个红色矩形。
+	只有被剪切区域内的红色矩形部分是可见的：
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300" style="border: 2px aquamarine solid;"></canvas>
+		<script type="text/javascript">
+			var ctx=c.getContext("2d");
+			// Clip a rectangular area
+			ctx.rect(50,20,200,120);
+			ctx.stroke();
+			ctx.clip();
+			// Draw red rectangle after clip()
+			ctx.fillStyle="red";
+			ctx.fillRect(0,0,100,100);
+		</script>
+	</body>
+</html>

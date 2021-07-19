@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+	//outline:none;可以去除文本框中的小边框
+	在CSS3中，我们可以使用outline属性来定义表单中文本框的轮廓线样式。
+	语法：
+	outline: width style color;
+	说明：
+	第1个值指的是轮廓线宽度（outline-width），第2个值指的是轮廓线样式
+	（outline-sytle），第3个值指的是轮廓线颜色（outline-color）。
+	outline属性跟border属性很相似，我们可以把轮廓线看成是一条特殊的边框来理解。
+-->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#txt{
+				border-width: 3px;
+				border-color: red;
+				border-style: dashed;
+			}
+			#txt:focus{
+				outline:none;
+			}
+			#txt1:focus{/*规定当获取焦点时的文本框样式*/
+				outline: 3px red dashed;
+			}
+			#txt2{
+				border-width: 3px;
+				border-color: red;
+				border-style: dashed;
+				outline:none;
+			}
+		</style>
+	</head>
+	<body>
+		<input id="txt" type="text">
+		<input id="txt1" type="text">
+		<input id="txt2" type="text">
+	</body>
+</html>

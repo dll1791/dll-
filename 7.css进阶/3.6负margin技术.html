@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+	在CSS中，margin属性取值可以是正数，也可以是负数。无论取正数还是负数，
+	margin都可以让当前元素或者周围元素进行移动。
+	
+	1、负margin简介
+	负margin对普通文档流元素的影响，可以分为两种情况。
+	  当元素的margin-top或者margin-left为负数时，“当前元素”会
+	       被拉向指定方向。
+	  当元素的margin-bottom或者margin-right为负数时，“后续元素”
+	       会被拉向指定方向。
+	//margin本身不会改变盒子的大小
+	
+	2、负margin技巧
+	负margin的使用很灵活，应用也非常广泛，常用的技巧有以下4个。
+		 图片与文本对齐
+		 自适应两列布局
+		 元素垂直居中
+		 tab选项卡
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				
+				height: 100px;
+				width: 100px;
+				background: #66FF2F;
+				text-align: center;
+			}
+			div:hover{
+				margin-bottom: -20px;
+				margin-top: -50px;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="../../图片与文件/负margin.png"/>
+		<br /><br /><br /><br />
+		<div id="">
+			
+		</div>
+		<p>将鼠标放上</p>
+	</body>
+</html>

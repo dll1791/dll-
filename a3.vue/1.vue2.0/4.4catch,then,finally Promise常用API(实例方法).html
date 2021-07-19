@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- 
+	p.then()得到异步任务的正确结果
+	p.catch()获取异步任务的错误结果（俩者只会生效一个）
+	//相当于then(function1(){},function2(){})的function2
+	p.finally()成功与否都会执行（最后执行）
+	
+	例如
+	function foo(){
+		return new Promise(function(right,err){
+			setTimeout(function(){
+				// right("正确");
+				err('错误');
+			},100)
+		})
+	}
+	foo()
+	.then(function(data){
+		console.log(data);
+	})
+	.catch(function(data){
+		console.log(data);
+	})
+	.finally(function(){
+		console.log('promise操作完成');
+	});
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function foo(){
+				return new Promise(function(right,err){
+					setTimeout(function(){
+						// right("正确");
+						err('错误');
+					},100)
+				})
+			}
+			foo()
+			.then(function(data){
+				console.log(data);
+			})
+			.catch(function(data){
+				console.log(data);
+			})
+			.finally(function(){
+				console.log('promise操作完成');
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+	在CSS中，定位布局共有4种方式。
+		 固定定位（fixed）
+		 相对定位（relative）
+		 绝对定位（absolute）
+		 静态定位（static）
+	1、子元素相对父元素定位
+	想要实现子元素相对父元素定位，我们都是给父元素定义
+	position:relative，然后给子元素定义position:absolute，
+	之后配合top、bottom、left和right来定位。
+	
+	语法：
+	父元素{position:relative;}
+	子元素
+	{
+	    position:absolute;
+	    /*定义top、bottom、left和right*/
+	}
+	2、子元素相对祖先元素定位
+	想要实现子元素相对祖先元素定位，我们都是给祖先元素定义
+	position:relative，然后给后代元素定义position:absolute，
+	之后配合top、bottom、left和right来定位。其实这个跟子元素相对于父元素定位是一样的道理。
+	
+	语法：
+	祖先元素{position:relative;}
+	子元素
+	{
+	    position:absolute;
+	    /*定义top、bottom、left和right*/
+	}
+
+
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

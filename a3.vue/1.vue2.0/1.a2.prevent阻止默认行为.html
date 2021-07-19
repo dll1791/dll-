@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- 
+//更多事件修饰符见vue文档
+事件修饰符可以串在一起写click.stop.prevent  //禁止冒泡和默认行为
+ 	.prevent阻止默认行为
+		1.通过绑定事件利用原生js去除
+		@click='btn0'
+		btn0:function(){
+			// 利用绑定事件去除默认跳转原生js
+			event.preventDefault();//
+		}
+		2.利用vue去除默认跳转
+		直接在点击事件后面加入.prevent
+		@click.prevent
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id='d1'>
+			<a href="http://www.baidu.com" @click="btn0()">利用绑定事件去除默认跳转原生js</a>
+			<a href="http://www.baidu.com" @click.prevent>利用vue去除默认跳转</a>
+		</div>
+		<script type="text/javascript">
+			let vue=new Vue({
+				el:'#d1',
+				data:{
+					num:0,
+				},
+				methods:{
+					btn0:function(){
+						// 利用绑定事件去除默认跳转原生js
+						event.preventDefault();//
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

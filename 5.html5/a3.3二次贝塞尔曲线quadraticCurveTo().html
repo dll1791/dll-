@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+	在Canvas中，我们可以使用quadraticCurveTo()方法来画二次贝塞尔曲线。
+	二次贝塞尔曲线需要两个点。第一个点是用于二次贝塞尔计算中的控制点，
+	第二个点是曲线的结束点。曲线的开始点是当前路径中最后一个点
+		语法：
+		cxt.quadraticCurveTo(cx , cy , x2,y2);
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300" style="border: 1px blue solid;"></canvas>
+		<img src="../../图片与文件/二次贝塞尔曲线原理图.png"/>
+		<script type="text/javascript">
+			var a=c.getContext("2d");
+			a.moveTo(0,0);
+			a.quadraticCurveTo(150,150,50,200);
+			a.stroke();
+		</script>
+	</body>
+</html>

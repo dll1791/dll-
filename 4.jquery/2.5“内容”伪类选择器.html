@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		内容伪类选择器，指的是根据元素的内部文本或者子元素来选取元素。
+		
+		选择器			说明
+		:contains('text')	选取包含指定文本的元素			$(":contains('的')").show(1500);
+		:has(selector)	选取包含指定选择器的元素		
+		:parent			选取含有文本或者子元素的元素
+		:empty			选取不含有文本以及子元素的元素，即空元素
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(":parent").show(2000);
+				$(":empty").css("background-color","#7CFC00")
+			})
+		</script>
+		<style type="text/css">
+			p{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<p>小城里</p>
+		<p>岁月流过去</p>
+		<p>清澈的勇气</p>
+		<p><span>骄傲的</span>活下去</p>
+		<a href=""></a>
+		<li></li>
+	</body>
+</html>

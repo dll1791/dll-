@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- resize:调整大小
+	textarea指的是多行文本框。对于textarea，有两个方面需要我们深入学习。
+		 固定大小，禁用拖动。
+		 在Chrome、Firefox和IE实现相同的外观。
+	
+	文本框默认右下角有一个可以拉伸的控件。感觉没必要也不方便 所以决定给他干掉
+	只需要将 textarea标签的样式增加如下参数即可：
+	resize: none;
+	
+	2：只是固定大小，右下角的拖动图标仍在
+	width: 200px;
+	height: 100px;
+	max-width: 200px;
+	max-height: 100px;
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			textarea{
+				width: 200px;
+				height: 100px;
+				max-width: 200px;
+				max-height: 100px;
+				resize: none;
+			}
+		</style>
+	</head>
+	<body>
+		<textarea name="" rows="" cols=""></textarea>
+	</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- 
+组件通信
+一、静态方式
+	组件间通信用props
+	1.父组件通过属性将值传递给子组件 如：title="来自父组件的数据"
+	2.子组件通过props接收父组件传递的值 props:['title'](props可以接收多个值)
+	示例：
+		<menu-item title="来自父组件的数据"></menu-item>
+		//2.子组件
+			Vue.component('menu-item',{
+				props:['title'],
+				data:function(){
+					return{
+						msg:'子组件本身的数据'
+					}
+				},
+				template:`<div>{{msg+"----"+title}}</div>`
+			});
+二、动态方式
+	通过v-bind绑定一个属性值（ptitle）来实现属性值动态变化
+	例如：
+	<menu-item :title="ptitle"></menu-item>
+	
+	let vue=new Vue({
+		el:'#vue1',
+		data:{
+			msg:'父组件中的数距',
+			ptitle:'动态绑定属性'//子组件中绑定的数距要在这里声明
+		}
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id='vue1'>
+			<!--1. 父组件 静态方式通信 -->
+			<menu-item title='来自父组件中的值'></menu-item>
+			<!-- 2.父组件 动态方式通信 -->
+			<menu-item :title="ptitle"></menu-item>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+	//2.子组件
+		Vue.component('menu-item',{
+			props:['title'],
+			data:function(){
+				return{
+					msg:'子组件本身的数据'
+				}
+			},
+			template:`<div>{{msg+"----"+title}}</div>`
+		});
+		let vue=new Vue({
+			el:'#vue1',
+			data:{
+				msg:'父组件中的数距',
+				ptitle:'动态绑定属性'//子组件中绑定的数距要在这里声明
+			},
+			components:{
+			
+			}
+			})
+	</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+	在Canvas中，我们可以使用getImageData()方法来获取一张图片的像素数据。
+	语法：
+	var imgData = cxt.getImageData(x , y , width , height);
+	var data = imgData.data;
+		
+	参数		描述
+	x		开始复制的左上角位置的 x 坐标（以像素计）。
+	y		开始复制的左上角位置的 y 坐标（以像素计）。
+	width	要复制的矩形区域的宽度。
+	height	要复制的矩形区域的高度。
+	
+	在canvas中，我们可以使用putImageData()方法输出一张图片的像素数据。
+	简单来说，就是使用putImageData()方法在Canvas中显示一张图片。
+	语法：
+	cxt.putImageData(image , x , y);
+	context.putImageData(imgData,x,y,dirtyX,dirtyY,dirtyWidth,dirtyHeight);
+	
+	参数			描述
+	imgData		规定要放回画布的 ImageData 对象。
+	x			ImageData 对象左上角的 x 坐标，以像素计。
+	y			ImageData 对象左上角的 y 坐标，以像素计。
+	dirtyX		可选。水平值（x），以像素计，在画布上放置图像的位置。
+	dirtyY		可选。垂直值（y），以像素计，在画布上放置图像的位置。
+	dirtyWidth	可选。在画布上绘制图像所使用的宽度。
+	dirtyHeight	可选。在画布上绘制图像所使用的高度。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300" style="border: 2px aquamarine solid;"></canvas>
+		<script type="text/javascript">
+			var a=c.getContext("2d");
+			a.fillStyle="#66FF2F"
+			a.fillRect(10,10,100,50)
+			
+			var img=a.getImageData(10,10,100,50);
+			a.putImageData(img,10,70);
+		</script>
+	</body>
+</html>

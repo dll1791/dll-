@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+@media mediatype and|not|only (media feature){
+	css-code;
+}
+and 前后必须用空格隔开
+@media screen and (max-width:600px )
+
+ 1.@media声明媒体查询
+ 2.mediatype:媒体类型
+	all:用于所有设备
+	print:用于打印机和打印预览
+	scree:用于电脑 平板 智能手机等（用的最多）
+ 3.关键字
+	and 将多个特性链接在一起
+	not 排除某个特性
+	only 指定某个特性
+ 3.media feature媒体特性必须有小括号包着
+	width 宽度
+	min-width 最小宽度
+	max-width 最大宽度
+ 
+ 
+ 
+ 
+	/*设备大于800px时*/
+        @media (min-width:800px){
+           .a{}
+           .b{}//这里写正常的css样式
+        }
+     /*设备小于600px时*/
+        @media (max-width: 600px){
+            .a{}
+           	.b{}
+        }    
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			  @media screen and (max-width:600px ){
+				  body{background: #0000FF;}
+			  }
+			  @media screen and (min-width:600px ) and (max-width:700px) {
+				  body{background: #ff5500;}
+			  }
+			  @media screen and (min-width:700px ){
+				  body{background: #ffff7f;}
+			  }
+		</style>
+	</head>
+	<body>
+	</body>
+</html>

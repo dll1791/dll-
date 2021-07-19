@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- 
+	axios的API和fetch差不多(GET查询、POST添加、PUT修改、DELETE删除)
+		axios把这四种请求封装成了函数使用起来更加方便
+	1.get请求传递参数有俩种形式
+		1）通过URL?方式 传参
+		2）通过url的斜杠模式传参 后台用params接收
+		3）通过params对象传参（传参方式1的axios封装方式）
+	2.delete方式和get是完全一样的也是三种方式
+	例如：
+	axios.delete('http://localhost:3000/axios',{
+		params:{
+			id: 'delete方式',
+		}
+	}).then(function(ret){
+		console.log(ret.data+'****');
+	})
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="../../../axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		//方式一：
+		//通过URL参数传递
+			axios.get('http://localhost:3000/axios?id=传参方式1').then(function(ret){
+				console.log(ret.data);
+			})
+		//方式二：
+		//通过URL/ 方式传递参数 restfull
+		axios.get('http://localhost:3000/axios1/传参方式2').then(function(ret){
+			console.log(ret.data);
+		})
+		
+		//方式三：
+		//通过params对象传参（传参方式1的axios封装方式）
+		axios.get('http://localhost:3000/axios',{
+			//后台接口和一的接口是一样的
+			params:{
+				id: '传参方式3',
+			}
+		}).then(function(ret){
+			console.log(ret.data);
+		})
+		//*********delete请求方式 方式三请求
+		axios.delete('http://localhost:3000/axios',{
+			params:{
+				id: 'delete方式',
+			},
+		}).then(function(ret){
+			console.log(ret.data+'****');
+		})
+		</script>
+	</body>
+</html>

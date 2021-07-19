@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+	在CSS2.1中，我们可以使用overflow属性来定义内容超出元素大小时应该如何处理。
+	然后CSS3又新增了overflow-x和overflow-y这两个属性。
+	其中，overflow-x属性用来定义内容超出元素“宽度”时应该如何处理，
+	而overflow-y属性用来定义内容超出元素“高度”时应该如何处理。
+
+	语法：
+	overflow-x: 取值;
+	overflow-y: 取值;
+	说明：
+	overflow-x和overflow-y这两个属性都有4种取值，如下表所示。
+	
+	overflow-x 属性取值
+	属性值	说明
+	visible	内容超出时，不剪切内容，也不添加滚动条
+	hidden	内容超出时，剪切内容，但只显示y轴滚动条而不显示x轴滚动条
+	scroll	内容超出时，显示所有滚动条
+	auto	跟scroll效果一样
+	overflow-y属性取值
+	属性值	说明
+	visible	内容超出时，不剪切内容，也不添加滚动条
+	hidden	内容超出时，剪切内容，但只显示x轴滚动条而不显示y轴滚动条
+	scroll	内容超出时，显示所有滚动条
+	auto	跟scroll效果一样
+-->
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        body{font-family:微软雅黑;font-size:14px;}
+        #view
+        {
+            display:inline-block;
+            width:160px;
+            height:160px;
+            background-color:#F1F1F1;
+            border:1px solid gray;
+            overflow-x:visible;
+        }
+        #circle
+        {
+            width:200px;
+            height:200px;
+            background-color:Red;
+            border-radius:100px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oRadio=document.getElementsByName("group");
+            var oDiv=document.getElementById("view");
+            for(var i=0;i<oRadio.length;i++){
+                oRadio[i].onclick=function(){
+                    if(this.checked){
+                        oDiv.style.overflowX=this.value;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="select">
+        <h3>overflow-X取值：</h3>
+        <label><input name="group" type="radio" value="visible" checked="checked"/><label for="ckb1">visible</label>
+        <label><input name="group" type="radio" value="hidden"/><label for="ckb2">hidden</label>
+        <label><input name="group" type="radio" value="scroll"/><label for="ckb3">scroll</label>
+        <label><input name="group" type="radio" value="auto"/><label for="ckb4">auto</label>
+    </div>
+    <div id="view">
+        <div id="circle"></div>
+    </div>
+</body>
+</html>

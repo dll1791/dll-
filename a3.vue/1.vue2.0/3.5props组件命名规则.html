@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- 
+	组件命名规则
+	在props中使用驼峰形式(menuTitle)，模板中需要转换成横线形式(menu-title)
+	字符串模板中没有限制
+	例如：
+	<menu-item menu-title='nihao'></menu-item>
+	Vue.component('menu-item',{
+		props:['menuTitle'],
+		data:function(){
+			return{
+				msg:'子组件本身的数据'
+			}
+		},
+		template:`<div>{{msg+"----"+menuTitle}}</div>`//这里的menuTitle要与props里面的数据相等
+	});
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id='vue1'>
+			<!--1. 父组件 静态方式通信 -->
+			<menu-item menu-title='来自父组件中的值'></menu-item>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+	//2.子组件
+		Vue.component('menu-item',{
+			props:['menuTitle'],
+			data:function(){
+				return{
+					msg:'子组件本身的数据'
+				}
+			},
+			template:`<div>{{msg+"----"+menuTitle}}</div>`
+		});
+		let vue=new Vue({
+			el:'#vue1',
+			})
+	</script>
+</html>
+

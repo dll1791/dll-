@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- 
+	fn.call(thisArg,arg1,arg2,...)
+	thisArg:当前this要指向的函数
+	arg1,arg2：传递其他参数
+	
+	call的用法：
+	1.调用函数  
+	function fn(x,y){
+		console.log('我想吃饭');
+	}
+	fn.call();//这样可以直接调用fn 传统的调用时fn();
+	
+	2.更改this指向
+	function fn(a,b){
+		console.log(this.name+' sda');
+	}
+	var o={
+		name:'dll'
+	}
+	fn.call(o,1,2);
+	//让fn中的this指向o
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+				function fn(a,b){
+					console.log(this.name+' sda');
+				}
+				var o={
+					name:'dll'
+				}
+				fn.call(o,1,2);
+		</script>
+	</body>
+</html>

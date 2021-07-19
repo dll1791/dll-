@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- 
+	通过v-bind绑定class实现样式绑定
+	1.对象语法
+		1.单类名
+		<div :class='{class1: isclass1}'></div>//一般都用is开头的值只有false或者true
+		class1是类名，isclass1控制class1属性是否显示
+		2.多类名
+		<div :class='{class1: isclass1,class2:isclass2}'></div>//一般都用is开头的值只有false或者true
+		class1是类名，isclass1控制class1属性是否显示
+	2.数组语法
+	//数组语法中的class3,class4必须在data中声明
+		<div :class='[class3,class4]'></div>
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			.class1{
+				border: 3px solid red;
+				width: 100px;
+				height: 100px;
+			}
+			.class2{
+				background: #c2c2c2;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='d1'>
+	
+			<!-- 通过button控制isclass1的值取反 -->
+			<button @click="btn1()">切换</button>
+					<!-- 方式1对象语法-->
+			<!-- 通过bind:class给class绑定一个class1事件
+			 用isclass1控制该样式是否生效(单类名) -->
+			<div :class='{class1:isclass1}'>单类名语法</div>
+			<!-- 多类名 -->
+			<div :class='{class1:isclass1,class2:isclass2}'>多类名语法</div>
+					<!-- 方式2数组语法 -->
+					<div :class='[class3,class4]'>数组语法</div>
+		</div>
+		<script type="text/javascript">
+			let vue=new Vue({
+				el:'#d1',
+				data:{
+					isclass1:true,
+					isclass2:true,
+					class3:'class1',//这里的class1class2是css样式中的 class属性
+					class4:'class2',
+				},
+				methods:{
+					btn1:function(){
+						//控制isclass1的值在true或false值之间切换
+						this.isclass1=!this.isclass1;//!取反
+						this.isclass2=!this.isclass2;//!取反
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
+

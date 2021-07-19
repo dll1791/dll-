@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- 
+	put(修改)和post请求的方式几乎一样
+	只是多了一个传递的id 同样也支持俩种类型传递模式(string和json)
+	
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="../../../axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		//方式一json格式传递（默认，推荐使用）
+			axios.put('http://localhost:3000/axios/id123',{
+				//id123是传递要修改的id 下面和post一样  
+				uname:'戴林朗',
+				pwd:'456'
+			}).then(function(ret){
+				console.log(ret.data);
+			})
+		//方式二string类型
+			var params=new URLSearchParams();
+			params.append('uname','dll')
+			params.append('pwd','45678')
+			axios.put('http://localhost:3000/axios/id123',params).then(function(ret){
+				console.log(ret.data);
+			})
+		</script>
+	</body>
+</html>

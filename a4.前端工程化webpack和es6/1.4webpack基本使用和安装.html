@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!-- 
+	为什么要用webpack
+	1.文件依赖关系错综复杂
+	2.静态资源请求效率低
+	3.模块化支持不友好
+	4.浏览器对js高级特性兼容性低 等等
+	
+	1.安装配置webpack
+		A.安装webpack：npm install webpack webpack-cli -D		B.创建一个 webpack.config.js 并进行配置			module.exports = {					mode:"development"//可以设置为development(开发模式)，production(发布模式)
+					//development表示转化的代码不会被压缩 用于产品开发
+					//production转换的代码被压缩 用于产品发布			}		C.修改项目中的package.json文件添加运行脚本dev			"scripts":{					"dev":"webpack"			 }		D.运行dev命令进行项目打包：npm run dev(启动webpack进行项目打包)		E.在页面中引入项目打包之后在dist文件夹中生成的js文件		<script src="../main.js"></script>		F.浏览页面查看效果
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

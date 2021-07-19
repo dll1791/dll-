@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用border-image属性为边框添加背景图片。现在所有主流浏览器最新版本都支持border-image属性。
+	语法：
+	border-image: source slice width outset repeat|initial|inherit;
+	例如：border-image:url(border.png) 27 repeat; 
+	指的就是图片(url(border.png))，剪裁位置(27)，重复方式(repeat)。
+	
+	
+	1.border-image-source: none|image用于指定要用于绘制边框的图像的位置
+		none	没有图像被使用
+		image	边框使用图像的路径
+		
+	2.border-image-slice	图片剪裁位置//用剪裁的图片来铺满整个边框，对应的边框用对应的位置剪裁
+		border-image-slice: number|%|fill;
+		值			说明
+		number	数字表示图像的像素（位图图像）或向量的坐标（如果图像是矢量图像）
+		%		百分比图像的大小是相对的：水平偏移图像的宽度，垂直偏移图像的高度
+		fill	保留图像的中间部分
+		
+	3.border-image-width	图像边界的宽度
+		border-image-width: number|%|auto;
+		值		说明
+		number	表示相应的border-width 的倍数
+		%		边界图像区域的大小：横向偏移的宽度的面积，垂直偏移的高度的面积
+		auto	如果指定了，宽度是相应的image slice的内在宽度或高度
+		
+	4.border-image-outset	用于指定在边框外部绘制 border-image-area 的量
+		border-image-outset: length|number;
+		值			描述			
+		length	 设置边框图像与边框（border-image）的距离，默认为0。	尝试一下 »
+		number	 代表相应的 border-width 的倍数
+	
+	5.border-image-repeat	用于设置图像边界是否应重复（repeat）、拉伸（stretch）或铺满（round）。
+		border-image-repeat: stretch|repeat|round|initial|inherit;
+		值	描述	实例
+		stretch	默认值。拉伸图像来填充区域	
+		repeat	平铺（repeated）图像来填充区域。	
+		round	类似 repeat 值。如果无法完整平铺所有图像，则对图像进行缩放以适应区域。	
+		space	类似 repeat 值。如果无法完整平铺所有图像，扩展空间会分布在图像周围	
+		initial	将此属性设置为默认值。	
+		inherit	从父元素中继承该属性。
+		//可以用border-top-image来设置单独一条边的图片
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.d1{
+				height: 100px;
+				width: 100px;
+				/*border: 1px solid blue;*/
+				border-image:url(../../图片与文件/边框图片.png) 20 5;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="d1"></div>
+		<p>原图片：</p>
+		<img src="../../图片与文件/边框图片.png"/>
+	</body>
+</html>

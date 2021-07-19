@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+		属性		说明
+		M  N	后代选择器，选择M元素内部后代N元素（所有N元素）
+		M > N	子代选择器，选择M元素内部子代N元素（所有第1级N元素）
+		//M > N 与M N的区别在于M N，  N元素全选，M > N只选择第一级的N元素 也就是儿子元素，孙子元素不选择例如N里面的N
+		M ~ N	兄弟选择器，选择M元素后面（所有的同级N元素,M和N是同级元素）
+		M + N	相邻选择器，选择M元素相邻的（下一个N元素）（M、N是同级元素）
+		例:
+		选择所有紧接着 <div> 元素之后的第一个 <p> 元素:
+		div+p
+		{ 
+		    background-color:yellow;
+		}
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div a{
+				background-color: #7CFC00;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<h1>0</h1>
+			<p>1 <a>1.5</a></p>
+			<p>2</p>
+			<p>3</p>
+			<a href="#">4</a>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在jQuery中，如果想要查找当前元素的后代元素（子元素、孙元素等），我们有以下3种方法：
+		 children()
+		 find()
+		 contents()
+		
+		1、children()
+		在jQuery中，我们可以使用children()方法来查找当前元素的“子元素”。
+		注意，children()方法只能查找子元素，不能查找其他后代元素。
+		语法：
+		$().children(selector)
+		
+		2、find()
+		在jQuery中，我们可以使用find()方法来查找当前元素的“后代元素”。
+		注意，find()方法不仅能查找子元素，还能查找其他后代元素。
+		语法：
+		$().find(selector)
+		
+		3、contents()
+		在jQuery中，我们可以使用contents()方法来获取子元素及其内部文本。
+		contents()方法和children()方法相似，不同的是，contents()
+		返回的jQuery对象中不仅包含子元素，还包含文本内容。
+		而children()方法返回的jQuery对象中只会包含子元素，不包含文本内容。
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

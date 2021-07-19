@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在JavaScript中，我们可以使用innerHTML属性很方便地获取和设置一个元素的“内部元素”，
+		也可以使用innerText属性获取和设置一个元素的“内部文本”。
+		
+		innerHTML与innerText比较如下：
+		HTML代码							innerHTML					innerText
+		<div>绿叶学习网</div>			绿叶学习网					绿叶学习网
+		<div><em>绿叶学习网</em></div>	<em>绿叶学习网</em>			绿叶学习网
+		<div><em></em></div>			<em></em>					（空字符串）
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<a href="" id="a1">a</a>
+		<script type="text/javascript">
+			a1.innerHTML="b";
+		</script>
+	</body>
+</html>

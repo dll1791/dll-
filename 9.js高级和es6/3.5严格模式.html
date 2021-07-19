@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- 
+	严格模式，即在严格的模式下运行js代码
+	//严格模式的好处：
+	1.消除js语法中一些不严谨不合理的怪异行为。
+	2.消除代码运行的一些不完全之处
+	3.提高编译效率
+	4.禁用了es5未来版本中定义的一些语法
+	如extends,super
+	
+	1.开启严格模式
+		1.为脚本开启严格模式
+		在所有语句之前加入 'use strict';//ie10之后的版本有效
+		例如 <script>'use strict'</script>
+		2.为某个函数开启严格模式
+		function fn(){
+			'use trict';//只给fn开启严格模式
+		}
+	2.严格模式的规定（不同点）
+		1.变量规定
+		在严格模式下变量必须先声明再使用
+		2.严禁删除已经声明的变量
+		例如：var x=10;delete x;//报错 
+		3.this指向
+		function fn(){}严格模式下fn中的this指向undefined
+		4.以前的构造函数不加new也可以当普通函数调用，this指向window
+		function Star(){
+			this.sex='男';
+		} 
+		Star();
+		//此时winfow.this就等于男 （非严格模式）
+		//严格模式下这样就报错了
+		5.定时器的this还是指向window
+	3. 严格模式下函数的变化
+		1.函数里不能有重名的参数
+		例如：function fn(a,a){console.log(a+a)}//严格模式下不准这样写
+		2.不允许在非函数的代码块内声明函数
+		例如：for{
+			function fu(){}//报错   
+		}
+		function fn(){
+			function f(){}//可以
+		}
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

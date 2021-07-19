@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在JavaScript中，我们可以使用cloneNode()方法来实现复制元素。
+		语法：
+		obj.cloneNode(bool);
+		deep	Boolean	可选。该方法将复制并返回调用它的节点的副本。
+		如果传递给它的参数是 true，它还将递归复制当前节点的所有子孙节点。(相同元素嵌套在一起不构成父节点)
+		否则，它只复制当前节点。
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="b1">参数是true时</button>
+		<button id="b2">参数不是true时</button>
+		
+		<ul id="a">
+			<li>小城里</li>
+			<li>岁月流过去</li>
+			<li>清澈的勇气</li>
+			<li>洗涤过的回忆</li>
+			<li>我记得你</li>
+			<li>骄傲的活下去</li>
+		</ul>
+		<script type="text/javascript">
+			b1.onclick=function(){
+				var a1=a.children[5].cloneNode(true);
+				/*这里的节点指的是<li>骄傲的活下去<li>这一整个，
+				当参数为false时传进去的只有<li><li>这一个标签里面的文字属于该标签的子节点*/
+				a.appendChild(a1);
+			}
+			b2.onclick=function(){
+				var a1=a.children[5].cloneNode(false);
+				/*这里的节点指的是<li>骄傲的活下去<li>这一整个，
+				当参数为false时传进去的只有<li><li>这一个标签里面的文字属于该标签的子节点*/
+				a.appendChild(a1);
+			}
+		</script>
+	</body>
+</html>

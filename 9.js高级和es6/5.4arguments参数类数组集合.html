@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- 
+	arguments是一个类数组(argument不是一个数组)负责存储传进方法中的参数
+	例：
+	function obj(){
+		console.log(arguments[0]);
+	}
+	obj(1,2,3)//输出0
+	
+	arguments对象只有函数开始时才可用，箭头函数里不能适用arguments。
+	有三个属性：
+	1.如arguments[0]等等传入的参数的值
+	2.arguments.length传入参数的个数
+	3.arguments[Symbol.iterator]
+	是一个迭代器
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function obj(){
+				console.log(arguments.length);
+			}
+			obj(1,2,3)
+		</script>
+	</body>
+</html>

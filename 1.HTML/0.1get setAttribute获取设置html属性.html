@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!-- 
+	setAttribute('aa','1')设置属性aa为1
+	getAttribute('aa');获取aa的属性值
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='d1' aa='2'></div>
+		<script type="text/javascript">
+			let x=d1.getAttribute('aa');
+			console.log(x);
+			d1.setAttribute('aa','1')
+			 x=d1.getAttribute('aa');
+			console.log(x);
+		</script>
+	</body>
+</html>

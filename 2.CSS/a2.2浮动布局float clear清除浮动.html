@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<!--浮动，可以使得元素移到左边或者右边，并且允许后面的文字或元素环绕着它。
+		浮动最常用于实现水平方向上的并排布局，例如两列布局、多列布局。
+		
+		语法：
+		float:取值;
+		属性值	说明
+		left	左浮动
+		right	右浮动
+		none:	元素不浮动
+        inherit 从父级继承浮动属性
+        
+		用clear来清除浮动
+		
+		语法：
+		clear:取值;
+
+		属性值	说明
+		left	清除左浮动
+		right	清除右浮动
+		both	同时清除左浮动和右浮动
+		inherit	清除从父级继承来的值
+-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.div1{
+				height: 500px;
+				width: 500px;
+				border: 1px gainsboro solid;
+				font-size:25px;
+				font-family: "微软雅黑";
+				font-weight: bold;
+				padding: 0px;
+			}
+			.a{
+				height: 100px;
+				width: 100px;
+				background-color: #ADFF2F;
+				border:1px #FF402F solid;
+				float: left;	
+			}
+			.b{
+				height: 100px;
+				width: 100px;
+				background-color: #ADFF2F;
+				border:1px #FF402F solid;
+				float:right;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div1">
+			<div class="a">1</div>
+			<div class="a">2</div>
+			<div class="a">3</div>
+			<div class="a">4</div>
+			<div class="a">5</div>
+			<div class="a">6</div>
+			左浮动
+			浮动后字体会自动围绕浮动图片
+		</div>
+		<div class="div1">右浮动
+			<div class="b">1</div>
+			<div class="b">2</div>
+			<div class="b">3</div>
+			<div class="b">4</div>
+			<div class="b">5</div>
+			<div class="b">6</div>
+			浮动后字体会围绕浮动图片
+			ssssssssssssssssssssss
+			ssssssssssssssssssss
+			ssssss
+		</div>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+	rotate	旋转
+	
+	在CSS3中，我们可以使用transform属性的rotate()方法来实现元素的旋转效果。
+	语法：
+	transform: rotateX*(度数) 以X轴为中心进行旋转
+	transform: rotateY*(度数) 以Y轴为中心进行旋转
+	transform: rotate(angle); 
+	单位deg
+	参数angle表示元素相对于中心原点旋转的度数，单位为deg。
+	如果度数为正，则表示顺时针旋转；如果度数为负，则表示逆时针旋转。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="d1" style="height: 100px; width:200px; background: greenyellow;margin: 100px;">	
+		点击旋转
+		</div>
+		<script type="text/javascript">
+			d1.onmousedown=function(){
+				d1.style.transform="rotate(20deg)";
+			}
+			d1.onmouseup=function(){
+				d1.style.transform="";
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- 
+	带参数的自定义指令
+	用法：
+	Vue.directive('color',{
+		//binding传入的必须是一个对象
+		inserted:function(el,binding){
+			//改变元素背景
+			el.style.backgroundColor=binding.value.color//el表示指令所绑定的元素	可以由用户自定义
+		}
+	}
+	);
+	<input type="text" v-color='{color:"orange"}'>
+	1.'focus'是指令名称用户自定义的
+	2.focus后面的{}是实现这个指令的业务逻辑
+	3.inserted:vue中固定的部分属于API的一部分 被绑定元素插入父节点时调用
+		除此之外还有bind（只调用一次 update）等，一般来说都是用inserted或bind
+	4.el是element的简写表示指令所绑定的元素可以由用户自定义
+	5.binding是一个对象包含以下属性
+		name:指令的名称 如color v-color中的color
+		value:指令的绑定值 如color里面的orange//{color:"orange"}
+		等，更多详情查API
+ -->
+<html>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="./0.0vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class='vue1'>
+			<!-- 通过API把背景变为绿色-->
+			<input type="text" v-color='binding1'>
+			<!-- 这里的binding1是用了vue中声明的对象 -->
+		</div>
+		<script type="text/javascript">
+		Vue.directive('color',{
+			inserted:function(el,binding){
+				//改变元素背景
+				el.style.backgroundColor=binding.value.color//el表示指令所绑定的元素	可以由用户自定义
+				console.log(binding.name);
+			}
+		}
+		);
+		let vue=new Vue({
+			el:'.vue1',
+			data:{
+				binding1:{
+					color:'green'
+				}
+			},
+			methods:{
+				
+			}
+		})
+		</script>
+	</body>
+</html>
+

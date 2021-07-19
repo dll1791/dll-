@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- 
+ 字符串也可以解构赋值。这是因为此时，字符串被转换成了一个类似数组的对象。
+  const [a, b, c, d, e] = 'hello';
+  a // "h"  b // "e" c // "l" d // "l" e // "o"
+  
+  类似数组的对象都有一个length属性，因此还可以对这个属性解构赋值。
+   let {length : a} = 'hello'; a// 5
+  //length是 'hello'的一个属性  这里申明了 一个名为 a的length对象 
+  -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let {length : a} = 'hello';
+			console.log(a);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用animation-delay属性来定义动画的延迟时间。
+	CSS3动画的animation-delay属性跟CSS3过渡的transition-delay属性是相似的。
+		语法：
+		animation-delay:  时间;
+		值			描述
+		time	可选。定义动画开始前等待的时间，以秒或毫秒计。默认值为0
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				height: 100px;
+				width: 100px;
+				background: #008000;
+				position: relative;
+				animation:dllmove 5s  infinite 3s;
+			}
+			@keyframes dllmove{
+				0%{top:0px;}
+				50%{top:300px;}
+				100%{top:0px;}
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

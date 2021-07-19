@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- 
+	es6新增的创建字符串的方式，使用反引号定义。
+	let name = `这是一个模板字符串`
+	
+	模板字符串特点
+	1.可以放变量直接用${}
+		let name = `张三`;
+		let hello=`hello${name}`;
+		console.log(hello);//hello张三
+	2.模板字符串可以换行
+		let html=`
+					张三
+					20
+		`;
+		console.log(html);//输出
+									张三
+									20
+	3.可以调用函数
+		const fn=()=>{
+			return '这是一个函数'
+		}
+		let str=`${fn()}abc`
+		console.log(str);//输出这是一个函数abc
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			const fn=()=>{
+				return '这是一个函数'
+			}
+			let str=`${fn()}abc`
+			console.log(str);
+		</script>
+	
+	</body>
+</html>

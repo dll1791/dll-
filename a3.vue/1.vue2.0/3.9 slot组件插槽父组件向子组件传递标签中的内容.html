@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- 
+	父组件向子组件传递模板内容（标签中的内容）
+	例如：<father>hi</father>中的'hi'就是模板内容
+	<slot></slot>标签是vue中的api是固定的
+	
+	用法：
+	什么都不需要做直接用<slot></slot>就行
+	父组件的标签中的内容会自动传递到<slot></slot>里面
+	（如果父组件没有内容，<slot></slot>里面就会显示默认内容）
+	<alert-box>父组件的值</alert-box>
+	Vue.component('alert-box', {
+				template: `
+					<div>
+					  <strong>插槽内容：</strong>
+					  <slot>默认内容</slot>
+					</div>
+				`
+				});
+ -->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app">
+			<!--  -->
+			<alert-box>父组件的值</alert-box>
+			<alert-box></alert-box>
+		</div>
+		<script type="text/javascript" src="0.0vue.js"></script>
+		<script type="text/javascript">
+			/*
+      组件插槽：父组件向子组件传递内容
+    */
+		Vue.component('alert-box', {
+			template: `
+				<div>
+				  <strong>插槽内容：</strong>
+				  <slot>默认内容</slot>
+				</div>
+			`
+			});
+			var vm = new Vue({
+				el: '#app',
+				data: {
+
+				}
+			});
+		</script>
+	</body>
+</html>

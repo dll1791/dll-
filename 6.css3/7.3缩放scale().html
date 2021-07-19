@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用transform属性的scale()
+	方法来实现元素的缩放效果。缩放，指的是“缩小”和“放大”的意思。
+	(这里的放大是整体放大)
+	语法：
+	transform: scaleX(x);         /*沿X轴方向缩放*/
+	transform: scaleY(y);         /*沿Y轴方向缩放*/
+	transform: scale(x, y);       /*沿X轴和Y轴同时缩放*/
+	
+	数x表示元素在x轴方向的缩放倍数，参数y表示元素在y轴方向的缩放倍数。
+	当x或y取值为0~1之间时，元素进行缩小；当x或y取值大于1时，
+	元素进行放大。大家思考一下“倍数”的概念，很快就懂了。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			html,body{
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="b1" onclick="a()">x缩放</button>
+		<button id="b2">y缩放</button>
+		<button id="b3">xy缩放</button>
+		<div id="d1" style="height: 20%; width:20%; background: greenyellow;margin: 200px;">	
+		</div>
+		<script type="text/javascript">
+			function a(){
+				d1.style.transform="scaleX(1.5)";
+			}
+			b2.onclick=function(){
+				d1.style.transform="scaleY(1.5)";
+			}
+			b3.onclick=function(){
+				d1.style.transform="scale(1.5)";
+			}
+		</script>
+		
+	</body>
+</html>

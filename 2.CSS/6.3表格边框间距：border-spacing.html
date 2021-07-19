@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--上一节介绍了如何去除表格边框间距，但是在实际开发中，有时候我们却需要定义一下表格边框的间距。
+在CSS中，我们可以使用border-spacing属性来定义表格边框间距。
+语法：
+border-spacing: 像素值;-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table,th,td{
+				border:2px solid red;
+			}
+			table
+			{
+				border-spacing: 8px;
+			}
+		</style>
+	</head>
+	<body>
+		<table >
+			<caption>表格标题</caption>
+			<thead>
+				<tr>
+					<th>表头1</th>
+					<th>表头2</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>表行1</td>
+					<td>表行2</td>
+				</tr>
+				<tr>
+					<td>表行1</td>
+					<td>表行2</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td>表行1</td>
+					<td>表行2</td>
+				</tr>
+			</tfoot>
+		</table>
+	</body>
+</html>

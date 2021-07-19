@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- 
+	fetch get查询  delete删除:
+	1.method(String): http请求方式，
+		默认为GET(GET查询、POST添加、PUT修改、DELETE删除)
+	2. body(String):Http的请求参数
+	3.headers(Object):HTTP的请求头,默认为{}
+	
+	fetch俩种传参方式
+	1.fetch('http://localhost:3000/books?id=dll',{
+				//?id=123把id传给后台	
+				method:'get'
+			}).then(function(data){
+				return data.text();
+			}).then(function(data){
+				console.log(data);
+			})
+			
+	2.fetch('http://localhost:3000/books1/dll123',
+	
+	delete请求方式传参:和get请求的方式差不多
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			fetch('http://localhost:3000/books?id=dll',{
+				//方式一传递
+				//?id=dll把id传给后台	
+				//后台通过	req.query.id获取传过来的参数
+				method:'get'
+			}).then(function(data){
+				return data.text();
+			}).then(function(data){
+				console.log(data);
+			})
+		
+			//方式二传递
+			fetch('http://localhost:3000/books1/dll123',{
+				//后台通过下面  获取所传的值
+				// app.get('/books1/:id', (req, res) => {
+				//   res.send('this is books1! 前台传的id值是：'+req.params.id)
+				// })
+				//?id=123把id传给后台	
+				method:'get'
+			}).then(function(data){
+				return data.text();
+			}).then(function(data){
+				console.log(data);
+			})
+			
+			//delete方式传递参数 没变换只是改下method的内容
+			fetch('http://localhost:3000/books2/delete方式',{
+				//后台的接收方式变为delete：
+				/*app.delete('/books2/:id', (req, res) => {
+				  res.send('this is books2! 前台传的id值是：'+req.params.id)
+				})*/
+				method:'delete'
+			}).then(function(data){
+				return data.text();
+			}).then(function(data){
+				console.log(data);
+			})
+					
+		</script>
+		
+	</body>
+</html>

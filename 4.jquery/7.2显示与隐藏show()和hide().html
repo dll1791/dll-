@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在jQuery中，如果想要实现元素的显示与隐藏，有以下2种方式。
+		
+		例子：
+		$("p").hide();
+		
+		show()和hide()
+		toggle()
+
+		1、show()和hide()
+		在jQuery中，我们可以使用show()方法来显示元素，
+		也可以使用hide()方法来隐藏元素。一般情况下，
+		show()和hide()这两个方法都是配合一起使用的。
+		
+		语法：
+		$().show(speed, fn)
+		$().hide(speed, fn)
+		
+		
+		2、toggle()
+		在jQuery中，我们还可以使用toggle()方法来“切换”元素的显示状态。
+		也就是说，如果元素是显示状态，则会隐藏起来；如果元素是隐藏状态，则会显示出来。
+		
+		语法：
+		$().toggle(speed, fn)
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<button id="b1">开始</button>
+		<button id="b">开始1</button>
+		<img src="../../图片与文件/风景3.png" height="300px"/>
+		<script type="text/javascript">
+			$("#b1").click(function(){
+				$("img").hide(2000);
+				$("img").show(2000);
+			})
+			$("#b").click(function(){
+				$("img").toggle(1000);
+				
+			})
+			
+		</script>
+	</body>
+</html>

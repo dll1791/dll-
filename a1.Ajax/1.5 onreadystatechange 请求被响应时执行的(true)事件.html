@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- 
+	1.在 onreadystatechange 事件中，我们规定当服务器响应已做好被
+	处理的准备时所执行的任务。
+当 readyState 等于 4 且状态为 200 时，表示响应已就绪：
+实例
+xmlhttp.onreadystatechange=function()
+{
+    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+        document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+    }
+}
+
+2.回调函数是一种以参数形式传递给另一个函数的函数。
+如果您的网站上存在多个 AJAX 任务，那么您应该为创建 
+XMLHttpRequest 对象编写一个标准的函数，并为每个 AJAX 任务调用该函数。
+该函数调用应该包含 URL 以及发生 onreadystatechange 
+事件时执行的任务（每次调用可能不尽相同）：
+实例
+function myFunction()
+{
+    loadXMLDoc("/try/ajax/ajax_info.txt",function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+        }
+    });
+}
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

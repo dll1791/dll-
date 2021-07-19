@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- 
+	1.extends 继承
+	class Father{
+		constructor() {
+		    
+		}
+		money(){
+			console.log('100元');
+		}
+	}
+	class Son extends Father{
+		
+	}
+	var son=new Son();
+	son.money();
+	
+	2.super可以调用父类的构造函数，父类的元素等
+		class Father{
+			constructor(x,y) {
+			   this.x=x;
+			   this.y=y;
+			}
+			sum(){
+				console.log(this.x+this.y);
+			}
+			money(){
+				console.log('100元');
+			}
+		}
+		class Son extends Father{
+			constructor(x,y) {
+			   super(x,y);//调用了父类中的构造函数
+			   //子类的x,y就被传入父类
+			}
+		}
+		var son=new Son(1,2 );
+		son.sum();
+		
+		3.调用父类的普通方法//在定义子类时用super调用；
+		class Father{
+			constructor(x,y) {
+			   this.x=x;
+			   this.y=y;
+			}
+			sum(){
+				console.log(this.x+this.y);
+			}
+			money(){
+				console.log('爸爸的钱100元');
+			}
+		}
+		class Son extends Father{
+			constructor(x,y) {
+			   super(x,y);//调用了父类中的构造函数
+			   //子类的x,y就被传入父类
+			}
+			money(){
+				console.log('儿子的钱100元');
+				super.money();
+			}
+		}
+		var son=new Son(1,2 );
+		son.sum();
+		son.money(); 
+		
+		4.super要放在子类的this之前（在子类的构造函数中）
+		
+		注意事项：类里面共有的方法和属性都要加this
+	
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+			<script type="text/javascript">
+			class Father{
+				constructor(x,y) {
+				   this.x=x;
+				   this.y=y;
+				}
+				sum(){
+					console.log(this.x+this.y);
+				}
+				money(){
+					console.log('爸爸的钱100元');
+				}
+			}
+			class Son extends Father{
+				constructor(x,y) {
+				   super(x,y);//调用了父类中的构造函数
+				   //子类的x,y就被传入父类
+				}
+				money(){
+					console.log('儿子的钱100元');
+					super.money();
+				}
+			}
+			var son=new Son(1,2 );
+			son.sum();
+			son.money(); 
+			</script>
+	</body>
+</html>

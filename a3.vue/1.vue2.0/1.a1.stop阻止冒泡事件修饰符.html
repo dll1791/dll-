@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- 
+事件修饰符可以串在一起写click.stop.prevent  //禁止冒泡和默认行为
+	.stop阻止冒泡
+		1.传统方式
+			当前想阻止冒泡的事件后加stopPropagation() 
+			event.stopPropagation();
+		2.vue方式
+			在绑定事件的标签中加入.stop
+			@click.stop='btn3'
+
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id='d1' @click="btn1()">
+			<button type="button" @click="btn2">冒泡</button>
+			<button type="button" @click="btn3">阻止冒泡js</button>
+			<!-- 阻止冒泡用vue方式 直接在绑定事件后面加一个.stop -->
+			<button type="button" @click.stop="btn4">阻止冒泡vue</button>
+			<div >{{num}}</div>
+		</div>
+		<script type="text/javascript">
+			let vue=new Vue({
+				el:'#d1',
+				data:{
+					num:1
+				},
+				methods:{
+					btn1:function(){
+						this.num=this.num+0.25;
+					},	
+					btn2:function(){//冒泡会导致num+1.25 本来是+1
+						this.num++;
+					},
+					btn3:function(){//阻止冒泡之后 重新变为num+1 用js方式
+						this.num++;
+						//阻止冒泡
+						event.stopPropagation();
+					},
+					btn4:function(){//阻止冒泡 用vue方式
+						this.num++;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--  
+	//所谓命名路由实际就是给路由规则起一个名字(name)
+		1.使用命名路由可以给实现路由跳转
+		（点击链接跳转到另一个路由）
+		2.可以通过名字传递参数
+		<router-link :to='{name:"username",params:{uid:3}}'>User3</router-link>	
+		
+		用法：在path所在的对象中加一个name属性即可
+		{
+			name:'username',
+			path:'/user/:uid',component:	User,
+			 },
+-->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<!-- 导入 vue 文件 -->
+		<script src="0.0vue.js"></script>
+		<!-- vue-router 和vue存在依赖关系，所以vue-router要放在vue下面  -->
+		<script src="0.0vue-router.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- 被 vue 实例控制的 div 区域 -->
+		<div id="app">
+			<!--  ***********用法：路由重定向和传参-->
+				<router-link to='/user/1'>User1</router-link>
+				<router-link to='/user/2'>User2</router-link>
+				<router-link :to='{name:"username",params:{uid:3}}'>User3</router-link>
+				<!-- 在需要绑定的to前面加一个：
+						name代表要执行的路由规则,params表示要传递的参数-->
+				<router-link to='/register'>register</router-link>
+				 <router-view></router-view>
+		</div> 
+
+		<script>
+			let User={
+				props:['uid','uname','age'],
+				template:`<h1>User组件---用户id为：{{uid}}--姓名:{{uname}}--年龄--{{age}}</h1>`
+			}
+			let Register={
+				template:`<h1>Register组件</h1>`
+			}
+			const router=new VueRouter({
+				routes:[
+//********************1命名路由 *********************
+					{
+						name:'username',
+						path:'/user/:uid',component:	User,
+						props: route=>{
+							return {uname:'dll',age:22,uid:route.params.uid}
+						} },
+						{path:'/register',component: Register}
+				]
+			})
+		
+			const vm = new Vue({
+				el: '#app',
+				data: {
+					
+				},
+				router:router,
+			})
+			
+		</script>
+	</body>
+</html>

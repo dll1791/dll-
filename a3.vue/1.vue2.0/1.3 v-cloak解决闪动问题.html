@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- 
+	v-cloak指令解决闪动问题  
+	闪动指的是当浏览器卡的时候先显示{{}}再显示vue渲染的数据
+	1.提供样式
+	在css中加入
+	[v-cloak]{
+		display:none;
+	}
+	2.在插值表达式所在的标签中添加v-cloak 
+	
+	原理：先通过样式隐藏内容，然后经过值的替换，替换好后在显示
+	最终的内容
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			/*  第一步1*/
+			[v-cloak]{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 第二步 -->
+		<div id='app' v-cloak>{{dll}}</div>
+		<script type="text/javascript">
+			let vue=new Vue({
+				el:'#app',
+				data:{
+					dll:'帅'
+				}
+			});
+		</script>
+	</body>
+</html>

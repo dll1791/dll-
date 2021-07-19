@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+	在CSS3变形中，任何元素都有一个中心原点。默认情况下，
+	元素的中心原点位于x轴和y轴的50%处
+	在CSS3中，我们可以使用transform-origin属性来改变元素的变形的中心原点。
+	
+	单位可以为px、em和百分比等
+	
+	关键字			百分比		说明
+	top left		0 0			左上
+	top center		50% 0		靠上居中
+	top right		100% 0		右上
+	left center		0 50%		靠左居中
+	center center	50% 50%		正中
+	right center	100% 50%	靠右居中
+	bottom left		0 100%		左下
+	bottom center	50% 100%	靠下居中
+	bottom right	100% 100%	右下
+	
+	transformOrigin 属性允许您改变被转换元素的位置。
+	2D 转换元素能够改变元素 X 和 Y 轴。3D 转换元素还能改变元素的 Z 轴。
+	注意：该属性必须与 transform 属性一起使用,如果没有transform属性那么该属性则不生效。
+
+	设置 transformOrigin 属性：
+	object.style.transformOrigin="x-axis y-axis z-axis|initial|inherit"
+
+	x-axis	
+	定义视图被置于 X 轴的何处。可能的值：	
+	y-axis	
+	定义视图被置于 Y 轴的何处。可能的值：
+	z-axis	
+	定义视图被置于 Z 轴的何处。可能的值：
+	只有length
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="b1">中心偏移</button>
+		<div id="d1" style="height: 100px; width:200px; background: greenyellow;margin: 100px;">	
+		</div>
+			<script type="text/javascript">
+				b1.onmousedown=function(){
+					d1.style.transformOrigin="0% 0%";
+					d1.style.transform="rotate(90deg)"
+				}
+				b1.onmouseup=function(){
+				
+				}
+			</script>
+	</body>
+</html>

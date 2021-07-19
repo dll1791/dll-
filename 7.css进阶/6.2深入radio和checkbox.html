@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--
+	默认情况下，单选框或复选框与它们周围的文本是以
+	vertical-align:baseline的方式对齐的，
+	这也是导致两者在垂直方向上对不齐。
+	既然是vertical-align属性导致的，
+	那么我们就可以使用vertical-align属性来解决，
+	以其人之道还治其人之身。
+	语法：
+	vertical-align:像素值;
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			input[type="radio"]{
+				vertical-align: bottom;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="radio" name="" id="" value="" />男
+	</body>
+</html>

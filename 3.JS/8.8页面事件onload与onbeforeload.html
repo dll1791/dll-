@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		1、onload
+		在JavaScript中，onload表示文档加载完成后再执行的一个事件。
+		语法：
+		window.onload = function(){
+		    ……
+		}
+		2、onbeforeunload
+		在JavaScript中，onbeforeunload表示离开页面之前触发的一个事件。
+		语法：
+		window.onbeforeunload = function(){
+		    ……
+		}
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			window.onbeforeunload=function(){
+				alert("欢迎下次光临");
+			}
+		</script>
+	</body>
+</html>

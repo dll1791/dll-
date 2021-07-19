@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+	reverse 颠倒
+	alternate 交替
+	initial 最初的
+	
+	在CSS3中，我们可以使用animation-direction属性来定义动画的播放方向。
+	语法：
+	animation-direction: 取值;
+	值	描述	
+	normal	默认值。动画按正常播放。	
+	reverse	动画反向播放。
+	alternate	动画在奇数次（1、3、5...）正向播放，在偶数次（2、4、6...）反向播放。	
+	alternate-reverse	动画在奇数次（1、3、5...）反向播放，在偶数次（2、4、6...）正向播放。
+	initial	设置该属性为它的默认值。请参阅 initial。	
+	inherit	从父元素继承该属性。请参阅 inherit。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				height: 100px;
+				width: 100px;
+				background: #008000;
+				position: relative;
+				animation:dllmove 2s  infinite alternate;
+			}
+			@keyframes dllmove{
+				0%{top:0px;}
+				100%{top:300px;}
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在jQuery中，我们可以使用scroll()方法来表示滚动事件。
+		语法：
+		$().scroll(function(){
+	    	……
+		})
+	-->
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<div id="" style="height: 200px; width: 200px;overflow:scroll;">
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		</div>
+		<p></p>
+		<script type="text/javascript">
+			var x=0;
+			$("div").scroll(function(){
+				x=x+1;
+				$("p").html("滚动:"+x+"次");
+			})
+		</script>
+		
+	</body>
+</html>

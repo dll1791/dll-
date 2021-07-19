@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+	“自动”占用可用空间
+	这是我们利用auto最常见的用法。通过分配auto元素的左右边距，
+	它们可以平等地占据元素容器中的可用水平空间 - 因此元素将居中。
+	
+	text-align对文本、inline元素以及inline-block元素都会起作用，
+	但对block元素不起作用。
+	img元素属于inline-block元素。
+	vertical 只对行内块元素有效
+	
+	text-align:center;与margin:0 auto;
+	是最常见的两种水平居中方式，不过这两者也有着本质的区别。
+	
+	 text-align:center;实现的是文字、
+	 inline元素以及inline-block元素的 水平居中。
+	 margin:0 auto;实现的是block元素的水平居中。
+	 text-align:center;在父元素中定义，“margin:0 auto;”
+	 在当前元素中定义。
+	//margin 只有水平居中没有垂直居中
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.d2{
+				height: 100px;
+				width: 100px;
+				background: #00FF00;
+				display: table-cell;
+				vertical-align: middle;
+			}
+			.d1{
+				
+				height: 50px;
+				width: 50px;
+				background: red;
+				margin:0 auto;
+				
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="d2">
+			<div class="d1"></div>
+		</div>
+	</body>
+</html>

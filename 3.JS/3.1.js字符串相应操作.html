@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			1.获取字符串长度5--
+			在JavaScript中，我们可以使用length属性来获取字符串的长度。
+			语法：
+			字符串名.length
+			
+			2.大小写转换
+			在JavaScript中，我们可以使用toLowerCase()方法将大写字符串转化为小写字符串，
+			也可以使用toUpperCase()方法将小写字符串转化为大写字符串。
+			语法：
+			
+			字符串名.toLowerCase()
+			字符串名.toUpperCase()
+			
+			3.获取某一个字符
+			在JavaScript中，我们可以使用charAt()方法来获取字符串中的某一个字符。
+			语法：
+			
+			字符串名.charAt(n)
+			
+			4.截取字符串
+			在JavaScript中，我们可以使用substring()方法来截取字符串的某一部分。
+			语法：
+			
+			字符串名.substring(start, end)
+			substring(1, 2)   截取字符串中的[1,2) 
+			
+			5. 替换字符串
+			在JavaScript中，我们可以使用replace()方法来用一个字符串替换另外一个字符串的某一部分。
+			语法：
+			
+			字符串名.replace(原字符串, 替换字符串)
+			字符串名.replace(正则表达式, 替换字符串)（在没有正则表达式的情况下 replace只替换第一次出现的目标字符串）
+			
+			6.分割字符串
+			在JavaScript中，我们可以使用split()方法把一个字符串分割成一个数组，
+			这个数组存放的是原来字符串的所有字符片段。有多少个片段，数组元素个数就是多少。
+			语法：
+			
+			字符串名.split("分割符")
+			
+			7.检索字符串位置
+			在JavaScript中，可以使用indexOf()方法来找出“某个指定字符串”
+			在字符串中“首次出现”的下标位置，也可以使用lastIndexOf()来找出“某
+			个指定字符串”在字符串中“最后出现”的下标位置。
+			语法：
+			
+			字符串名.indexOf(指定字符串)
+			字符串名.lastIndexOf(指定字符串)
+			
+		
+			-->
+			<script type="text/javascript">
+				var a=new String('abCDEFgHijklmn');
+				var c=["asdsda"]//c不算字符串只能算作一个字符
+				document.writeln(a.length);
+				document.writeln(a.toUpperCase());
+				document.writeln(a.toLowerCase());
+				document.writeln(a.charAt(3)+"  charAt");
+				document.writeln(a.substring(1,3));
+				var b=a.replace("a","挥一挥衣袖不带走一片云彩");//replace只能检索一个字符 当a替换变为abc的时候就转换不了了
+				document.writeln(b);
+				document.writeln(a.indexOf("bC"));
+				
+			</script>
+	</body>
+</html>

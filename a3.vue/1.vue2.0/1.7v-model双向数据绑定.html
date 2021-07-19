@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- 
+//实际就是把input中的value与data中的某个值绑定在了一起
+	1.数据双向绑定：
+	表单输入内容可以让页面内容变化
+	同理页面内容变化，表单输入的内容也会变化
+	用法：
+	v-model='data中的值'或某个方法
+
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			[v-cloak]{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='d1'>
+			<div v-cloak>{{dll}}</div>
+			<!-- 更改页面中input的值对应页面的内容也会发生改变 -->
+			<div ><input v-model="dll" type="text" /></div>
+			<!-- 用 v-model将input的vlaue与dll绑定在一起 -->
+		</div>
+		<script type="text/javascript">
+			let vue=new Vue({
+				el:'#d1',
+				data:{
+					dll:'hello dll',
+				}
+			})
+		
+		</script>
+	</body>
+</html>
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在jQuery中，如果想要替换元素，我们有以下2种方法。
+		语法；
+		
+		替换目标.replaceWith("新元素")
+		$("<h3>Word</h3>").replaceAll("span,b,i");
+		//将<h3>Word</h3>代替所有的span,b,i标签。
+		
+		提示：replaceWith() 与 replaceAll() 作用相同。
+		差异在于语法：内容和选择器的位置，以及 replaceAll() 无法使用函数进行替换。
+		
+		
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<button>替换</button>
+		<p>将被替换</p>
+		<p>将被替换</p>
+		
+		<script type="text/javascript">
+			$("button").click(function(){
+				$("p").replaceWith("<p>你好</p>")
+			})
+		</script>
+	</body>
+</html>

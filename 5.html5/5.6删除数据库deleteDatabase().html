@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+	在HTML5中，我们可以使用indexedDB对象的deleteDatabase()方法来删除数据库。
+	var request = window.indexedDB.deleteDatabase(数据库名);
+	request.onerror = function(){
+	    console.log("删除数据库失败！");
+	};
+	request.onsuccess = function(e){
+	    console.log("删除数据库成功！");
+	};
+
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var request = window.indexedDB.deleteDatabase("DB");
+			request.onerror = function(){
+			    console.log("删除数据库失败！");
+			};
+			request.onsuccess = function(e){
+			    console.log("删除数据库成功！");
+			};
+		</script>
+	</body>
+</html>

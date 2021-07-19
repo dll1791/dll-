@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用background-origin属性来定义背景图片是从什么地方开始平铺的，也就是定义背景图片的位置。
+	语法：
+	background-origin: padding-box|border-box|content-box;
+	
+	属性			说明
+	border-box	从边框开始平铺
+	padding-box	从内边距开始平铺（默认值）
+	content-box	从内容区开始平铺
+	
+	背景图像background-attachment是"固定"，这个属性没有任何效果。
+	
+	background-origin往往都是配合background-position来使用的，
+	其中background-origin定义background-position相对于什么位置
+	来定位。
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			:root{
+				background-image: url(../../A练习项目/顶楼能不能买/主页背景.jpg);
+				background-repeat: no-repeat;
+				background-origin:content-box;
+			}
+		</style>
+	</head>
+	<body>
+	</body>
+</html>

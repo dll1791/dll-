@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- #region 
+  表单元素
+  除了结构元素和表单元素之外，HTML5还增加了大量语义化元素，其中最重要的有以下6个。
+  address
+  time
+  progress
+  meter
+  figure和figcaption
+  fieldset和legend
+
+  1.address(斜体字段)
+  在HTML5中，我们可以使用更具有语义化的address元素来为“整个页面”或者“某一个article元素”添加地址信息（电子邮件或真实地址）。
+ 
+  2、time元素（行内元素）（用户在页面上的TIME元素里面写时间，time元素不能直接显示时间，比如本页面制作与<time>2月10日12:40</time> ）
+  在HTML5中，我们可以使用更具有语义化的time元素来显示页面中的日期时间信息。
+  语法：
+  <time datetime="时间"></time>
+  
+  3、progress元素(任务完成进度条 不是块元素)
+  在HTML5中，我们可以使用progress元素以进度条的形式来显示某一个任务的完成度，如上传文件、下载文件等。
+  语法：
+  <progress max="最大值" value="当前值"></progress>
+ 
+  4、meter元素(数据比例进度条 不是块元素)
+  在HTML5中，我们可以使用进度条的形式来显示数据所占的比例。
+  语法：
+  <meter min="最小值" max="最大值" value="当前值"></meter>
+  
+  5、figure和figcaption(例如图片和一段图片的介绍就可以用figure把他们框起来)
+  <figure> 标签规定独立的流内容（图像、图表、照片、代码等等）。
+  figure 元素的内容应该与主内容相关，但如果被删除，则不应对文档流产生影响。
+  在HTML5中，引入了figure和figcaption这两个元素来增强图片的语义化。
+  请使用 <figcaption> 元素为 figure 添加标题（caption）。
+
+    <figure>
+    <img src="" alt=""/>
+    <figcaption></figcaption>
+    </figure>
+  
+  6、fieldset和legend(形成一个框把表单框起来)
+  HTML5中，我们还可以使用fieldset元素来给表单元素进行分组。其中，legend元素用于定义某一组表单的标题。
+  <fieldset> 标签将表单内容的一部分打包，生成一组相关表单的字段。<fieldset> 标签没有必需的或唯一的属性。  
+  当一组表单元素放到 <fieldset> 标签内时，浏览器会以特殊方式来显示它们，
+  它们可能有特殊的边界、3D 效果，或者甚至可创建一个子表单来处理这些元素。
+  语法：
+  <fieldset>
+      <legend>表单组标题</legend>
+      ……
+  </fieldset>
+
+
+
+
+
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <address>2694886781</address>
+  <time datetime="时间">12:40</time>
+
+  <progress max="最大值" value="当前值"></progress>
+  <meter></meter>
+  <figure>
+    <figcaption>知识就是力量</figcaption>
+    <img src="../../图片与文件/小图标1.gif" alt="">
+  </figure>
+  <form action="">
+    <input type="text">
+    <fieldset>
+      <legend>表单组标题</legend>
+      <input type="password">
+      <input type="button">
+    </fieldset>
+  </form>
+
+</body>
+
+</html>

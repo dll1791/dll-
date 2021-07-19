@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- 
+ align-items设置侧轴子元素排列 我们可以利用这个让flex实现垂直居中
+ //align-items适用于子元素中只有一行的情况 当有多行时就不行了
+ 实现方法：
+ 	justify-content: center;//先让主轴居中
+	align-itexms:center;//然后让侧轴居中这时整个就居中了
+ 
+如果 主轴是x 侧轴就是Y
+	利用align-items能够设置侧轴元素对齐的方式在子项为单项（单行）的时候使用
+	 align-items的值为flex-start 表示从头开始 
+	 align-items的值为flex-end 表示从结尾开始
+	 align-items的值为center 表示居中显示
+	 align-items的值为stretch 会将子元素拉伸//拉伸子盒子不给高度就会有效果
+																						基本不用
+	
+
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	<style type="text/css">
+			div{
+				border: 2px solid green;
+				width: 300px;
+				height: 200px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				/* align-items: stretch; */
+			}
+			span{
+				border: 2px solid green;
+				height: 50px;
+				width: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+			<span>4</span>
+		</div>
+	</body>
+</html>

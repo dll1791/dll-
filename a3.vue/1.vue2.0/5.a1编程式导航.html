@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- 
+	导航分为俩种：
+	1.声明式导航 用点击链接实现跳转的方式导航
+	2.编程式导航	通过调用js api实现页面跳转
+		vue中的API：
+		1.this.$router.push('hash地址')//最常用方法
+		2.this.$router.go(n)//go方法实现前进后退 	1下一个页面，-1就是返回上一个页面
+		
+	//样例说明：点击按钮让他调转到register页面
+ -->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<script src="0.0vue.js"></script>
+		<script src="0.0vue-router.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+				<router-link to='/user/1'>User1</router-link>
+				<router-link to='/user/2'>User2</router-link>
+				<router-link :to='{name:"username",params:{uid:3}}'>User3</router-link>
+				<router-link to='/register'>register</router-link>
+				 <router-view></router-view>
+		</div> 
+
+		<script>
+			let User={
+				props:['uid','uname','age'],
+				//***********编程式导航1.push方法*******点击按钮跳转到注册页面
+				template:`<div>
+									<h1>User组件---用户id为：{{uid}}--姓名:{{uname}}--年龄--{{age}}</h1>
+									<button @click="gozhuce">跳转到注册页面</button>
+								</div>`,
+				methods:{
+					gozhuce(){
+						this.$router.push('/register');
+						// this.$router.push 一个vue Api里面放入跳转的地址即可跳转至相应页面
+					}
+				}
+			}
+			let Register={
+				// ***********2.go方法返回上一个地址***************
+				template:`<div>,
+				<h1>Register组件</h1>
+				<button @click='byback'>点击返回上一个地址</button></div>`,
+				methods:{
+					byback(){
+						this.$router.go(-1);
+						//this.$router.go(-1);vueapi 返回指定的历史页面
+					}
+				}
+			}
+			const router=new VueRouter({
+				routes:[
+					{
+						name:'username',
+						path:'/user/:uid',component:	User,
+						props: route=>{
+							return {uname:'dll',age:22,uid:route.params.uid}
+						} },
+						{path:'/register',component: Register}
+				]
+			})
+		
+			const vm = new Vue({
+				el: '#app',
+				data: {
+					
+				},
+				router:router,
+			})
+			
+		</script>
+	</body>
+</html>

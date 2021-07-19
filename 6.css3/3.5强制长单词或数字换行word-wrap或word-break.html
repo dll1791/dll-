@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+	//只对数字和字母有效
+	在CSS3中，我们可以使用word-wrap或word-break来定义长单词或URL地址是否换行到下一行。
+	语法：
+	word-wrap:取值;
+	或
+	word-break:取值;
+	
+	1.word-wrap:取值;
+	值			描述
+	normal		只在允许的断字点换行（浏览器保持默认处理）。
+	break-word	在长单词或 URL 地址内部进行换行。
+	
+	2.word-break:取值;
+	值			描述
+	normal		使用浏览器默认的换行规则。
+	break-all	允许在单词内换行。
+	keep-all	只能在半角空格或连字符处换行//在 空格和- 处换行
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.p1{
+				border: 1px black solid;
+				width: 50px;
+				word-wrap: break-word;
+			}
+			.p2{
+				border: 1px black solid;
+				width: 50px;
+				word-break: keep-all;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="p1">12345645645</p>
+		<p class="p2">12345641-234</p>
+	</body>
+</html>

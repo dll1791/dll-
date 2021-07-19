@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- 
+作用：简化代码
+	async/await 语法是ES7引入的新语法,可以更加方便的进行异步操作
+		
+	1.async用于函数上(async()返回值是Promise实例对象)
+		async function queryData(){
+	2.await用于async函数中(await可以得到异步的结果)
+		//await后面要跟一个promise实例对象(await可以省去.then操作)
+		var ret=	await axios.get('http://localhost:3000/axios-json');
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="../../../axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//1.async/await直接加在  函数/数据 的头部
+			async function queryData(){
+				//不需要then了,通过await就可以直接获取到后台的结果
+			var ret=	await axios.get('http://localhost:3000/axios-json');
+				console.log(ret.data.uname+'---1');
+			}
+			queryData();
+			
+			
+			//2.与then混合使用的情况
+			async function queryData1(){
+			var ret=	await axios.get('http://localhost:3000/axios-json');
+				return ret.data;//因为return后会生成一个promise对象因此可以继续用then
+			}
+			queryData1().then(function(data){
+				console.log(data)
+			});
+		</script>
+	</body>
+</html>

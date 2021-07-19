@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--flex: 弯曲-->
+<!--
+	为了解决传统布局的死板以及不足，CSS3新增了一种新型的弹性盒子模型。
+	通过弹性盒子模型，我们可以轻松地创建自适应浏览器窗口的“流动布局”
+	以及自适应字体大小的弹性布局，使得响应式布局的实现更加容易。
+
+		属性		说明
+	flex-grow	定义子元素的放大比例
+	flex-shrink	定义子元素的缩小比例
+	flex-basis	定义子元素的宽度
+	
+	flex	flex-grow、flex-shrink、flex-basis的复合属性
+	flex-direction	定义子元素的排列方向
+	flex-wrap	定义子元素是单行显示，还是多行显示
+	flex-flow	flex-direction、flex-wrap的复合属性
+	order		定义子元素的排列顺序
+	justify-content	定义子元素在“横轴”上的对齐方式
+	align-items	定义子元素在“纵轴”上的对齐方式
+	
+	准确来说，这一章我们只需要重点掌握flex、flex-flow、order、justify-content、
+	align-items这5个属性就可以了，这样可以大大减少我们的记忆负担。
+	
+	弹性盒子（父元素）的宽度为200px，而所有子元素宽度之和为300px，
+	此时子元素宽度之和大于父元素宽度。因此，子元素会按比例来划分宽度。这就是弹性盒子的特点！
+	此外记住一点：在使用弹性盒子模型之前，你必须为父元素定义“display:flex;”
+	或“display:inline-flex;”，这个父元素才具有弹性盒子模型的特点。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.a{
+				border: #000000 5px solid;
+				height: 100px;
+				width: 300px;
+				display: flex;
+			}
+			.b{
+				height: 100px;
+				width: 1000px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a">
+			<div class="b" style="background: green;"></div>
+			<div class="b" style="background: red;"></div>
+			<div class="b" style="background: blue;"></div>
+		</div>
+	</body>
+</html>

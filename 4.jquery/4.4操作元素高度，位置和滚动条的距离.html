@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		1.设置元素高度和宽度
+		获取浏览器显示区域（可视区域）的高度 ：
+		$().height();
+		获取浏览器显示区域（可视区域）的宽度 ：
+		$().width();
+		
+		2.设置元素位置
+		返回偏移坐标：
+		$(selector).offset()
+		设置偏移坐标：		
+		$(selector).offset({top:value,left:value})
+		使用函数设置偏移坐标：		
+		$(selector).offset(function(index,currentoffset))
+		
+		
+		offset是以屏幕为参考的，offset()是获取元素的偏移，属于jQuery函数。
+		position是设置元素的位置，属于CSS样式设置。
+		其中，position:absolute以它父级div中设置position:relative为参考的，
+		配合left，top设置位置。若父级div中没有position:relative设置，则以body为参考.
+		
+		3.操作滚动条
+		scroll() 方法触发 scroll 事件，或规定当发生 scroll 事件时运行的函数
+		$(selector).scroll(function)
+		方法返回或设置匹配元素的滚动条的垂直位置
+		scrollTop() 
+		方法返回或设置匹配元素的滚动条的水平位置
+		scrollLeft() 
+	-->
+	<head>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<button id="b1">高 宽</button>
+		<button id="b2">位置</button>
+		<button id="b3">滚动条</button>
+		<div id="" style="background-color: honeydew;">
+			1
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#b1").click(function(){
+					$("div").height("100px");
+					$("div").width("100px");
+				})
+			});
+			$("#b2").click(function(){
+				
+					$("div").offset({top:100,left:100});
+					var x=$("div").offset();
+					$("div").text(x.left+" "+x.top);
+				
+			});
+		</script>
+	</body>
+</html>

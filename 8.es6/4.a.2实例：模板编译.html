@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- 
+ 下面，我们来看一个通过模板字符串，生成正式模板的实例。
+  var template =
+   ` <ul><% for(var i=0; i < data.supplies.length; i++) { %> 
+	<li><%= data.supplies[i] %>
+  </li> <% } %> </ul> `;
+  上面代码在模板字符串之中，放置了一个常规模板。
+  该模板使用<%...%>放置JavaScript代码，使用<%= ... %>输出JavaScript表达式。 
+  怎么编译这个模板字符串呢？
+  
+  1.一种思路是将其转换为JavaScript表达式字符串。
+  echo('<ul>'); 
+  for(var i=0; i < data.supplies.length; i++) {
+	  echo('<li>'); 
+	  echo(data.supplies[i]); 
+	  echo('</li>'); 
+	  };
+	  echo('</ul>');//  echo对象转换为字符串
+	  这个转换使用正则表达式就行了。
+	   
+	   var evalExpr = /<%=(.+?)%>/g;
+		var expr = /<%([\s\S]+?)%>/g;
+		 template = template .replace(evalExpr, '`); 
+		 \n echo( $1 ); \n echo(`') .replace(expr, '`); 
+		 \n $1 \n echo(`'); 
+		 template = 'echo(`' + template + '`);'; 
+		 然后，将template封装在一个函数里面返回，就可以了。
+	  
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

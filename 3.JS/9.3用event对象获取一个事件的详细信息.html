@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在JavaScript中，我们可以通过event对象来
+		获取一个事件的详细信息。event对象就像飞机
+		中的“黑匣子”。
+		
+		属性			说明
+		
+		type		事件类型
+		keyCode		键码值
+		shiftKey	是否按下Shift键
+		ctrlKey		是否按下Ctrl键
+		altKey		是否按下Alt键
+		
+		1、type
+		在JavaScript中，我们可以使用event对象的type属性来获取事件的类型。
+		2、keyCode (只是一个数字)
+		在JavaScript中，如果我们想要获取按下了键盘中的哪个键，可以使用event对象的keyCode属性来获取。
+		语法：
+		event.keyCode
+		
+
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="p" style="color: lawngreen;">按下按键这里将显示按键的代码</p>
+		<script type="text/javascript">
+			document.body.onkeydown=function(){
+				str=event.keyCode;
+				p.innerHTML=str;
+			}
+		</script>
+	</body>
+</html>

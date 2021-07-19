@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- 
+	数组扩展可以将数组扩展成一个以逗号分割的参数序列
+	例如：
+	const ary=[1,2,3];
+	console.log(...ary);//输出1 2 3实际上是1,2,3 因为console.log的特性
+	总结：
+	数组的...相当于去除数组边框
+	参数的...相当于加上数组边框
+	
+	应用：
+	1.合并数组：
+	let arr1=[1,2]
+	let arr2=[3,4]
+	let arr3=[...arr1,...arr2];
+	2.合并数组2；
+	push可以接收多个参数
+	arry1.push(...ary2);
+	3.扩展运算符可以将伪数组转换为真正的数组
+	例：
+	let lis=document.querySelectorAll('li');
+	 lis=[...lis];//将lis伪数组转为真正的数组
+	4.用构造函数方法也可以将类数组转化为数组
+	arry=Array.from(伪数组,function(value){});
+		1.第一个是你要转换的伪数组
+		2.是你要对数组执行的方法，value是一个参数表示当前数组里的数据
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<script type="text/javascript">
+			let lis=document.querySelectorAll('li');
+			 lis=[...lis];
+			console.log(lis);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+	黑白效果，也叫“灰度图（average）”，是指将彩色图片转换成黑白图片。
+	实现算法是：首先取红、绿、蓝3个通道的平均值，
+	也就是(data[i + 0] + data[i + 1] +data[i + 2])/3。
+	然后data[i + 0]、data[i + 1]和data[i + 2]全部保存为这个平均值即可。
+	语法：
+	for (var i = 0; i < data.length; i += 4) 
+	{
+	    var average = (data[i + 0] + data[i + 1] + data[i + 2] + data[i + 3]) / 3;
+	    data[i + 0] = average;     //红
+	    data[i + 1] = average;     //绿
+	    data[i + 2] = average;     //蓝
+	}
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300" style="border: 2px aquamarine solid;"></canvas>
+		<script type="text/javascript">
+			var a=c.getContext("2d");
+			a.fillStyle="#66FF2F"
+			a.fillRect(10,10,20,20);
+			a.fillStyle="#8A2BE2";
+			a.fillRect(10,30,20,20);
+			a.fillStyle="#FF0000";
+			a.fillRect(30,30,20,20);
+			a.fillStyle="#FFD700";
+			a.fillRect(30,10,20,20);
+			
+			var img=a.getImageData(10,10,40,40);
+			for (var i = 0; i < img.data.length; i += 4) 
+			{
+			    var average = (img.data[i + 0] + img.data[i + 1] + img.data[i + 2] + img.data[i + 3]) / 3;
+			    img.data[i + 0] = average;     //红
+			    img.data[i + 1] = average;     //绿
+			    img.data[i + 2] = average;     //蓝
+			}
+			a.putImageData(img,50,50);
+		</script>
+	</body>
+</html>

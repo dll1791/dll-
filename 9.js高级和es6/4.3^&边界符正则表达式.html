@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- 
+	特殊字符也称为元字符如 ^.+*?等
+	1.边界符^,$
+		1.^ 表示以....开始
+		2.$ 表示以....结尾
+		例1：
+		var rg=/^123/;//以123开头的数据
+		var str='123 sad';
+		//正则表达式内不需要加”“  
+		console.log(rg.test(str));
+		例2：
+		var rg=/123$/;//以123结尾的数据
+		var str='123123';
+		//正则表达式内不需要加”“  
+		console.log(rg.test(str));
+		
+		特殊案例：
+		/123/字符串内含有123
+		/^123$/必须是123
+		
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var rg=/123$/;//以123开头的数据
+			var str='123123';
+			//正则表达式内不需要加”“  
+			console.log(rg.test(str));
+		</script>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--在浏览器中，超链接的外观如下图所示。可以看出，超链接在鼠标点击不同时期的样式是不一样的。
+
+（1）默认情况下：字体为蓝色，带有下划线。
+（2）鼠标点击时：字体为红色，带有下划线。
+（3）鼠标点击后：字体为紫色，带有下划线。
+
+	在CSS中，我们可以使用“超链接伪类”来定义超链接在鼠标点击的不同时期的样式。
+	
+	语法：
+	a:link{…}
+	a:visited{…}
+	a:hover{…}
+	a:active{…}
+	
+	伪类			说明
+	a:link		定义a元素未访问时的样式(直接定义a效果是一样的)（常用）
+	a:visited	定义a元素访问后的样式
+	a:hover		定义鼠标经过a元素时的样式（常用）
+	a:active	定义鼠标点击激活时的样式
+	
+	定义4个伪类，必须按照“link、visited、hover、active”的顺序进行，
+	不然浏览器可能无法正常显示这4种样式。请记住，这4种样式定义顺序不能改变。-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			a{text-decoration: none;/*去掉鼠标下划线*/
+				color: gold}
+			/*a:link{color: gold;}/*对于未访问时状态，我们直接针对a元素定义就行了，没必要使用a:link。*/
+			/*a:visited{color: green}*/
+			a:hover{color:red}
+			/*a:active{color:black}*/
+			/*在实际开发中，我们只会用到两种状态：未访问时状态和鼠标经过状态。*/
+		</style>
+	</head>
+	<body>
+		<a href=#a>链接测试</a>
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<p id="a">11</p>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--calc:计算
+	在CSS3中，我们可以使用calc()函数通过“计算”的方式来定义某一个属性的取值。
+	语法：
+	属性: calc(表达式)
+	
+	说明：
+	其中，我们可以使用calc()函数以计算的方式给元素的
+	width、margin、padding、font-size等来定义属性值。
+	对于calc()函数，有以下5条运算规则。
+	
+	（1）只能使用加（+）、减（-）、乘（*）和除（/）这4种运算。
+	（2）可以使用px、em、rem、百分比等单位。
+	（3）可以混合使用各种单位进行运算。
+	（4）表达式中有加号（+）和减号（-）时，其前后必须有空格。
+	（5）表达式中有乘号（*）和除号（/）时，其前后可以没有空格，但建议保留。
+	
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				background: #00BFFF;
+				width: 100px;
+				height: calc(100px + 50px - 100px);
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

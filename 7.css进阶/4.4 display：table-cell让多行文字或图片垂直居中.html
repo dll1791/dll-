@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+	display:table-cell非常强大，常见用途有以下3种。
+		 图片/多行文字 垂直居中于元素。
+		 等高布局。
+		 自动平均划分元素。
+	
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		.parent {
+           display: table;
+           width: 300px;
+           height: 300px;
+           text-align: center;
+       }
+       .son  {
+           display: table-cell;
+           height: 200px;
+           background-color: yellow;
+           vertical-align: middle;
+       }
+       /*这里我们只需要将容器设为display:table然他成为一个块级表格元素，
+        * 子元素display:table-cell使子元素成为表格单元格，然后就像在表格里一样，
+        * 给子元素加个vertical-align: middle就行了,多行文字垂直居中*/
+		</style>
+	</head>
+	<body>
+		<div class="parent">
+        <p class="son">会议认为，党的十八大以来，我国经济发展取得历史性成就、
+                     发生历史性变革，为其他领域改革发展提供了重要物质条件。经济实力
+                     再上新台阶，经济年均增长7.1%，成为世界经济增长的主要动力源和稳定器。
+        </p>
+    </div>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- 
+	1.通过更改data中的分数来改变div的显示
+	v-if三个渲染出来的只有一个div
+		v-if
+		v-else
+		v-else-if
+	2.v-show就是控制div的显示或者隐藏
+	v-show
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id='d1'>
+			<!--1. 根据data中的分数显示不同的结果-->
+			<div v-if='fenshu>=90'>优秀</div>
+			<div v-else-if='fenshu<90&&fenshu>=70'>一般</div>
+			<div v-else>较差</div>
+			<!--  -->
+			<button @click="btn1()">点击切换v-show</button>
+			<div v-show='flag'>测试v-show</div>
+		</div>
+		<script type="text/javascript">
+			let vue=new Vue({
+				el:'#d1',
+				data:{
+					fenshu:90,
+					flag:true
+				},
+				methods:{
+					btn1:function(){
+								console.log(1);
+								this.flag=!this.flag;
+							}
+				}
+				});
+		</script>
+	</body>
+</html>

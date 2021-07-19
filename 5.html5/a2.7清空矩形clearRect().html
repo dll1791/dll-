@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--
+	在Canvas中，我们可以使用clearRect()方法来清空“指定矩形区域”。
+	在Canvas中，我们可以使用clearRect()方法来清空整个Canvas（即画布）。
+	语法：
+	cxt.clearRect(x, y, width, height);
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="200px" height="200px"></canvas>
+		<script type="text/javascript">
+			var cxt=c.getContext("2d");
+			cxt.fillStyle="#66FF2F";
+			cxt.fillRect(0,0,200,200);
+			cxt.clearRect(50,50,100,100);
+		</script>
+	</body>
+</html>

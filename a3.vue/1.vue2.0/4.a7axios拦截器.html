@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- 
+请求头:用于告诉服务器客户端的情况(编码方式，语言环境等)
+	axios拦截器：
+	1.请求拦截器(例如设置请求头)
+	通过拦截器我们可以控制所有请求
+	//axios请求发送之前会先经过请求拦截器
+		
+	2.响应拦截器
+	服务器发送的数据到达之前会经过响应拦截器
+	通过他我们可以对服务器的数据进行一些处理
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="../../../axios.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+	//	1.请求拦截器(例如设置请求头) 通过拦截器我们可以控制所有请求
+			axios.interceptors.request.use(function(config){
+				//配置请求头可以对url进行判断使得某些url添加请求头
+				//config表示当前要处理的数据
+				config.headers.mytoken='nihao'
+				return config;//config必须return否则不生效
+			},function(err){//打印错误信息
+				console.log(err);
+			})
+			
+			axios.get('http://localhost:3000/axios-json').then(function(ret){
+				console.log(ret.data);
+			})
+	//	2.响应拦截器  对服务器返回的数据进行处理
+			axios.interceptors.response.use(function(res){
+				var data=res.data.uname;//对传回的对象进行处理只要其中的uname
+				//将uname返回出去
+				return data;//必须return否则不生效
+			},function(err){
+				console.log(err);
+			})
+			axios.get('http://localhost:3000/axios-json').then(function(ret){
+				console.log(ret);//后台传回的本来是一个对象但经过拦截器处理
+				//只剩下了  戴林朗
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- 
+属性绑定
+	v-bind绑定属性
+		这里的url是data中的一个成员
+		<a v-bind:href="url">通过绑定href让a标签跳转百度页面</a>
+		//可以通过数据动态的改变属性值
+	缩写属性
+		v-bind:直接简写为：
+		<a :href=""></a>
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<div id='d1'>
+			<!-- 这里的url是data中的一个成员 -->
+				<!-- 全称 -->
+			<a v-bind:href="url">通过绑定href让a标签跳转百度页面</a>
+				<!-- 简写 -->
+			<a :href="url">通过绑定href让a标签跳转百度页面</a>
+		</div>
+		<script type="text/javascript">
+			let vue=new Vue({
+				el:'#d1',
+				data:{
+					url:'http://www.baidu.com'
+				}
+			});
+		</script>
+	</body>
+</html>

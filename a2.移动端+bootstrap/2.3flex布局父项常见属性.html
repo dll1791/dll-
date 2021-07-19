@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- 
+	在移动端兼容性好，操作简单, pc端兼容较差
+	不用清除浮动，就可以实现流动效果
+	1.flex布局特性
+		任何一个容器都可以用flex布局 flex默认把盒子放在一行显示
+		使用了flex子元素的float,clear和vertical-align属性将失效
+		flex可以实现居中浮动的效果，而且不需要清除浮动
+	2.原理：给父亲添加flex属性使孩子完成布局
+	
+	
+	 flex-direction:column;将主轴改为y轴，纵轴 
+	 flex-direction:row; 将主轴改为x轴，横轴 
+	 flex-direction:row- reverse;主轴为x轴，并且翻转 
+	 flex-direction:column- reverse;主轴为y轴，并且翻转
+	
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				border: 2px solid green;
+				width: 300px;
+				height: 200px;
+				display: flex;
+				flex-direction: flex-end;
+				
+			}
+			span{
+				border: 2px solid green;
+				height: 50px;
+				width: 150px;
+				float:left;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+
+			<span>4</span>
+		</div>
+	</body>
+</html>

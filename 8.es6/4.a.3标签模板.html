@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- 
+ 模板字符串的功能，不仅仅是上面这些。它可以紧跟在一个函数名后面，
+ 该函数将被调用来处理这个模板字符串。这被称为“标签模板”功能
+ （tagged template）。
+ alert`123` // 等同于 alert(123)
+ 标签模板其实不是模板，而是函数调用的一种特殊形式。
+ “标签”指的就是函数，紧跟在后面的模板字符串就是它的参数。
+  但是，如果模板字符里面有变量，就不是简单的调用了，
+  而是会将模板字符串先处理成多个参数，再调用函数。
+  
+  var a = 5; 
+  var b = 10; 
+  function tag(s, v1, v2) {
+    console.log(s[0]);
+    console.log(s[1]);
+    console.log(s[2]);
+    console.log(v1);
+    console.log(v2);
+   
+    return "OK";
+  }
+
+  tag`Hello ${ a + b } world ${ a * b }`; 
+  // 等同于 tag(['Hello ', ' world ', ''], 15, 50);
+  上面代码中，模板字符串前面有一个标识名tag，它是一个函数。
+  整个表达式的返回值，就是tag函数处理模板字符串后的返回值。
+   函数tag依次会接收到多个参数。
+   第一个参数：['Hello ', ' world ', '']
+	第二个参数: 15 
+	第三个参数：50
+	也就是说，tag函数实际上以下面的形式调用。 tag(['Hello ', ' world ', ''], 15, 50)
+	
+	var total = 30;
+	 var msg = passthru`The total is ${total} (${total*1.05} with tax)`;
+	  function passthru(literals) { 
+		  var result = '';
+		   var i = 0; 
+		   while (i < literals.length) {
+			   result += literals[i++]; 
+			   if (i < arguments.length) { //js把传入到这个函数的全部参数存储在
+																	一个叫做arguments的数组里
+				   result += arguments[i];
+					} }
+					return result; 
+					}
+					msg // "The total is 30 (31.5 with tax)"
+	上面这个例子展示了，如何将各个参数按照原来的位置拼合回去。
+	 passthru函数采用rest参数的写法如下。
+	 function passthru(literals, ...values) {
+		 var output = ""; 
+		 for (var index = 0; index < values.length; index++) { 
+			 output += literals[index] + values[index];
+			  }
+			  output += literals[index] return output;
+			   }
+“标签模板”的一个重要应用，就是过滤HTML字符串，防止用户输入恶意内容。
+//实现方案就是用replace替换掉所有的<,>等东西，当用户在输入框中输入一个
+恶意代码时就会被破坏解构
+
+标签模板的另一个应用，就是多语言转换（国际化处理）。 
+i18n`Welcome to ${siteName}, you are visitor number ${visitorNumber}!` 
+// "欢迎访问xxx，您是第xxxx位访问者！"
+
+
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a = 5;
+			var b = 10; 
+			function tag(s, v1, v2) {
+			  console.log(s[0]);
+			  console.log(s[1]);
+			  console.log(s[2]);
+			  console.log(v1);
+			  console.log(v2);
+			 
+			  return "OK";
+			}
+			tag`${ a + b } 你好 世界 ${ a * b }`; 
+			function e(){
+				let h=arguments[0];
+				console.log(h);
+			}
+		e(4);
+		</script>
+	</body>
+</html>

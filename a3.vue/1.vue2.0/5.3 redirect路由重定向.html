@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- 
+	路由重定向：
+	用户在访问地址A的时候强制用户跳转地址C，从而展示特定的组件页面
+	例如：用户访问A—>A被vue重定向使A跳转至C
+	案例（使本地路由重定向显示第一个路由组件User）
+	redirect属性  
+	{path:'/',redirect:'/user'},
+ -->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<!-- 导入 vue 文件 -->
+		<script src="0.0vue.js"></script>
+		<!-- vue-router 和vue存在依赖关系，所以vue-router要放在vue下面  -->
+		<!-- 1.引入库文件 -->
+		<script src="0.0vue-router.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- 被 vue 实例控制的 div 区域 -->
+		<div id="app">
+				<router-link to='/user'>User</router-link>
+				<router-link to='/register'>register</router-link>
+				 <router-view></router-view>
+		</div>
+
+		<script>
+			let User={
+				template:`<h1>User组件</h1>`
+			}
+			let Register={
+				template:`<h1>Register组件</h1>`
+			}
+		//路由重定向：重新添加一个路由规则
+			const router=new VueRouter({
+				routes:[
+					{path:'/',
+					redirect:'/user'},//用redirect重新定义这个地址的跳转对象
+					{path:'/user',component:	User},
+					{path:'/register',component: Register}
+				]
+			})
+		
+			const vm = new Vue({
+				el: '#app',
+				data: {
+					
+				},
+				router:router,
+			})
+			
+		</script>
+	</body>
+</html>

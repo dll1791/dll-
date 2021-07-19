@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+	HTML5离线存储的工作原理是怎样的，具体是怎么使用的？
+	（1）工作原理
+    	HTML5离线存储是基于一个新建的.appcache文件的缓存机制（不是存储技术），
+    	通过这个文件来解析清单中的离线存储资源，这些资源就会像Cookie一样被存储下来。
+    	之后当网络处于离线状态下时，浏览器会通过被离线存储的数据进行页面展示。
+  	（2）怎么使用
+		    ① 页面头部加入manifest属性：
+		<!DOCTYPE html>
+		<html>
+		<head manifest="cache.manifest">
+		    ……
+		</html>
+		    ②网站根目录下新建一个cache.manifest文件，文件格式如下：
+		CACHE MANIFEST  
+		# 上面这一句必须存在，而且必须放在头部  
+		
+		# version xx.xx.xx
+		
+		# 指明缓存入口  
+		CACHE:  
+		index.html  
+		style.css  
+		images/logo.png  
+		scripts/main.js  
+		
+		# 以下资源必须在线访问，离线是不可访问
+		NETWORK:  
+		login.php  
+		
+		# 如果index.php无法访问则用404.html代替  
+		FALLBACK:  
+		/index.php /404.html  
+		    ③ 对于更新缓存，采用“自动更新”和“手动更新”两种方式
+		  ·自动更新，指的是通过改变cache.manifest文件的内容来触发更新缓存。
+		  ·手动更新，指的是通过JavaScript事件来操作更新缓存。
+		-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

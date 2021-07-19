@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- 
+	1.链接在移动端被点击时有个高亮，为了去除这个
+	可以使用-webkit-tap-highlight-color:transparent
+	
+	2.按钮和输入框在移动端浏览器默认的外观在css上加上这个属性
+	才能给按钮和输入框自定义样式
+		-webkit-appearance: none;
+	
+	3.禁用长按页面时的弹出菜单
+	img,a{-webkit-touch-callout: none;}
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			a{
+				-webkit-tap-highlight-color:transparent;
+			}
+			input{
+				-webkit-appearance: none;
+			}
+			img,a{-webkit-touch-callout: none;}
+		</style>
+	</head>
+	<body>
+		<a href="">lianjie</a>
+		<input type="button" name="" id="" value="anniu" />
+	</body>
+</html>

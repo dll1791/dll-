@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+	在CSS3中，我们可以使用transform属性的skew()方法来实现元素的倾斜效果。
+	语法：
+	transform: skewX(x);        /*沿X轴方向倾斜*/
+	transform: skewY(y);        /*沿Y轴方向倾斜*/
+	transform: skew(x, y);      /*沿X轴和Y轴同时倾斜*/
+	单位为deg，度数有正负之分
+	skewx正逆    负顺时针
+	围绕x轴的中心旋转
+	
+	skewy正顺    负逆时针
+	围绕Y轴的中心旋转
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#d1{
+				transform: skewx(20deg);	
+			}
+			#d2{
+				transform: skewy(20deg);	
+			}
+			#d3{
+				transform: skew(20deg,-20deg);	
+			}
+		</style>
+	</head>
+	<body>
+		<div style="height: 100px; width:200px; background: greenyellow;margin: 100px;">	
+		</div>
+		<div id="d1" style="height: 100px; width:200px; background: greenyellow;margin: 100px;">	
+		</div>
+		<div id="d2" style="height: 100px; width:200px; background: greenyellow;margin: 100px;">	
+		</div>
+		<div id="d3" style="height: 100px; width:200px; background: greenyellow;margin: 100px;">	
+		</div>
+		
+	</body>
+</html>

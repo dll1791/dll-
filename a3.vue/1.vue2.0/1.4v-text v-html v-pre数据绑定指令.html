@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- 
+数据绑定：把数据填充到标签中
+	1.v-text填充纯文本
+	v-text='参数名' 下面js中data值里面的属性
+	相比插值表达式更加简洁
+	//没有闪动问题
+	
+	2.v-html填充HTML片段
+	存在安全问题
+	容易导致xss（跨站脚本）攻击 //使用该指令时需要慎重
+	本网站内部数据可以使用，来自第三方的数据不可以用
+	<strong></strong>
+	
+	3.v-pre填充原始信息
+	显示原始信息，跳过编译过程(分析编译过程)
+
+ -->
+<html>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='d1'>
+			<div>{{dll}}</div>
+			<!-- v-text填充纯文本可以 -->
+			<div v-text='txt'></div> 
+			<!-- v-html填充HTML片段 -->
+			<div v-html="html"></div>
+			<!-- v-pre填充原始信息 -->
+			<div v-pre>{{dll}}</div>
+		</div>
+		<script type="text/javascript">
+			let vue=new Vue({
+				el:'#d1',
+				data:{
+					txt:'这是一个文本',
+					dll:'hellow dll',
+					html:'<h1>这是一个html</h1>'
+				}
+			})
+		</script>
+	</body>
+</html>

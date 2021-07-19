@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- 
+	脚手架就是一个命令行工具，用命令快速生成一个vue的基础框架
+		1.命令行输入npm install -g @vue/cli安装脚手架 4.x版本
+		2.用脚手架创建项目 俩种主流方式
+			a. 	命令行方式创建(不推荐，该方式了解即可)
+					vue create my-project（项目名称必须是英文的）
+					输入之后会弹出一个面板选择最后一项自定义(可以选择安装哪些功能，空格选中这里选(Babel,esLInt,etc.))
+					之后有弹出个页面问你选择哪个路由，输入n选择hash的路由
+					然后会弹出个ESLint版本让你选择，选择Standard config(倒数第二个)
+					之后选择默认项Lint on save
+					之后会弹出个框问你之前选择安装的(Babel,esLInt,etc.)文件怎么创建，有俩种方式选择第一个(in dedicated config files)
+					然后问你是否将这些创建的信息保存为一个模板（自行考虑）
+					随后会提示
+					  cd 6.1my-pro1
+					  npm run serve 输入cd进入项目根目录中,npm run 进行编译，等待编译成功选择一个地址看看效果
+					 
+					
+			b. 	图形化界面方式创建 vue ui(推荐，图像界面更加方便)
+				1.进入命令行 输入vue ui命令打开一个浏览器面板，然后通过鼠标点击即可完成操作
+				2.点击创建进入项目创建面板，选择路径点击输入项目名称
+				3.在Git 初始git仓库 下面输入框中(最后一行) 输入 init project点击下一步
+				4.选择配置，可以选择默认配置，手动配置，或者按照自己的模板配置(第一次推荐手动配置)
+					开启babel router Linter/Formatter  使用配置文件 4个 点击下一步
+				5.把使用历史路由关闭，点击select下拉列表 选择倒数第二个(ESLint +Standard config) 点击创建项目
+				6.输入名字保存模板，等待项目创建
+				7.点击左边篮筐的  任务
+					serve ->运行  就可以进行项目的开发和调试
+					点击右侧的启动app就可以看项目效果
+ -->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<script src="0.0vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+				
+		</div>
+
+		<script>
+			let vm = new Vue({
+				el: '#app',
+				data: {
+					
+				},
+				components: {
+					
+				}
+			})
+		</script>
+	</body>
+</html>

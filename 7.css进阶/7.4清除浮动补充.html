@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- 
+	很多情况下父盒子不方便给高度，但是子盒子需要添加浮动，
+	这时候父盒子的高度就会变成0了，就会对后面的布局有影响，
+	这时候需要清除浮动，如果父盒子有高度或者对后面的布局没
+	有影响则不需要清除浮动，清除浮动的本质是清除浮动带来的影响
+ -->
+<html>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.f{
+				border: 2px solid #000099;
+				height: 200px;
+				/* overflow: hidden; */
+			}
+			.f div{
+				float: left;
+				height: 50px;
+				width: 50px;
+				border: 2px solid #55aaff;
+				
+			}
+			.f:after{
+				content:'';
+				height: 0;
+				display:block;
+				clear: both;
+				visibility: hidden;
+			}
+			.f{
+				*zoom: 1;
+				/* ie6的清除浮动 */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="f">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+		</div>
+	</body>
+</html>

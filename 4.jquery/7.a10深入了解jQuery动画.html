@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+	所有jQuery动画从本质上来说，都是通过改变元素的CSS属性值来实现的。
+	换句话说，jQuery动画其实就是通过将元素的CSS属性从“一个值”
+	在一定时间内平滑地过渡到“另一个值”，从而实现动画效果。
+	
+	        对于3种动画形式，实现的原理如下。
+	（1）显示与隐藏：通过改变display、opacity、width、height来实现。
+	（2）淡入与淡出：通过改变display、opacity来实现。
+	（3）滑上与滑下：通过改变display、height来实现。
+	 
+	 //第1组
+	$().hide(500);
+	$().animate({"width":"0", "height":"0", "opacity":"0.0",
+	"display":"none"},500);
+	//第2组
+	$().fadeOut(500);
+	$().animate({"opacity":"0.0", "display":"none"},500);
+	//第3组
+	$().slideUp(500);
+	$().animate({"height":"0", "display":"none"},500);
+
+	        实际上，这三种动画形式本质上就是使用animate()方法来实现的，
+	只不过jQuery把它们封装得更加简单而已。
+		
+		display实例：
+		p.inline
+		  {
+		  display:inline;
+		  }
+		  值						描述
+		none				此元素不会被显示。
+		block				此元素将显示为块级元素，此元素前后会带有换行符。
+		inline				默认。此元素会被显示为内联元素，元素前后没有换行符。
+		inline-block		行内块元素。（CSS2.1 新增的值）
+		list-item			此元素会作为列表显示。
+		run-in				此元素会根据上下文作为块级元素或内联元素显示。
+		table				此元素会作为块级表格来显示（类似 <table>），表格前后带有换行符。
+		inline-table		此元素会作为内联表格来显示（类似 <table>），表格前后没有换行符。
+		table-row-group		此元素会作为一个或多个行的分组来显示（类似 <tbody>）。
+		table-header-group	此元素会作为一个或多个行的分组来显示（类似 <thead>）。
+		table-footer-group	此元素会作为一个或多个行的分组来显示（类似 <tfoot>）。
+		table-row			此元素会作为一个表格行显示（类似 <tr>）。
+		table-column-group	此元素会作为一个或多个列的分组来显示（类似 <colgroup>）。
+		table-column		此元素会作为一个单元格列显示（类似 <col>）
+		table-cell			此元素会作为一个表格单元格显示（类似 <td> 和 <th>）
+		table-caption		此元素会作为一个表格标题显示（类似 <caption>）
+		inherit				规定应该从父元素继承 display 属性的值。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

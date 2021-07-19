@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		
+		jQuery的ready事件跟JavaScript的onload事件虽然有着相同的功能，
+		但是两者之间也有着细微的区别。
+		
+		在JavaScript中，onload表示文档加载完成后再执行的一个事件和jQuery一样。
+		
+		JQ中的语法：
+		//写法1：
+		$(document).ready(function(){
+		    ……
+		})
+		
+		//写法2：
+		jQuery(document).ready(function(){
+		    ……
+		})
+		
+		ready和onload的区别：
+		1.jQuery的ready事件仅仅是DOM元素加载完成就可以执行，而JavaScript
+		的onload事件除了DOM元素加载完成后还需要等所有外部文件也加载
+		完成才可以执行。
+		2.在JavaScript中，window.onload只能调用一次，如果多次调用，则只会执行最后一个。
+		在jQuery中，ready事件是可以多次执行的。
+
+		
+		3、ready事件的4种写法
+		
+		//写法1：
+		$(document).ready(function(){
+		    ……
+		})
+		
+		//写法2：
+		jQuery(document).ready(function(){
+		    ……
+		})
+		//写法3：
+		$(function(){
+		    …… 
+		})
+		
+		//写法4：
+		jQuery(function(){
+		    ……
+		})
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

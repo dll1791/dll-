@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--tr表示一行 td表示这一行中的表格单元-->
+<!--caption 表格标题一个表格只能有一个标题他独立于表格之外-->
+<!--th表头单元格 浏览器会以粗体和居中来显示th标签中的内容-->
+    <table border="1">
+        <caption>表格标题</caption>
+<!--   html中的  thead tbody tfoot元素 增加语义性方便阅读维护的同时也方便设置不同区域的css样式-->
+        <thead>
+            <tr>
+<!--（横向合并）合并列 colspan 同合并行一样参考合并行 -->
+                <th colspan="3">th单元</th>
+            </tr>
+        </thead>
+       <tbody>
+       
+<!-- （纵向合并） rowspan合并行（是以这个单元格为基础合并行不会影响旁边的单元格） 2 表示合并的行数   -->
+           <td rowspan="2">表格</td>
+           <td>表格</td>
+           <td>表格</td>
+       </tr>
+       <tr>
+           <td>表格</td>
+           <td>表格</td>
+       </tr>
+       </tbody>
+        <tfoot>
+        <tr>
+            <td>表格</td>
+            <td>表格</td>
+            <td>表格</td>
+        </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

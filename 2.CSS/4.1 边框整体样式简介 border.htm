@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>  
+		div元素可以定义边框，img元素可以定义边框，table元素可以定义边框，span元素同样也可以定义边框
+		
+		属性				说明
+		border-width	边框的宽度		
+		border-style	边框的外观
+		border-color	边框的颜色
+		想要为一个元素定义边框样式，必须要同时设置border-width、border-style、
+		border-color属性才会有效果。
+		border-width属性用于定义边框的宽度，取值是一个像素值。
+		
+		border-style属性用于定义边框的外观，常用取值如下表所示。
+		border-style属性取值
+		属性值	说明
+		none	无样式
+		dashed	虚线
+		solid	实线
+		还有hidden、dotted、double等取值
+		
+		border-color属性用于定义边框的颜色，取值可以是“关键字”或“16进制RGB值”
+		width属性用于定义元素的宽度，height属性用于定义元素的高度。
+		
+		想要为一个元素定义边框，我们需要完整地给出border-width、border-style和border-color。这种写法代码量过多，很费时费力。不过CSS为我们提供了一种简写形式：
+		border: 1px solid red;
+		上面代码其实等价于：
+		border-width: 1px;
+		border-style: solid;
+		border-color: red; 
+	</body>
+</html>

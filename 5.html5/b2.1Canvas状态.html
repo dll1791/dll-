@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!--
+	  什么是状态？
+	Canvas是基于“状态”来绘制图形的。每一次绘制，即使用stroke()或fill()，
+	Canvas会检测整个程序定义的所有状态，这些状态包括strokeStyle、
+	fillStyle和lineWidth等。
+	
+	当一个状态值没有被改变时，Canvas就一直使用最初的值。当一个状态值被改变时，我们分两种情况考虑。
+	（1）如果使用beginPath()开始一个新的路径，则不同路径使用不同的值。
+	（2）如果没有使用beginPath()开始一个新的路径，则后面的值会覆盖前面的值（后来者居上原则）。
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在JavaScript中，我们可以使用以下2组方式来获得兄弟元素。
+		  previousSibling、nextSibling（不常用）
+		  previousElementSibling、nextElementSibling（常用）
+		  
+		  跟查找子元素的2组方式一样，previousSibling和nextSibling
+		  查找出来的可能是文本节点（一般是空白节点），因此如果你希望只操作元素节点，
+		  建议用previousElementSibling和nextElementSibling。
+
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<p id="b1">1</p>
+		<p id="b2">2</p>
+		<a href="" id="b3">3</a>
+	</head>
+	<body>
+		<script type="text/javascript">
+			b2.previousElementSibling.style.backgroundColor="#ff5544";
+			b2.nextElementSibling.style.backgroundColor="pink";
+		</script>
+	</body>
+</html>

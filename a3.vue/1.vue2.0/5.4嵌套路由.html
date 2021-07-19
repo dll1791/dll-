@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- 
+	嵌套路由：
+	多个路由叠加
+	例如父路由中又有子路由链接
+	1.在父路由的组件中添加新的路由链接
+	2.在父路由组件的规则设定中，用children添加子路由规则设定
+ -->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<!-- 导入 vue 文件 -->
+		<script src="0.0vue.js"></script>
+		<!-- vue-router 和vue存在依赖关系，所以vue-router要放在vue下面  -->
+		<script src="0.0vue-router.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- 被 vue 实例控制的 div 区域 -->
+		<div id="app">
+				<router-link to='/user'>User</router-link>
+				<router-link to='/register'>register</router-link>
+				 <router-view></router-view>
+		</div>
+		<script>
+			let User={
+				template:`<h1>User组件</h1>`
+			}
+			// ***************1.路由嵌套*****************
+			//	1.在父路由的组件中添加新的路由链接
+			let Register={
+				template:`
+							<div>
+								<h1>Register组件</h1>
+								<hr/>
+								<!-- 子路由 -->
+								<router-link to='/register/tab1'>tab1</router-link>
+								<router-link to='/register/tab2'>tab2</router-link>
+								<!-- 子路由的占位符 -->
+								<router-view></router-view>
+							</div>
+								`
+			}
+			let Tab1={
+				template:`<h3>tab1子组件</h3>`
+			}
+			let Tab2={
+				template:`<h3>tab2子组件</h3>`
+			}
+			const router=new VueRouter({
+				routes:[
+					{path:'/',redirect:'/user'},
+					{path:'/user',component:	User},
+					//*********************2.子路由的路由规则设定*******************
+					//在父路由组件的规则设定中，用children添加子路由规则设定
+					{
+						path:'/register',component: Register,
+						children:[
+							{path:'/register/tab1',component:Tab1},
+							{path:'/register/tab2',component: Tab2}]
+					},
+					
+				]
+			})
+		
+			const vm = new Vue({
+				el: '#app',
+				data: {
+					
+				},
+				router:router,
+			})
+			
+		</script>
+	</body>
+</html>

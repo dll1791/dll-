@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+	hue:色彩
+	rotate:旋转
+	在CSS3中，我们可以使用hue-rotate()方法来实现色相旋转的滤镜效果。
+	语法：
+	filter: hue-rotate(度数)
+	说明：
+	hue-rotate()方法的取值是一个度数，单位为deg（即degree的缩写）。
+	其中，0deg表示不旋转，360deg表示旋转360°，也就是相当于一个循环。
+	
+	0-90 ：向绿色靠近
+	90-180：向蓝色靠近
+	180-270：向红色靠近
+	270-360：向原本的颜色靠近
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#a1{
+				filter: hue-rotate(270deg);
+			}
+		</style>
+	</head>
+	<body>
+		<img id="a1" src="../../图片与文件/梦想3.jfif" style="height: 400px;"title="复古"/>
+		<img src="../../图片与文件/梦想3.jfif" style="height: 400px;"/>
+	</body>
+</html>

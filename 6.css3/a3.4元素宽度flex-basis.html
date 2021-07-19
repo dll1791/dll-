@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+	basis:基础主要成分
+	
+	在CSS3中，我们可以定义弹性盒子内部子元素的在分配空间之前，该子元素所占的空间大小。
+	浏览器会根据这个属性，然后计算父元素是否有多余空间。
+	很多小伙伴初次见到flex-basis这个属性，都会感到很疑惑，完全不知道它是用来干嘛的。
+	说白了，flex-basis就是width的替代品，这两个都用来定义子元素的宽度。
+	只不过在弹性盒子中，flex-basis的语义会比width好一点而已。
+	
+	语法：
+	flex-basis: 取值;
+	
+	flex-basis属性取值有两个：一个是“auto”，即该子元素的宽度是根据内容多少来定的；
+	另外一个是“长度值”，单位可以为px、em和百分比等。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.a{
+				border: #000000 5px solid;
+				height: 100px;
+				width: 100px;
+				display: flex;
+			}
+			.b{
+				height: 100px;
+				width: 50px;
+				flex-basis:20%;
+			}
+			.b1{
+				height: 100px;
+				width: 10px;
+				flex-basis: 50px;
+				flex-basis:20%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a">
+			<div class="b"  style="background: green;"></div>
+			<div class="b1"  style="background: red;"></div>
+			
+		</div>
+	</body>
+</html>
+

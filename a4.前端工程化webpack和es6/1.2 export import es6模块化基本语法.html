@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- 
+1. 2export import es6模块化基本语法
+	1. export   default 默认导出（每个模块中只允许使用一次，否则报错）
+	2. import 接收名称 from '模块标识符' 默认导入
+	3.export let s1 按需导出
+	例如：
+	1.	let a = 10
+			let c = 20
+			let d = 30
+
+			function show() {
+			  console.log('1111111111111')
+			}
+			
+			//默认导出
+			export default {//（每个模块中只允许使用一次，否则报错）
+			  a,
+			  c,
+			  show
+			}
+			//默认导出和按需导出不冲突
+			
+			//按需导出
+			export let s1 = 'aaa'
+			export let s2 = 'ccc'
+			export function say() {
+			  console.log('ooooooooo')
+			}
+			
+	2.	
+		//默认导入
+		import m1 from './mi.js'
+		
+		//按需导入和默认导入共存
+		import m1,{s1,s2,say} from './mi.js'
+		//m1是默认导入的对象，{s1,s2,say}是按需导入
+		for (let i = 0; i < 3; i++) {
+		  console.log(i)
+		}
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

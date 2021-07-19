@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		所谓事件监听器，指的是使用addEventListener()方法来为一个元素添加事件，我们又称之为“绑定事件”。
+		
+		语法：
+		obj.addEventListener("type" , fn , false)
+		在JavaScript中，我们可以使用removeEventListener()方法为元素解绑（或解除）某个事件。解绑事件与绑定事件是相反的操作。
+		（注意: 监听的事件不要使用 "on" 前缀。 例如，使用 "click" ,而不是使用 "onclick"。）
+	
+		false
+		(可选。布尔值，指定事件是否在捕获或冒泡阶段执行。
+		可能值:
+		true - 事件句柄在捕获阶段执行
+		false- false- 默认。事件句柄在冒泡阶段执行)
+		
+		fn(function 执行方法的名称)
+		
+		 语法：
+		obj.removeEventListener(type , fn , false);
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="demo">你好</p>	
+			实例
+			为 <button id="myBtn">按钮</button>元素添加点击事件。 当用户点击按钮时，在 id="demo" 的 <p> 元素上输出 "Hello World" :
+			<script type="text/javascript">
+				myBtn.addEventListener("click",function(){
+					demo.innerHTML="Hello World";
+				})
+				
+			</script>
+
+	</body>
+</html>

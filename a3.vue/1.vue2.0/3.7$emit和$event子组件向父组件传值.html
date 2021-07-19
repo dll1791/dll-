@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- 
+	子组件向父组件传值：
+	props传递数据的原则是单向数据流
+	只允许父组件向子组件传递数据，不允许子组件直接操作props中的数据
+	（实际可以操作，但是不要用为了简化数据操作逻辑所以不能用）
+	
+	1.子组件可以通过自定义事件方式向父组件中传值
+	//$emit是固定的代表声明一个向父组件传值的事件 (传递的值通过event接收)
+	//enlarge-text是自己定义的事件名称
+		<button @click='$emit("enlarge-text")'>扩大父组件中字体大小</button>
+	
+	enlarge-text就是之前定义的事件
+	<menu-item : @enlarge-text='handle'></menu-item>
+	
+	2.直接传值 // @click='$emit("enlarge-text",40)'
+	//中的第二个参数40就代表子组件对外广播的值
+		1.<button @click='$emit("enlarge-text",40)'>通过事件扩大父组件字体为40px</button>
+		2.//所传的值通过$event接收
+		<menu-item  @enlarge-text='handle($event)'></menu-item>
+		3.最后设置handle函数的逻辑就可以使得字体大小变为40px
+ -->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="app">
+			<div :style='{fontSize: fontSize1 + "px"}'>{{pmsg}}</div>
+			<menu-item  @enlarge-text='handle($event)'></menu-item>
+		</div>
+		<script type="text/javascript" src="0.0vue.js"></script>
+		<script type="text/javascript">
+			/*
+      子组件向父组件传值-基本用法
+      props传递数据原则：单向数据流
+    */
+
+			Vue.component('menu-item', {
+				template: `
+        <div>
+          <button @click='$emit("enlarge-text",40)'>通过事件扩大父组件字体为40px</button>
+        </div>
+      `
+			});
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					pmsg: '父组件中内容',
+					fontSize1: 14
+				},
+				methods: {
+					handle: function(val) {
+						// 扩大字体大小
+						this.fontSize1=val;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

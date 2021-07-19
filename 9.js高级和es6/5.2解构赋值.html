@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- 
+	解构赋值：按照对应位置对变量赋值，对象也可以解构赋值
+	1.数组解构
+	//a,b,c是变量
+		let[a,b,c]=[1,2,3];//这里的let []不是数组他是一个解构的意思
+		console.log() ;//如果结构不成功变量的值就会变为undefined
+	2.对象解构
+		1.不含变量名的解构
+		//对象解构是先匹配变量名在赋值
+		//例如右边的name先找到左边的name，这时才将andy赋值给name
+		//给左边的name
+		let {name,age}={name:'andy',age:'15'};
+		console.log(name);
+		console.log(age);
+		2.含有变量名的解构
+		//这里的解构是把 andy赋值给myname而不是name
+		let {name:myname,age:myage}={name:'andy',age:'15'};
+		console.log(myname);//直接输出name则会得到一个空值
+		//这里的name只用于属性匹配无实际意义
+		//myname才是真正的变量
+		console.log(myage);
+		
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let {name,age}={age:'15',name:'andy'};
+			console.log(name);
+			console.log(age);
+		</script>
+	</body>
+</html>

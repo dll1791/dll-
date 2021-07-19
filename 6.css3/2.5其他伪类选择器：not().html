@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+	除了前几节中介绍的伪类选择器之外，CSS3还为我们提供了其他几种伪类选择器。
+	  :root		
+	  :empty
+	  :target
+	  :not()（重点掌握）
+	
+	1.:root 选择器匹配文档根元素。（只能设置整个html页面，单独的元素背景不起效）
+	在 HTML 中，根元素始终是 html 元素
+	
+	实例
+	设置 HTML 文档的背景色：
+	:root
+	{ 
+	background:#ff0000;
+	}
+	
+	2.:empty 选择器匹配没有子元素（包括文本节点）的每个元素。
+	
+	实例
+	指定空的 p 元素的背景色：
+	p:empty
+	{ 
+	background:#ff0000;
+	}
+	
+	3.URL 带有后面跟有锚名称 #，指向文档内某个具体的元素。
+	这个被链接的元素就是目标元素(target element)。
+	:target 选择器可用于选取当前活动的目标元素。
+	（比如页面内的跳转链接跳转到业内某个P元素，此时这个P元素就会被选中）
+	
+	实例
+	突出显示活动的 HTML 锚：
+	p:target
+	{ 
+	border: 2px solid #D4D4D4;
+	background-color: #e5eecc;
+	}
+	
+	4.:not(selector) 选择器匹配非指定元素/选择器的每个元素。
+	设置非 <p> 元素的所有元素的背景色：（重点掌握）
+	:not(p)
+	{ 
+	background-color: #ff0000;
+	}
+	
+-->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

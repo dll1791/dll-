@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- 
+	1.add()给Set数据结构中添加值//返回set结构本身，直接改变数据本身
+		例：let set =new Set();
+			console.log(set.size);
+			set.add(4).add(2).add(1).add('a');//在set中添加1,2,4
+			console.log(set.size);//输出3
+	
+	2.delete()重Set数据结构中三处一个指定值//返回一个布尔值
+		例：
+		let set =new Set();
+		set.add(4).add(2).add(1);
+		let boo=set.delete(1);
+		console.log(boo);//输出true
+		
+	3.has()判断set中是否含有某个值//返回一个布尔值
+			let set =new Set();
+			set.add(4).add(2).add(1);
+			let boo=set.has(1);
+			console.log(boo);//返回true
+			
+	4.clear()清除set所有成员//没有返回值
+			let set =new Set();
+			set.add(4).add(2).add(1);
+			set.clear();
+			console.log(set.size);//输出0
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let set =new Set();
+			set.add(4).add(2).add(1);
+			set.clear();
+			console.log(set.size);
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- 
+	函数的定义和调用有三种
+	1. function fn(){};
+	2.var fun=function(){}
+	
+	3.new Function('参数1','参数2','函数体');//效率低，麻烦不适用
+	例如：
+	var f =new Function('a','b','console.log(a+b)');//要在浏览器查看
+	f(1,2);//参数函数体都需要字符串的格式
+	
+	结论：所有函数都是Function的实例对象
+	js中万物皆对象
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var f =new Function('a','b','console.log(a+b)');//要在浏览器查看
+			f(1,2);
+			console.log(f);
+		</script>
+	</body>
+</html>

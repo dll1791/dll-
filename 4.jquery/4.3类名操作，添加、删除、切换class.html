@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		(为目标函数加入css样式，删除，切换)
+		类名操作，指的是为元素添加一个class或删除一个class，
+		从而整体控制元素的样式。在jQuery中，对于类名操作共有以下3种。
+		
+		  添加class
+		  删除class
+		  切换class
+		  
+		//添加class
+		$().addClass("类名")
+		//删除class
+		$().removeClass("类名")
+		//切换class
+		$().toggleClass("类名")
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.css1{
+				height: 500px;
+				content: url('../../图片与文件/savanna2.jfif');
+			}
+			.css2{
+				height: 500px;
+				content: url('../../图片与文件/梦想4.jfif');
+			}
+		</style>
+	</head>
+	<body>
+			<button id="b1">添加</button>
+			<button id="b2">删除</button>
+			<button id="b3">切换</button>
+			<p></p>
+			<img src="" alt="" id="d"/>
+			<script type="text/javascript">
+				$("#b1").click(function(){
+					$("#d").addClass("css1")
+				})
+				$("#b2").click(function(){
+					$("#d").removeClass("css1");
+					$("#d").removeClass("css2");
+				})
+				$("#b3").click(function(){
+					$("#d").toggleClass("css2");
+				})
+			</script>
+	</body>
+</html>

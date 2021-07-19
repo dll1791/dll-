@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+	对于浮动来说，它有2个最重要的特点。
+	（1）当一个元素定义了float:left或float:right时，
+	不管这个元素之前是inline、inline-block或者其他类型，
+	都会变成block类型。也就是说，浮动元素会表现为块元素效果，
+	然后可以定义width、height、padding和margin。
+	如果你再去为浮动元素定义display:block，完全是多此一举。
+	
+	（2）当一个元素定义了float:lef或float:right时，
+	这个元素会脱离文档流，后面的元素会紧跟着填上了空缺的位置。
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			span{/*加入float后变成了块元素*/
+				height: 100px;
+				width: 100px;
+				background: #002E8B;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<span></span>
+	</body>
+</html>

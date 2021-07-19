@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在jQuery中，我们可以使用stop()方法来停止元素正在执行的动画效果。
+		
+		语法：
+		$().stop(stopAll, goToEnd)
+		
+		stop()方法的4种形式
+	形式						说明
+	stop()				等价于stop(false, false)，仅停止当前动画，后面的动画还可以继续执行
+	stop(true)			等价于stop(true,false)，停止当前动画，并且停止后面的动画
+	stop(true, true)	当前动画继续执行，只停止后面的动画
+	stop(false, true)	停止当前动画，跳到最后一个动画，并且执行最后一个动画
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js"></script>
+	</head>
+	<body>
+		<button class="b1">队列动画</button>
+		<button class="b2">停止当前后面继续</button>
+		<button class="b3">停止所有</button>
+		<button class="b4">停止后面</button>
+		<button class="b5">停止当前动画跳到最后动画</button>
+		<br><br>
+		<div style="width: 100px;height: 100px; background-color: aquamarine;">
+		</div>
+		<script>
+			$(".b1").click(function () {
+				$("div").animate({width:"+=50px"}).animate({height:"+=50px"}).fadeOut(2000).show(2000);
+			});
+			$(".b2").click(function (){
+				$("div").stop();
+			})
+			$(".b3").click(function (){
+				$("div").stop(true);
+			})
+			$(".b4").click(function (){
+				$("div").stop(true,true)
+			})
+			$(".b5").click(function (){
+				$("div").stop(false,true)
+			})
+		</script>
+	</body>
+</html>

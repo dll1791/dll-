@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在JavaScript中，想要给元素添加一个事件，其实我们有2种方式：
+		  事件处理器
+		  事件监听器
+		
+		事件处理器是没办法为一个元素添加多个相同事件的。
+		语法：
+		oBtn.onclick = function(){……};
+		
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="a" height="100px">
+			<p href="">ss</p>
+		</div>
+		<script type="text/javascript">
+			a.onmousemove=function(){
+				alert("nihao");
+				a.innerHTML="nihao";
+			}
+		</script>
+	</body>
+</html>

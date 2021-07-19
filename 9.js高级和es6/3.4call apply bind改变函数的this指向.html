@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- //bind(捆绑)
+	常用的可以改变函数中this指向的方法有
+	bind(),call(),apply
+	
+	1.call()
+	fun.call(thisArg,arg1,arg2,....) 
+	thisArg：规定this指向的对象
+	arg:要传递的参数
+	call可以调用函数，也可以改变函数内的this指向
+	例：
+	function Father(uname){
+		this.name=uname;
+	}
+	function Son(uname){
+		Father.call(this,uname);
+	}
+	var son=new Son('儿子');
+	console.log(son.name);
+	
+	2.apply()方法
+	fun.apply(thisArg,[argsArray])
+	thisArg: 和call()一样规定this指向的对象
+	[argsArray]：传递的值必须装在数组中
+	例子：
+			var o={
+				name: 'dll'
+			};
+			function fn(a,b){
+				console.log(a+''+b+this.name);
+			}
+			fn.apply(o,[1,2]);
+	作用：
+	1.调用函数
+	2.改变this指向
+	3.apply的主要应用
+	利用数学内置对象求最大值/最小值
+	例子：
+	var arr=[1,66,3,9];
+	var max=Math.max.apply( ,arr);
+	console.log(max);//Math.max是一个返回最大值的方法
+	//这里没有改变Math.max的this指向对象而是利用了apply
+	//可以去掉数组边框的功能将数组传进Math.max方法里面
+	（apply要求接收一个数组形式的参数，但是返回的确实数组里面单个的值）
+	与call的不同点：第二个参数必须是数组（伪数组）
+	
+			
+	3.bind()bind不会调用函数，但是能改变this指向
+	fn.bind(thisArg,arg,arg)语法规范与call一样
+	返回值是fn改造完的thisArg的拷贝（一个新函数）
+	例子：
+	var o={
+		name: 'dll'
+	};
+	function fn(a,b){
+		console.log(a+''+b+this.name);
+	}
+	var f =fn.bind(o,1,2);//因为bind不会自己调用且返回一个函数
+	f();								//因此bind需要重新找一个方法赋值给这个新方法
+										//然后在用新方法调用
+	
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button>禁用</button>
+		<p ></p>
+		<script type="text/javascript">
+			//btn中常用的方法
+			var btn=document.querySelector('button');
+			var p1=document.querySelector('p');
+				btn.onclick=function(){
+					this.disabled=true;
+					setTimeout(function(){
+						this.disabled=false;//这个this指向window
+					}.bind(this),3000)//这里的this指向btn
+					// 在外面用bind使内部的this指向btn又不用立即调用
+				}
+		</script>
+	
+	</body>
+</html>

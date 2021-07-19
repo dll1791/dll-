@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+	使用animation属性实现CSS3动画，其实跟JavaScript使用函数，是非常相似的：①定义动画；②调用动画。
+	
+	语法：
+	animation-name:  动画名;
+	@keyframes 动画名
+	{
+	    0%{}
+	    ……
+	    100%{}
+	}
+	
+	@keyframes animationname 
+	{keyframes-selector {css-styles;}}
+	
+		值				说明
+	animationname	必需的。定义animation的名称。
+	keyframes-selector	必需的。动画持续时间的百分比。
+						合法值：
+						0-100%
+						from (和0%相同)
+						to (和100%相同)
+	
+	注意： 您可以用一个动画keyframes-selectors。
+	css-styles	必需的。一个或多个合法的CSS样式属性
+	
+	
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				height: 100px;
+				width: 100px;
+				background: #008000;
+				position: relative;
+				animation:dllmove 5s infinite;
+			}
+			@keyframes dllmove{
+				0%{top:0px;}
+				50%{top:300px;}
+				100%{top:0px;}
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>
+

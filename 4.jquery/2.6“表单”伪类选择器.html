@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		表单伪类选择器，指的是专门操作表单元素的一种伪类选择器。
+		
+			《例如$(":image").css("border","2px red solid")》
+		
+		选择器		说明
+		
+		:input		选取所有input元素
+		:button		选耳取所有普通按钮，即<input type="button"/>
+		:submit		选取所有提交按钮，即<input type="submit"/>
+		:reset		选取所有重置按钮，即<input type="reset"/>
+		:text		选取所有单行文本框
+		:textarea	选取所有多行文本框
+		:password	选取所有密码文本框
+		:radio		选取所有单选框
+		:checkbox	选取所有复选框
+		:image		选取所有图片域
+		:file		选取所有文件域
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(":image").css("border","2px red solid")
+			})
+		</script>
+	</head>
+	<body>
+		<input type="image" name="" id="" value="" src="../../图片与文件/小图标1.gif"/>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+	亮度效果（brightness），是指让图片变得更亮或者更暗。
+	实现算法很简单：将红、绿、蓝3个通道值，分别同时加上一个正值或负值。
+	语法：
+	for (var i = 0; i < data.length; i += 4) 
+	{
+	    var a = 50;
+	    data[i + 0] += a;
+	    data[i + 1] += a;
+	    data[i + 2] += a;
+	}
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300" style="border: 2px aquamarine solid;"></canvas>
+		<script type="text/javascript">
+			var a=c.getContext("2d");
+			a.fillStyle="#66FF2F"
+			a.fillRect(10,10,20,20);
+			a.fillStyle="#8A2BE2";
+			a.fillRect(10,30,20,20);
+			a.fillStyle="#FF0000";
+			a.fillRect(30,30,20,20);
+			a.fillStyle="#FFFF00";
+			a.fillRect(30,10,20,20);
+			
+			var img=a.getImageData(10,10,40,40);
+			for (var i = 0; i < img.data.length; i += 4) 
+			{
+			    var b = 100;
+			     img.data[i + 0] += b;
+			     img.data[i + 1] += b;
+			     img.data[i + 2] += b;
+			}
+			a.putImageData(img,50,50);
+		</script>
+	</body>
+</html>

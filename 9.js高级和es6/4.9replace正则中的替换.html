@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- 
+	replace()是替换字符串的，也可以用来替换正则表达式
+	1.普通的替换
+	var str= 'andy和red';
+	var st=str.replace('andy','baby');
+	console.log(st);
+	2. 正则的替换
+		1.\\和字符中的""是相通的 
+		例如：
+		var str= 'andy和red';
+		var st=str.replace(/andy/,'baby');
+		console.log(st);
+		
+		2.正则的替换可以替换指定的一些文字（如敏感词）
+		例如：
+		var str= '干！我操你大爷！';
+		var st=str.replace(/草|擦|操|干/,'*');
+		console.log(st);
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str= '干！我操你大爷！';
+			var st=str.replace(/(草|擦|操|干)+/g,'*');
+			console.log(st);
+		</script>
+	</body>
+</html>

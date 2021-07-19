@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+	在Canvas中，我们可以使用save()方法来保存当前状态，然后使用restore()
+	方法来恢复之前保存的状态。save()和restore()一般情况下都是成对使用的。
+	
+	1、图形或图片剪切
+	在Canvas中，我们可以在图形或者图片剪切，即clip()之前使用save()方法来保持当前状态
+	，然后在剪切，即clip()之后可以使用restore()方法恢复之前保存的状态。
+	2、图形或图片变形
+	在Canvas中，我们可以在图形或者图片变形（clip()）之前使用save()方法来保持当前状态，
+	然后在变形，即clip()之后使用restore()方法恢复之前保存的状态。
+	3、状态属性的改变
+	在Canvas中，如果状态属性发生改变，我们可以在这些状态改变之前使用save()方法来保存，然后可以使用restore()方法恢复此状态。
+
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="c" width="300" height="300" style="border: 2px aquamarine solid;"></canvas>
+		<br /><button id="b1">清空</button><button id="b2">恢复</button>
+		<script type="text/javascript">
+			var a=c.getContext("2d");
+			a.fillStyle="#7CFC00";
+			var b=a.fillRect(20,20,100,100);
+			a.save();
+			b1.onclick=function(){
+				a.clearRect(0,0,300,300);
+			}
+			b2.onclick=function(){
+				a.restore();
+				var b=a.fillRect(20,20,100,100);
+			}
+		</script>
+	</body>
+</html>

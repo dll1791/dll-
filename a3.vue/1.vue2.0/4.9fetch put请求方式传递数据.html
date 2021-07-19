@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--  
+	put 和 post请求方式相差不多  他表示要修改数据
+	put相比post可以在url中多传递一个参数
+	fetch('http://localhost:3000/books5/123',{
+-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		//123表示要修改的数据是123
+			fetch('http://localhost:3000/books5/123',{
+				method:'put',
+				body: JSON.stringify({
+					uname:'戴林朗',
+					pwd:'789'
+				}),
+				headers:{
+					'Content-Type':'application/json'//选项配置  必填
+				}
+				}
+			).then(function(data){
+				return data.text();
+			}).then(function(data){
+				console.log(data);
+			})
+		</script>
+	</body>
+</html>

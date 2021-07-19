@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在JavaScript中，对话框有3种，这3个都是window对象的方法。
+		  alert()
+		  confirm()
+		  prompt()
+
+ 	1、alert()
+	在JavaScript中，alert()对话框一般仅仅用于提示文字。
+	语法：
+	alert("提示文字")
+	
+	 2、confirm()
+	在在JavaScript中，confirm()对话框不仅提示文字，还提供确认。
+	语法：
+	confirm("提示文字")
+	当单击确定时返回true，单击取消时返回false
+	
+	 3、prompt()
+	在JavaScript中，prompt()对话框不仅提示文字，还返回一个字符串。
+	语法：
+	prompt("提示文字")
+
+在实际开发中，为了更好的用户体验，对话框我们一般使用div元素模拟出来。
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			alert("alert");	
+			var b=confirm("confirm");
+			var a=prompt("prompt");
+			alert(b+" "+a);
+		</script>
+	</body>
+</html>

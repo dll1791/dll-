@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		FileList对象是所有文件的集合，它是一个类数组对象。File对象表示一个文件对象，通过FileList[n]的方式来获取。
+		File对象有4个属性，如下表所示。
+	
+		在文件上传中使用 accept 属性，本例中的输入字段可以接受 GIF 和 JPEG 两种图像：
+		  <input type="file" name="pic" id="pic" accept="image/gif, image/jpeg" />
+		  如果不限制图像的格式，可以写为：accept="image/*"。
+		  
+		multiple 设置可上传文件数
+		
+		属性					说明
+		
+		name				文件名称
+		type				文件类型
+		size				文件大小（单位为B）
+		lastModifiedDate	文件最后的修改时间
+		
+		
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="file" name="file" id="file" value="" multiple="5"/><button id="b1">开始</button>
+		<p id="p1"></p>
+		
+		<script type="text/javascript">
+			b1.onclick=function(){
+				p1.innerHTML="文件大小 "+FileList[0].type;
+			}
+			
+		</script>
+	</body>
+</html>

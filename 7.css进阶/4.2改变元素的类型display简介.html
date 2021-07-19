@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+	cell:小房间		
+	在CSS中，我们可以使用display属性来改变元素的类型。
+		语法：
+		display: 取值;
+		
+		值					描述
+		none			此元素不会被显示。
+		block			此元素将显示为块级元素，此元素前后会带有换行符。
+		inline			默认。此元素会被显示为内联元素，元素前后没有换行符。
+		inline-block	行内块元素。（CSS2.1 新增的值）//结合的行内和块级的优点，既可以设置长宽，
+												可以让padding和margin生效，
+												又可以和其他行内元素并排。
+		table			此元素会作为块级表格来显示（类似 <table>），表格前后带有换行符。
+		table-row		此元素会作为一个表格行显示（类似 <tr>）。
+		table-column	此元素会作为一个单元格列显示（类似 <col>）
+		table-cell		此元素会作为一个表格单元格显示（类似 <td> 和 <th>）
+		table-caption	此元素会作为一个表格标题显示（类似 <caption>）
+		//用display创建的表格和 直接用table创建的表格结果是不一样的 display创建的表格没有内外边距	
+		
+		不常用：
+		list-item		此元素会作为列表显示。
+		run-in			此元素会根据上下文作为块级元素或内联元素显示。
+		inline-table	此元素会作为内联表格来显示（类似 <table>），表格前后没有换行符。
+		table-row-group	此元素会作为一个或多个行的分组来显示（类似 <tbody>）。
+		table-header-group	此元素会作为一个或多个行的分组来显示（类似 <thead>）。
+		table-footer-group	此元素会作为一个或多个行的分组来显示（类似 <tfoot>）。
+		table-column-group	此元素会作为一个或多个列的分组来显示（类似 <colgroup>）。
+		inherit	规定应该从父元素继承 display 属性的值。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.span{
+				display: table-cell;
+				border: 1px solid ;
+			}
+			#s1{
+				display: table;
+			}
+			td{
+				border: 1px solid ;
+			}
+		</style>
+	</head>
+	<body>
+		<span id="s1">
+			<span class="span">1</span><span  class="span">2</span><span  class="span">3</span>
+		</span>
+		
+		<table>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</table>
+		
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+	
+	
+	white-space属性指定元素内的空白怎样处理。
+	
+	属性值
+	值			描述
+	normal		默认。空白会被浏览器忽略。
+	pre			空白会被浏览器保留。其行为方式类似 HTML 中的 <pre> 标签。<pre>标签会保留换行和空格
+	nowrap		文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。
+	pre-wrap	保留空白符序列，但是正常地进行换行。
+	pre-line	合并空白符序列，但是保留换行符。
+	inherit		规定应该从父元素继承 white-space 属性的值。
+-->
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				/*overflow: hidden;*/
+				border: 2px solid black;
+				height: 20px;
+				width: 120px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<p>nomal	</p>
+		<div id="d1" style="white-space:normal;">
+			我的批话多的说都说不完
+		</div>
+		<p>pre	</p>
+		<div id="d2" style="white-space:pre;">
+			我的批话多的说都说不完
+		</div>
+		
+		<p>nowrap	</p>
+		<div id="d3" style="white-space:nowrap;">
+			我的批话多的说都说不完
+		</div>
+		
+		<p>pre-wrap	</p>
+		<div id="d3" style="white-space:pre-wrap;">
+			我的批话多的说都说不完
+		</div>
+		<br /><br /><br />
+		<p>pre-line	</p>
+		<div id="d3" style="white-space:pre-line;">
+			我的批话多的说都说不完
+		</div>
+	</body>
+</html>

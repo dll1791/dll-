@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+	drop: 推动
+	CSS3中的drop-shadow()方法，用来实现阴影滤镜效果。
+	语法：
+	filter: drop-shadow(x-offset y-offset blur color)
+	说明：
+	
+	drop-shadow()方法的参数有4个，每一个参数说明如下。
+	
+	（1）x-offset：定义水平阴影的偏移距离，可以使用负值。由于CSS3采用的是W3C坐标系，
+	因此x-offset取值为正时，向右偏移；取值为负时，向左偏移。
+	（2）y-offset：定义垂直阴影的偏移距离，可以使用负值。
+	由于CSS3采用的是W3C坐标系，因此y-offset取值为正时，向下偏移；取值为负时，向上偏移。
+	（3）blur：定义阴影的模糊半径，只能为正值。
+	（4）color：定义阴影的颜色。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#a1{
+				filter:drop-shadow(5px 5px 10px red);
+			}
+		</style>
+	</head>
+	<body>
+		<img id="a1" src="../../图片与文件/梦想3.jfif" style="height: 400px;"title="复古"/>
+		<img src="../../图片与文件/梦想3.jfif" style="height: 400px;"/>
+	</body>
+</html>

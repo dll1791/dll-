@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在script标签中调用事件，指的是在“<script></script>”标签内部调用事件。
+		语法：
+		obj.事件名 = function()
+		{
+		    ……
+		};
+		
+
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="t1" value="heihei" />
+		<script type="text/javascript">
+			t1.onmouseleave=function(){
+				t1.type="button";
+				t1.value="没想到吧";
+				alert("nihao");
+			};
+		</script>
+	</body>
+</html>

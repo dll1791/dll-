@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<!--
+		在jQuery中，常用的编辑事件只有一种，那就是contextmenu事件。
+		
+		语法：
+		$(selector).contextmenu( [eventData ], handler )
+		
+		举例：
+		$( "#target" ).contextmenu(function())
+		
+		contextmenu() 函数用于添加事件处理程序到 contextmenu 事件。
+		注意：.contextmenu() 方法只是作为 .on( "contextmenu", handler )
+		 的一个速记写法，
+		 移除该事件可以使用 .off( "contextmenu" ) 。
+	-->
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<p>右键这里</p>
+		<script type="text/javascript">
+			$("p").contextmenu(function(){
+				alert("右键")
+			});
+		</script>
+	</body>
+</html>

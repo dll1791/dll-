@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+	可以使用ie-css3.htc来使得IE6~IE8支持CSS3部分属性
+	
+	做前端的同学都应该听说或者用过，是一段脚本，可以让ie实现css3里的圆角和阴影效果。
+	css带来的便利是很容易感受的到的，但恶心的是它在ie下的不兼容，所以某位牛人现身写了个
+	ie-css3.htc，允许你在ie下去使用css3的部分东西。
+	ie-css3的使用方法很简单，在你需要使用css3的样式里加入
+	behavior: url(js/ie-css3.htc);就可以了（括号里是ie-css3.htc的地址）
+	ie-css3.htc
+
+	http://fetchak.com/ie-css3/
+
+	用法示例：
+	.box {
+    -moz-border-radius: 15px;                /* Firefox */
+    -webkit-border-radius: 15px;             /* Safari and Chrome */
+    border-radius: 15px;                     /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
+    -moz-box-shadow: 10px 10px 20px #000;    /* Firefox */
+    -webkit-box-shadow: 10px 10px 20px #000; /* Safari and Chrome */
+    box-shadow: 10px 10px 20px #000;         /* Opera 10.5+, future browsers and IE6+ using IE-CSS3 */
+    behavior: url(ie-css3.htc);              /* This lets IE know to call the script on all elements which get the 'box' class */
+	}
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- 
+	Object.defineProperty(obj,prop,descriptor)
+	//三个参数都不能省略
+	可以定义对象中的新属性或修改原有的属性。
+1.	obj:必需。目标对象
+2.prop :必需。需定义或修改的属性的名字
+3.	descriptor :必需。目标属性所拥有的特性
+	descriptor属性里的值
+	以对象形式{}书写
+	
+	descriptor属性值
+	1.value:设置属性的值默认为undefined
+	2.writable:值是否可以重写。true | false默认为false
+	3.enumerable:目标属性是否可以被枚举。true | false默认为false//是否可以遍历
+	//每个用defineProperty创造的值  enumerable默认都是false
+	
+	configurable:目标属性是否可以被删除或是否可以再次修改特性true | false 
+	默认为false
+	//如果address已经被设置为false,后面就不允许设置为true;
+	//每个用defineProperty创造的值  configurable默认都是false
+	
+	
+	var obj={
+		id:1,
+		name:'小米',
+		price:1999,
+		num:2000
+	};
+	Object.defineProperty(obj,'num',{
+		value:1000
+	})
+
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var obj={
+				id:1,
+				name:'小米',
+				price:1999,
+				num:2000
+			};
+			Object.defineProperty(obj,'num',{
+				value:1000
+			})
+			Object.defineProperty(obj,'price',{
+				value:9.9,
+			})
+			Object.defineProperty(obj,'id',{
+				writable:false//不允许修改id
+			})
+		</script>
+	</body>
+</html>

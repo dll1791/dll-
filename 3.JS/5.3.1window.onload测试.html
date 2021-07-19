@@ -1,0 +1,23 @@
+<!DOCTYPE html>  
+<!--window.onload方法就是把要执行的函数放到最后文档加载完之后执行，
+	这样做是为了避免正常加载的时候因为要执行的函数在被执行的dom之前
+	导致在没有加载到目的dom对象的情况下直接加载了函数导致无法加载成功的现象。
+-->
+<html>   
+<head>   
+<meta charset=" utf-8">   
+<title>没有使用 window.onload() 测试</title>
+
+<script type="text/javascript">
+	window.onload=function(){//如果去掉onload则会导致先加载该函数
+							//后加载div从而导致最后的结果报错说bg没有被定义
+		document.getElementById("bg").style.backgroundColor="blue";
+		bg.style.width="100px";
+		bg.style.height="100px";
+	}
+</script>
+</head>
+<body>
+    <div id="bg"></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+一、
+	1.  let基本用法 
+		基 ES6新增了let命令，用来声明变量。它的用法类似于var，
+		但是所声明的变量，只在let命令所在的代码块内有效。 
+		{ let a = 10; var b = 1; }
+		for循环的计数器，就很合适使用let命令。
+	2.不存在变量提升 
+		let不像var那样会发生“变量提升”现象。所以，
+		变量一定要在声明后使用，否则报错。
+		console.log(foo); // 输出undefined
+		console.log(bar); // 报错ReferenceError
+		 var foo = 2;
+		  let bar = 2;
+		 变量foo用var命令声明，会发生变量提升，
+		 即脚本开始运行时，变量foo已经存在了，
+		 但是没有值，所以会输出undefined。
+		 变 量bar用let命令声明，不会发生变量提升。
+		 这表示在声明它之前，变量bar是不存在的，
+		 这时如果用到它，就会抛出一个错误。
+	3.let n=5;let n=10,输出后n=5
+二、
+	2 const命令命 const声明一个只读的常量。
+	一旦声明，常量的值就不能改变。
+	如果强行改变则会大致报错
+	
+	代码块内如果存在 let 或者 const，代码块会
+	对这些命令声明的变量从块的开始就形成一
+	个封闭作用域。代码块内，在声明变量 之前
+	使用它会报错。
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="p"></p>
+		<script type="text/javascript">
+			{
+				const PI = 3.1415; // 3.1415 
+			
+				console.log(PI);
+			}
+			
+		</script>
+	</body>
+</html>

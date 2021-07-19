@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- 
+	1.gulp的方法
+		1.gulp.src()
+			获取任务要处理的文件
+		2.gulp.dest()
+			输出文件到硬盘的某个目录下面
+			.pipe(gulp.dest('./dist/css'));
+		3.gulp.task()
+			建立gulp任务
+			gulp.task('first', () => {})
+			1.first 任务名称
+			2.() => {}一个回调函数
+		4.gulp.watch()
+			监控文件的变化,当文件发生变化时用什么方法
+		
+	2.gulp示例
+	//应用gulp模块
+	const gulp=require('gulp');
+	//建立任务
+	gulp.task('first', ()=>{
+		console.log('第一个gulp任务执行了');
+		return  gulp.src('./src/图片与文件/百度.css')// 获取要处理的文件  必须要有一个返回值不然会报错
+		 .pipe(gulp.dest('dist/css'));//gulp会自动创建一个css目录
+	
+	});
+	3.命令行工具操作gulp 
+		1.下载：命令行输入 npm install gulp-cli -g		2. 安装完成之后 命令行中就多了一个 gulp +要执行的任务名就可以了指令
+		3.例如gulp first
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

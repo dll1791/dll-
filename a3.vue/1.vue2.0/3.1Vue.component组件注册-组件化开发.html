@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- 
+	组件化开发：
+	把网页看成一个个组件所组成的，一个组件代表独立的一部分，有父组件和子组件
+	组件开发提高代码的复用性
+	组件注册相当于函数的声明
+	每个组件都是相互独立的
+	用法：
+	Vue.component(组件名称，{//组件名称命名规则： 
+													//button-counter  button组件是按钮类型，
+													//counter是组件是干嘛的这里是记录点击的次数
+		data:组件函数,用于存值
+		template:（子组件）组件模板内容 如<div></div>
+	})
+	
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="0.0vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id='vue1'>
+			<!-- 2.使用下面声明的button-counter组件 -->
+			<button-counter></button-counter>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+	//1. 声明组件
+		Vue.component('button-counter',{
+			data:function(){
+				return {
+					count:0
+				}
+			},
+			template:'<button @click="bt1">点击了多少次{{count}}</button>',
+			 methods:{
+				 bt1:function(){
+					 this.count++;
+				 }
+			 }
+		})
+		let vue=new Vue({
+			el:'#vue1',
+			})
+	</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--在CSS中，我们可以使用border-collapse属性来去除单元格之间的空隙，也就是将两条边框合并为一条。
+	可以让表格更美观
+	
+	语法：
+	border-collapse: 取值;
+	
+	属性值		说明
+	separate	边框分开，有空隙（默认值）
+	collapse	边框合并，无空隙(默认的边框与边框之间有俩条框合并之后变为一条)
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			 table,td,th{
+			 	border:5px solid red;
+			 	border-collapse: collapse;/*相当于去除表格边框的间距*/
+			 	}
+		</style>
+	</head>
+	<body>
+		<table>
+        <caption>表格标题</caption>
+        <!--表头-->
+        <thead>
+            <tr>
+                <th>表头单元格1</th>
+                <th>表头单元格2</th>
+            </tr>
+        </thead>
+        <!--表身-->
+        <tbody>
+            <tr>
+                <td>表行单元格1</td>
+                <td>表行单元格2</td>
+            </tr>
+            <tr>
+                <td>表行单元格3</td>
+                <td>表行单元格4</td>
+            </tr>
+        </tbody>
+        <!--表脚-->
+        <tfoot>
+            <tr>
+                <td>表行单元格5</td>
+                <td>表行单元格6</td>
+            </tr>
+        </tfoot>
+    </table>
+	</body>
+</html>
